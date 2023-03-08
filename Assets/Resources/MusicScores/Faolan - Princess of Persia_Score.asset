@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8975100c68e436aadf3ae40a93e8285, type: 3}
+  m_Name: Faolan - Princess of Persia_Score
+  m_EditorClassIdentifier: 
+  bgm: {fileID: 8300000, guid: 85c0e953aa62fac40a3c51d9ceae70dd, type: 3}
+  beatNumber: 32
+  scoreAsset: {fileID: 4900000, guid: 1875231625fbbe34881402ecfa1e9041, type: 3}
+  instrumentCount: 4
+  initialDelayTime: 5.3
+  noteMarginTime: 0.1
+  speedMagnification: 1
+  loopScore: 1
+  customBpm: 0

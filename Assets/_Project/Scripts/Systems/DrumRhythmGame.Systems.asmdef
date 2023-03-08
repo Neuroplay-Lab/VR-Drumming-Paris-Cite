@@ -1,0 +1,16 @@
+{
+    "name": "DrumRhythmGame.Systems",
+    "references": [
+        "GUID:b449ba40da42b2d4caafcd5168a60217",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

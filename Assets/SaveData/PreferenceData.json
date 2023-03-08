@@ -1,0 +1,9 @@
+{
+    "displayVisualCue": true,
+    "enableRecording": true,
+    "recordPerUnit": true,
+    "muteAgentDrumSounds": true,
+    "enableLogging": true,
+    "hideCueAfterTime": 20.0,
+    "musicVolume": 1.0
+}

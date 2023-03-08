@@ -1,0 +1,15 @@
+{
+    "name": "RootMotion.FinalIK",
+    "references": [
+        "GUID:6e09a2fabead6b44f992bad0d1b84954",
+        "GUID:0bb76661b2d54d04aae48ff9a4bf2223"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}

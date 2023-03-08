@@ -1,0 +1,3 @@
+For this session, you are tasked with playing a simple left-right-left beat on the drums in-front of you. 
+
+You will also see a prompt indicating which drum you should strike in sync with the music

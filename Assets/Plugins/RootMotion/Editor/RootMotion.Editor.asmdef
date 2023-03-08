@@ -1,0 +1,19 @@
+{
+    "name": "RootMotion.Editor",
+    "references": [
+        "GUID:a44cbcf9feb8a5a45a16bc44972c084c",
+        "GUID:465cd894b68f8ec458c226e469f4c0be",
+        "GUID:6e09a2fabead6b44f992bad0d1b84954",
+        "GUID:0bb76661b2d54d04aae48ff9a4bf2223"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}

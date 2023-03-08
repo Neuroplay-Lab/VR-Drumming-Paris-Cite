@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8975100c68e436aadf3ae40a93e8285, type: 3}
+  m_Name: Inazuma_Normal
+  m_EditorClassIdentifier: 
+  bgm: {fileID: 8300000, guid: 54d45dcbc5d428443a7e0949ea1cebd3, type: 3}
+  beatNumber: 16
+  scoreAsset: {fileID: 4900000, guid: 296075852d1a9534dbde66ebfe00aaa1, type: 3}
+  instrumentCount: 4
+  initialDelayTime: 3.9
+  noteMarginTime: 2
+  speedMagnification: 0.9999
+  loopScore: 1

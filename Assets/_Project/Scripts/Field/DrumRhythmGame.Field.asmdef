@@ -1,0 +1,19 @@
+{
+    "name": "DrumRhythmGame.Field",
+    "references": [
+        "GUID:b449ba40da42b2d4caafcd5168a60217",
+        "GUID:f3042a85ad8f7894cb4dac71c4c2f900",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:465cd894b68f8ec458c226e469f4c0be",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
