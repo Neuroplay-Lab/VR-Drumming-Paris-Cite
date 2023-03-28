@@ -29,6 +29,7 @@ namespace _Project.Scripts.Systems
         public static event Action<bool> LoggingStateChanged;
 
         public static event Action<AgentSO> AgentSelected;
+        public static event Action<SceneSO> SceneSelected;
 
 
         public static void InvokeDrumHitEvent(ActorType actor, InstrumentType type, XRNode node)
@@ -75,6 +76,11 @@ namespace _Project.Scripts.Systems
         public static void InvokeAgentSelected(AgentSO obj)
         {
             AgentSelected?.Invoke(obj);
+        }
+
+        public static void InvokeSceneSelected(SceneSO obj)
+        {
+            SceneSelected?.Invoke(obj);
         }
 
         public static void InvokeMusicSettingChangeEvent(MusicSetting obj)
