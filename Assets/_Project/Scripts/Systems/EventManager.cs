@@ -75,16 +75,19 @@ namespace _Project.Scripts.Systems
 
         public static void InvokeAgentSelected(AgentSO obj)
         {
+            Debug.Log("Agent Change");
             AgentSelected?.Invoke(obj);
         }
 
         public static void InvokeSceneSelected(SceneSO obj)
         {
+            Debug.Log("Scene Change");
             SceneSelected?.Invoke(obj);
         }
 
         public static void InvokeMusicSettingChangeEvent(MusicSetting obj)
         {
+            Debug.Log("Music Change");
             MusicSettingChangeEvent?.Invoke(obj);
         }
 

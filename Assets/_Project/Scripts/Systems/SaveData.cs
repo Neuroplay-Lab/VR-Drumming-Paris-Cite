@@ -36,6 +36,7 @@ namespace _Project.Scripts.Systems
         public readonly PreferenceData preferenceData;
         public readonly PartnerErrorData partnerErrorData;
         public readonly AvatarData avatarData;
+        public readonly SceneryData sceneryData;
 
         /// <summary>
         /// Load all save data
@@ -45,6 +46,7 @@ namespace _Project.Scripts.Systems
             preferenceData = Load<PreferenceData>(nameof(PreferenceData));
             partnerErrorData = Load<PartnerErrorData>(nameof(PartnerErrorData));
             avatarData = Load<AvatarData>(nameof(AvatarData));
+            sceneryData = Load<SceneryData>(nameof(SceneryData));
 
             Application.quitting += SaveAll;
         }
@@ -75,6 +77,7 @@ namespace _Project.Scripts.Systems
             Save(preferenceData, nameof(PreferenceData));
             Save(partnerErrorData, nameof(PartnerErrorData));
             Save(avatarData, nameof(AvatarData));
+            Save(sceneryData, nameof(sceneryData));
             Debug.Log($"Data saved in: {_saveDir}");
         }
 

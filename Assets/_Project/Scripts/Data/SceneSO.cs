@@ -7,6 +7,7 @@ namespace _Project.Scripts.Data
     {
         public int index;
         public new string name;
+        public Sprite sprite;
         public GameObject prefab;
     }
 }

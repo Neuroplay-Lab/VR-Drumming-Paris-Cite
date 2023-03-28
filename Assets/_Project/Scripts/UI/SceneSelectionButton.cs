@@ -15,6 +15,7 @@ namespace _Project.Scripts.UI
 
         public void SceneSelected()
         {
+            Debug.Log("HERE");
             EventManager.InvokeSceneSelected(sceneSO);
             Debug.Log($"Selected: {title} scene");
         }
