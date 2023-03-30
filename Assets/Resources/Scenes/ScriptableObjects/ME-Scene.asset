@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 1
   name: Middle East
-  sprite: {fileID: 21300000, guid: a4638c6b8e07c0b49822ed7a91a96d0a, type: 3}
+  sprite: {fileID: 21300000, guid: b9a20fc75381b44f899ecd8c5a007fed, type: 3}
   prefab: {fileID: 5933226754968952629, guid: b8ecfe3b250b64502ae61037298641d4, type: 3}

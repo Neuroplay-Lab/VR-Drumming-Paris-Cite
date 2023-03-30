@@ -36,7 +36,7 @@ namespace _Project.Scripts
         {
             base.Awake();
             // TODO: Shouldn't be fetching by name.
-            sceneGrid = transform.Find("SceneGrid_ScrollRect").GetComponentInChildren<GridLayoutGroup>().transform;
+            sceneGrid = transform.Find("SceneGrid_ScrollRect").GetComponentInChildren<VerticalLayoutGroup>().transform;
             scenes = Resources.LoadAll<SceneSO>(ScenePath).ToList();
             PopulateSceneModal();
         }
@@ -58,7 +58,7 @@ namespace _Project.Scripts
                 button.GetComponent<Button>().onClick.AddListener(() =>
                 {
                     // TODO: This could probably be extracted to a method.
-                    button.GetComponent<Image>().color = activeColor;
+                    button.GetChild(0).Find("Scene_Image").GetComponent<Image>().color = activeColor;
                     ResetButtonAppearance();
                     selectedScene = new SceneStruct(button, scene);
                     SelectScene(scene);
@@ -66,38 +66,26 @@ namespace _Project.Scripts
                 sceneButtons.Add(button.GetComponent<Button>());
             }
 
-            SetFirstButtonAsClear();
         }
 
-        private void SetFirstButtonAsClear()
-        {
-            sceneGrid.GetChild(0).GetComponentInChildren<Button>().onClick.AddListener(() =>
-            {
-                ResetButtonAppearance();
-                selectedScene = new SceneStruct();
-                SceneryManager.Instance.DestroyScene();
-                PartnerManager.Instance.DestroyPartnerOne();
-            });
-        }
-
-        private static void SetInitialButtonAppearance(Transform avatar, SceneSO agent)
+        private static void SetInitialButtonAppearance(Transform avatar, SceneSO scene)
         {
             // TODO: Probably shouldn't be fetching by name.
-            avatar.GetChild(0).Find("AvatarImage_Image").GetComponent<Image>().sprite = agent.sprite;
-            avatar.GetChild(1).Find("AvatarIndex_Text").GetComponent<TextMeshProUGUI>().text =
-                agent.index.ToString();
+            avatar.GetChild(0).Find("Scene_Image").GetComponent<Image>().sprite = scene.sprite;
+            avatar.Find("SceneName_Text").GetComponent<TextMeshProUGUI>().text =
+                scene.name;
         }
 
-        private static void SelectScene(SceneSO agent)
+        private static void SelectScene(SceneSO scene)
         {
-            Debug.Log($"Selected {agent.name} ({agent.index})");
-            EventManager.InvokeSceneSelected(agent);
+            Debug.Log($"Selected {scene.name} ({scene.index})");
+            EventManager.InvokeSceneSelected(scene);
         }
 
         private void ResetButtonAppearance()
         {
             if (selectedScene.Button == null) return;
-            selectedScene.Button.GetComponent<Image>().color = passiveColor;
+            selectedScene.Button.GetChild(0).Find("Scene_Image").GetComponent<Image>().color = passiveColor;
         }
 
         /// <summary>
