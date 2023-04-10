@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9fae08365f9149adb3991190f30128d, type: 3}
   m_Name: ME-Scene
   m_EditorClassIdentifier: 
-  index: 1
+  index: 2
   name: Middle East
   sprite: {fileID: 21300000, guid: b9a20fc75381b44f899ecd8c5a007fed, type: 3}
   prefab: {fileID: 5933226754968952629, guid: b8ecfe3b250b64502ae61037298641d4, type: 3}
