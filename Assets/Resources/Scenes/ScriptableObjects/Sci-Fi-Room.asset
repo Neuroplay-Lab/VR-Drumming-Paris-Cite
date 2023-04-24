@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9fae08365f9149adb3991190f30128d, type: 3}
   m_Name: Sci-Fi-Room
   m_EditorClassIdentifier: 
-  index: 3
+  index: 4
   name: Sci-Fi
   sprite: {fileID: 21300000, guid: cb06710281e014faabb2cb75edc04fd8, type: 3}
   prefab: {fileID: 8326545942156990431, guid: 1b3e4cd8bd7f1428684a8541a437e1ff, type: 3}
