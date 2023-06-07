@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9968593f2b53e8479d87fecc67eb811, type: 3}
-  m_Name: PM1_5
+  m_Name: PM2_10
   m_EditorClassIdentifier: 
-  index: 5
-  name: Male POC Adult
-  sprite: {fileID: 21300000, guid: 27c65380600993a4197889e4f4a14b79, type: 3}
-  prefab: {fileID: 7015801216248750209, guid: 5500d8bbfa5afcf4c93f9a27b10086e0, type: 3}
+  index: 10
+  name: Male POC Teen
+  sprite: {fileID: 21300000, guid: b519ada79c72b422b92d9bb9f58c30bb, type: 3}
+  prefab: {fileID: 1657936082216147713, guid: 7b3621685fee84e9281e683f7ce153ce, type: 3}

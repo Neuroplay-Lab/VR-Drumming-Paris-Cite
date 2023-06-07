@@ -4071,7 +4071,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2eae339fe57537b4d874b97e94dbf092, type: 2}
+  - {fileID: 2100000, guid: bc028216d5a744fc9a486e00bb917f59, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4588,13 +4588,13 @@ MonoBehaviour:
   fadeInTime: 0.3
   speed: 1
   resetToDefaultsSpeed: 1
-  characterCollider: {fileID: 0}
+  characterCollider: {fileID: 4090309316547913459}
   FPSCamera: {fileID: 0}
   camRaycastLayers:
     serializedVersion: 2
     m_Bits: 0
   camRaycastDistance: 1
-  fullBody: {fileID: 0}
+  fullBody: {fileID: 4090309316547913463}
   lookAt:
     ik: {fileID: 0}
     lerpSpeed: 5
@@ -6196,6 +6196,7 @@ MonoBehaviour:
   timeToPlayStart: 0
   chatteringInterval: 0.1
   audioSource: {fileID: 0}
+  wrongSide: {fileID: 0}
 --- !u!54 &7060349330361338086
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7038,6 +7039,7 @@ MonoBehaviour:
   timeToPlayStart: 0
   chatteringInterval: 0.1
   audioSource: {fileID: 7060349330589198900}
+  wrongSide: {fileID: 0}
 --- !u!114 &7060349330589198906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8520,6 +8522,7 @@ MonoBehaviour:
   timeToPlayStart: 0
   chatteringInterval: 0.1
   audioSource: {fileID: 0}
+  wrongSide: {fileID: 0}
 --- !u!54 &7060349330932276726
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9464,6 +9467,7 @@ MonoBehaviour:
   timeToPlayStart: 0
   chatteringInterval: 0.1
   audioSource: {fileID: 0}
+  wrongSide: {fileID: 0}
 --- !u!54 &7060349331212705338
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11247,6 +11251,7 @@ MonoBehaviour:
   timeToPlayStart: 0
   chatteringInterval: 0.1
   audioSource: {fileID: 7060349331688197801}
+  wrongSide: {fileID: 0}
 --- !u!1 &7060349331688910276
 GameObject:
   m_ObjectHideFlags: 0
@@ -12852,6 +12857,7 @@ MonoBehaviour:
   timeToPlayStart: 0
   chatteringInterval: 0.1
   audioSource: {fileID: 0}
+  wrongSide: {fileID: 0}
 --- !u!54 &7060349332167156188
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13365,6 +13371,7 @@ MonoBehaviour:
   timeToPlayStart: 0
   chatteringInterval: 0.1
   audioSource: {fileID: 0}
+  wrongSide: {fileID: 0}
 --- !u!1 &7060349332302073963
 GameObject:
   m_ObjectHideFlags: 0
