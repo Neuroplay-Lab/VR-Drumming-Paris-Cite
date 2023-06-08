@@ -7788,10 +7788,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dcc94891fe5e5f48a0b512981904a1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crashCymbal: {fileID: 0}
-  highTom: {fileID: 0}
-  middleTom: {fileID: 0}
-  snareDrum: {fileID: 0}
+  crashCymbal: {fileID: 1657936082951750030}
+  highTom: {fileID: 1657936082581306316}
+  middleTom: {fileID: 1657936082583270614}
+  snareDrum: {fileID: 1657936082932806862}
 --- !u!114 &8964259344511740361
 MonoBehaviour:
   m_ObjectHideFlags: 0
