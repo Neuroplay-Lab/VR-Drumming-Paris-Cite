@@ -12,11 +12,13 @@ namespace _Project.Scripts.Systems
         // A way of creating headers in a CSV file
         private const string
             DataHeader =
-                "Timestamp,WhichInstrumentWasHit,SyncRateBetweenPlayerAndDrummingAgent,RhythmErrorRate"; // ,CueOnset
+                "Timestamp,WhichInstrumentWasHit,SyncRateBetweenPlayerAndDrummingAgent,RhythmErrorRate,EyeFocusPoint"; // ,CueOnset
 
         private DataLogger dataLogger;
         private ErrorRateController errorRateController;
         private SyncRateController syncRateController;
+
+        [SerializeField] private EyeFocus eyeTracker;
 
         public int ScorePoint { get; private set; }
         public float SynchronousRate { get; private set; }
@@ -100,7 +102,7 @@ namespace _Project.Scripts.Systems
                 var lastErrorRate = errorRateController.GetLastErrorRate();
 
                 dataLogger.Enqueue(
-                    $"{(latestUnit.startTime + latestUnit.endTime) / 2f},{latestUnit.instrumentType},{latestUnit.syncRate},{lastErrorRate:F7}");
+                    $"{(latestUnit.startTime + latestUnit.endTime) / 2f},{latestUnit.instrumentType},{latestUnit.syncRate},{lastErrorRate:F7},{eyeTracker.GetCurrentFocusPoint()}");
             }
             else
             {
