@@ -20,6 +20,7 @@ namespace _Project.Scripts.Systems
 
         private bool _isRecording;
         private Queue<string> _queue;
+        private Queue<byte[]> _screenshots;
 
         private SaveData _saveData;
 
@@ -43,6 +44,7 @@ namespace _Project.Scripts.Systems
         public void StartRecording(string csvLabel = "Label")
         {
             _queue = new Queue<string>();
+            _screenshots = new Queue<byte[]>();
             _coroutine = Observable.FromCoroutine(() => StartRecordingTransform(csvLabel)).Subscribe();
             _saveData = SaveData.Instance;
         }
@@ -59,6 +61,11 @@ namespace _Project.Scripts.Systems
         public void Enqueue(string text)
         {
             _queue?.Enqueue(text);
+        }
+
+        public void EnqueueScreenshot(byte[] ss)
+        {
+            _screenshots?.Enqueue(ss);
         }
 
         private IEnumerator StartRecordingTransform(string csvLabel)
@@ -86,6 +93,8 @@ namespace _Project.Scripts.Systems
                     yield return null;
                 }
             }
+
+            // System.IO.File.WriteAllBytes(Application.dataPath + "/cameracapture.png", byteArray);
 
             _queue.Clear();
         }

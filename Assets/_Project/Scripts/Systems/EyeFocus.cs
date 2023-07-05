@@ -67,6 +67,11 @@ public class EyeFocus : MonoBehaviour
             }
 
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log(currentFocusPoint);
+        }
     }
 
     private static void EyeCallback(ref EyeData_v2 eye_data)

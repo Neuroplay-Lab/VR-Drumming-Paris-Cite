@@ -19,6 +19,7 @@ namespace _Project.Scripts.Systems
         private SyncRateController syncRateController;
 
         [SerializeField] private EyeFocus eyeTracker;
+        [SerializeField] private Camera eyeViewCamera;
 
         public int ScorePoint { get; private set; }
         public float SynchronousRate { get; private set; }
@@ -55,6 +56,18 @@ namespace _Project.Scripts.Systems
             EventManager.MusicResetEvent += StopRecording;
 
             EventManager.DrumHitEvent += CaptureDrumHit;
+        }
+
+        private byte[] SaveCameraView()
+        {
+            RenderTexture screenTexture = new RenderTexture(Screen.width, Screen.height, 16);
+            eyeViewCamera.targetTexture = screenTexture;
+            RenderTexture.active = screenTexture;
+            eyeViewCamera.Render();
+            Texture2D renderedTexture = new Texture2D(Screen.width, Screen.height);
+            renderedTexture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+            RenderTexture.active = null;
+            return renderedTexture.EncodeToPNG();
         }
 
         private void OnDestroy()
@@ -96,13 +109,16 @@ namespace _Project.Scripts.Systems
             if (SaveData.Instance.preferenceData.recordPerUnit)
             {
                 // "UnitCenterTime,Instrument,SyncRate" : "HitTime,HitActor,Instrument"
-                var recordPerUnit =
-                    "{(latestUnit.startTime + latestUnit.endTime) / 2f},{latestUnit.instrumentType},{latestUnit.syncRate}";
+                /*var recordPerUnit =
+                    "{(latestUnit.startTime + latestUnit.endTime) / 2f},{latestUnit.instrumentType},{latestUnit.syncRate}";*/
 
                 var lastErrorRate = errorRateController.GetLastErrorRate();
 
                 dataLogger.Enqueue(
                     $"{(latestUnit.startTime + latestUnit.endTime) / 2f},{latestUnit.instrumentType},{latestUnit.syncRate},{lastErrorRate:F7},{eyeTracker.GetCurrentFocusPoint()}");
+
+                dataLogger.EnqueueScreenshot(SaveCameraView());
+
             }
             else
             {
