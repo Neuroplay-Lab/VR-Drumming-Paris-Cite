@@ -13,7 +13,8 @@ public class EyeFocus : MonoBehaviour
     private static EyeData_v2 eyeData = new EyeData_v2();
     private bool eye_callback_registered = false;
 
-    private string currentFocusPoint;
+    private string currentFocusItem;
+    private Vector3 worldCoord;
 
     // Start is called before the first frame update
     void Start()
@@ -52,25 +53,26 @@ public class EyeFocus : MonoBehaviour
             bool eye_focus;
             if (eye_callback_registered)
             {
-                eye_focus = SRanipal_Eye_v2.Focus(index, out GazeRay, out FocusInfo, 0, MaxDistance, (1 << layer_id), eyeData);
+                eye_focus = SRanipal_Eye_v2.Focus(index, out GazeRay, out FocusInfo, 0, MaxDistance, (1 << layer_id) | (1 << 0), eyeData);
             }
             else
             {
-                eye_focus = SRanipal_Eye_v2.Focus(index, out GazeRay, out FocusInfo, 0, MaxDistance, (1 << layer_id));
+                eye_focus = SRanipal_Eye_v2.Focus(index, out GazeRay, out FocusInfo, 0, MaxDistance, (1 << layer_id) | (1 << 0));
             }
 
             if (eye_focus)
-            {
-                    
-                currentFocusPoint = FocusInfo.transform.name;
+            {   
+                if(FocusInfo.transform.gameObject.layer == 10) // if hitting a relevant focal point
+                {
+                    currentFocusItem = FocusInfo.transform.name;
+                } else
+                {
+                    currentFocusItem = null;
+                }
+
+                worldCoord = FocusInfo.point;
                 break;
             }
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log(currentFocusPoint);
         }
     }
 
@@ -79,8 +81,13 @@ public class EyeFocus : MonoBehaviour
         eyeData = eye_data;
     }
 
-    public string GetCurrentFocusPoint()
+    public string GetCurrentFocusItem()
     {
-        return this.currentFocusPoint;
+        return this.currentFocusItem;
+    }
+
+    public Vector3 GetCurrentFocusCoordinates()
+    {
+        return worldCoord;
     }
 }

@@ -12,14 +12,15 @@ namespace _Project.Scripts.Systems
         // A way of creating headers in a CSV file
         private const string
             DataHeader =
-                "Timestamp,WhichInstrumentWasHit,SyncRateBetweenPlayerAndDrummingAgent,RhythmErrorRate,EyeFocusPoint"; // ,CueOnset
+                "Timestamp,WhichInstrumentWasHit,SyncRateBetweenPlayerAndDrummingAgent,RhythmErrorRate,EyeFocusItem, EyeFocusCoord"; // ,CueOnset
 
         private DataLogger dataLogger;
         private ErrorRateController errorRateController;
         private SyncRateController syncRateController;
 
         [SerializeField] private EyeFocus eyeTracker;
-        [SerializeField] private Camera eyeViewCamera;
+        //[SerializeField] private Camera eyeViewCamera;
+        private Vector3 lookCoords;
 
         public int ScorePoint { get; private set; }
         public float SynchronousRate { get; private set; }
@@ -58,7 +59,7 @@ namespace _Project.Scripts.Systems
             EventManager.DrumHitEvent += CaptureDrumHit;
         }
 
-        private byte[] SaveCameraView()
+        /*private byte[] SaveCameraView()
         {
             RenderTexture screenTexture = new RenderTexture(Screen.width, Screen.height, 16);
             eyeViewCamera.targetTexture = screenTexture;
@@ -68,7 +69,7 @@ namespace _Project.Scripts.Systems
             renderedTexture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
             RenderTexture.active = null;
             return renderedTexture.EncodeToPNG();
-        }
+        }*/
 
         private void OnDestroy()
         {
@@ -114,10 +115,12 @@ namespace _Project.Scripts.Systems
 
                 var lastErrorRate = errorRateController.GetLastErrorRate();
 
-                dataLogger.Enqueue(
-                    $"{(latestUnit.startTime + latestUnit.endTime) / 2f},{latestUnit.instrumentType},{latestUnit.syncRate},{lastErrorRate:F7},{eyeTracker.GetCurrentFocusPoint()}");
+                lookCoords = eyeTracker.GetCurrentFocusCoordinates();
 
-                dataLogger.EnqueueScreenshot(SaveCameraView());
+                dataLogger.Enqueue(
+                    $"{(latestUnit.startTime + latestUnit.endTime) / 2f},{latestUnit.instrumentType},{latestUnit.syncRate},{lastErrorRate:F7},{eyeTracker.GetCurrentFocusItem()},({lookCoords.x}/{lookCoords.y}/{lookCoords.z})");
+
+                //dataLogger.EnqueueScreenshot(SaveCameraView(), latestUnit.startTime + latestUnit.endTime);
 
             }
             else
