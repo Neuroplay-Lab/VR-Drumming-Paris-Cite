@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using ViveSR.anipal.Eye;
+using System.IO;
 
 public class EyeFocus : MonoBehaviour
 {
@@ -16,6 +17,13 @@ public class EyeFocus : MonoBehaviour
     private string currentFocusItem;
     private Vector3 worldCoord;
 
+    private Queue<string> eyeFocusQueue;
+    private System.DateTime startTime;
+    private string currentScene = "Basic Room";
+    private string logDirectory;
+    private int participantNo = 0;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +33,20 @@ public class EyeFocus : MonoBehaviour
             enabled = false;
             return;
         }
+
+        eyeFocusQueue = new Queue<string>();
+        startTime = System.DateTime.Now;
+        if (!Directory.Exists($@"{Application.dataPath}/Log"))
+        {
+            Directory.CreateDirectory($@"{Application.dataPath}/Log");
+        }
+        while (Directory.Exists($@"{Application.dataPath}/Log/{System.DateTime.Now:yyyy-MM-dd}-ppt{participantNo}"))
+        {
+            participantNo += 1;
+        }
+
+        logDirectory = $@"{Application.dataPath}/Log/{System.DateTime.Now:yyyy-MM-dd}-ppt{participantNo}";
+        Directory.CreateDirectory(logDirectory);
     }
 
     // Update is called once per frame
@@ -71,9 +93,48 @@ public class EyeFocus : MonoBehaviour
                 }
 
                 worldCoord = FocusInfo.point;
+
+                eyeFocusQueue.Enqueue($@"{worldCoord.x},{worldCoord.y},{worldCoord.z},{currentFocusItem},{System.DateTime.Now - startTime:mm:ss}");
                 break;
             }
         }
+    }
+
+    public void LogEyeData()
+    {
+        string savePath;
+        if (File.Exists(logDirectory + $"/{currentScene}.csv"))
+        {
+            int saveNumber = 1;
+
+            while (File.Exists(logDirectory + $"/{currentScene}({saveNumber}).csv"))
+            {
+                saveNumber += 0;
+            }
+
+            savePath = logDirectory + $"/{currentScene}({saveNumber}).csv";
+
+        } else
+        {
+            savePath = logDirectory + $"/{currentScene}.csv";
+        }
+        using (var writer = new StreamWriter(savePath, false))
+        {
+            writer.WriteLine("x,y,z,focusItem,time");
+
+            while(eyeFocusQueue.Count > 0)
+            {
+                writer.WriteLine(eyeFocusQueue.Dequeue());
+                writer.Flush();
+            }
+        }
+
+    }
+
+    public void sceneChange(string sceneName)
+    {
+        LogEyeData();
+        currentScene = sceneName;
     }
 
     private static void EyeCallback(ref EyeData_v2 eye_data)
@@ -89,5 +150,10 @@ public class EyeFocus : MonoBehaviour
     public Vector3 GetCurrentFocusCoordinates()
     {
         return worldCoord;
+    }
+
+    private void OnApplicationQuit()
+    {
+        LogEyeData();
     }
 }

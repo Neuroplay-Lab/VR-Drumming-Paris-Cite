@@ -49108,7 +49108,6 @@ GameObject:
   - component: {fileID: 6605821894245966561}
   - component: {fileID: 6605821894245966560}
   - component: {fileID: 6605821894245966567}
-  - component: {fileID: 6605821894245966566}
   m_Layer: 0
   m_Name: Door_L.017
   m_TagString: Untagged
@@ -49209,21 +49208,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6605821894245966566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6605821894245966564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b5e0617227fa4743be84f23d9e5cb42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openandclose1: {fileID: 6605821894245966567}
-  open: 0
-  Player: {fileID: 0}
 --- !u!1 &6605821894257722960
 GameObject:
   m_ObjectHideFlags: 0
@@ -52847,7 +52831,6 @@ GameObject:
   - component: {fileID: 6605821894489832309}
   - component: {fileID: 6605821894489832308}
   - component: {fileID: 6605821894489832299}
-  - component: {fileID: 6605821894489832298}
   m_Layer: 0
   m_Name: Door_L
   m_TagString: Untagged
@@ -52948,21 +52931,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6605821894489832298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6605821894489832296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b5e0617227fa4743be84f23d9e5cb42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openandclose1: {fileID: 6605821894489832299}
-  open: 0
-  Player: {fileID: 0}
 --- !u!1 &6605821894495536762
 GameObject:
   m_ObjectHideFlags: 0
@@ -53863,7 +53831,6 @@ GameObject:
   - component: {fileID: 6605821894537948119}
   - component: {fileID: 6605821894537948118}
   - component: {fileID: 6605821894537948117}
-  - component: {fileID: 6605821894537948116}
   m_Layer: 0
   m_Name: Door_R.003
   m_TagString: Untagged
@@ -53964,21 +53931,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6605821894537948116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6605821894537948106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b5e0617227fa4743be84f23d9e5cb42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openandclose1: {fileID: 6605821894537948117}
-  open: 0
-  Player: {fileID: 0}
 --- !u!1 &6605821894538338846
 GameObject:
   m_ObjectHideFlags: 0
@@ -62435,7 +62387,6 @@ GameObject:
   - component: {fileID: 6605821895144296425}
   - component: {fileID: 6605821895144296424}
   - component: {fileID: 6605821895144296431}
-  - component: {fileID: 6605821895144296430}
   m_Layer: 0
   m_Name: Door_R.004
   m_TagString: Untagged
@@ -62536,21 +62487,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6605821895144296430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6605821895144296428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b5e0617227fa4743be84f23d9e5cb42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openandclose1: {fileID: 6605821895144296431}
-  open: 0
-  Player: {fileID: 0}
 --- !u!1 &6605821895145020069
 GameObject:
   m_ObjectHideFlags: 0
@@ -76177,7 +76113,6 @@ GameObject:
   - component: {fileID: 6605821896012300942}
   - component: {fileID: 6605821896012300941}
   - component: {fileID: 6605821896012300940}
-  - component: {fileID: 6605821896012300931}
   m_Layer: 0
   m_Name: Door.R.001
   m_TagString: Untagged
@@ -76278,21 +76213,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6605821896012300931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6605821896012300929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b5e0617227fa4743be84f23d9e5cb42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openandclose1: {fileID: 6605821896012300940}
-  open: 0
-  Player: {fileID: 0}
 --- !u!1 &6605821896012355048
 GameObject:
   m_ObjectHideFlags: 0
@@ -79032,7 +78952,6 @@ GameObject:
   - component: {fileID: 6605821896200292954}
   - component: {fileID: 6605821896200292953}
   - component: {fileID: 6605821896200292952}
-  - component: {fileID: 6605821896200292959}
   m_Layer: 0
   m_Name: Door_L.016
   m_TagString: Untagged
@@ -79133,21 +79052,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6605821896200292959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6605821896200292957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b5e0617227fa4743be84f23d9e5cb42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openandclose1: {fileID: 6605821896200292952}
-  open: 0
-  Player: {fileID: 0}
 --- !u!1 &6605821896205459724
 GameObject:
   m_ObjectHideFlags: 0
