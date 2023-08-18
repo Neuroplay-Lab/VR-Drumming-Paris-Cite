@@ -86,7 +86,7 @@ public class EyeFocus : MonoBehaviour
             {   
                 if(FocusInfo.transform.gameObject.layer == 10) // if hitting a relevant focal point
                 {
-                    currentFocusItem = FocusInfo.transform.name;
+                    currentFocusItem = FocusInfo.collider.GetComponent<FocusItem>().GetItemLabel();
                 } else
                 {
                     currentFocusItem = null;
