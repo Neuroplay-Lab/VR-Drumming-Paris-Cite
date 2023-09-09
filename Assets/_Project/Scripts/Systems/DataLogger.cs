@@ -26,10 +26,19 @@ namespace _Project.Scripts.Systems
 
         public DataLogger()
         {
-            _logDirectory = $@"{Application.dataPath}/Log";
-            if (!Directory.Exists(_logDirectory))
+            string baseLogDir = $@"{Application.dataPath}/Log";
+            if (!Directory.Exists(baseLogDir))
                 // Create directory when it doesn't exist
+                Directory.CreateDirectory(baseLogDir);
+
+            ParticipantData currentPpt = ParticipantData.GetNextParticipantID();
+            _logDirectory = baseLogDir + $"/{currentPpt.date}-ppt{currentPpt.pptNumber}/Sync Logs";
+            currentPpt.Save();
+            if (!Directory.Exists(_logDirectory))
+            {
                 Directory.CreateDirectory(_logDirectory);
+
+            }
         }
 
         #region IDisposable Members

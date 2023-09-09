@@ -20,7 +20,7 @@ public class EyeFocus : MonoBehaviour
     private Queue<string> eyeFocusQueue;
     private System.DateTime startTime;
     private string currentScene = "Basic Room";
-    private string logDirectory;
+    private string heatmapLogDirectory;
     private int participantNo = 0;
     
 
@@ -36,17 +36,11 @@ public class EyeFocus : MonoBehaviour
 
         eyeFocusQueue = new Queue<string>();
         startTime = System.DateTime.Now;
-        if (!Directory.Exists($@"{Application.dataPath}/Log"))
-        {
-            Directory.CreateDirectory($@"{Application.dataPath}/Log");
-        }
-        while (Directory.Exists($@"{Application.dataPath}/Log/{System.DateTime.Now:yyyy-MM-dd}-ppt{participantNo}"))
-        {
-            participantNo += 1;
-        }
 
-        logDirectory = $@"{Application.dataPath}/Log/{System.DateTime.Now:yyyy-MM-dd}-ppt{participantNo}";
-        Directory.CreateDirectory(logDirectory);
+        ParticipantData pptData = ParticipantData.GetPptData();
+
+        heatmapLogDirectory = $@"{Application.dataPath}/Log/{pptData.date}-ppt{pptData.pptNumber}/Eye Tracking Data (Heatmaps)";
+        Directory.CreateDirectory(heatmapLogDirectory);
     }
 
     // Update is called once per frame
@@ -94,7 +88,7 @@ public class EyeFocus : MonoBehaviour
 
                 worldCoord = FocusInfo.point;
 
-                eyeFocusQueue.Enqueue($@"{worldCoord.x},{worldCoord.y},{worldCoord.z},{currentFocusItem},{System.DateTime.Now - startTime:mm:ss}");
+                eyeFocusQueue.Enqueue($@"{worldCoord.x},{worldCoord.y},{worldCoord.z},{currentFocusItem},{(System.DateTime.Now - startTime):mm:ss}");
                 break;
             }
         }
@@ -103,20 +97,20 @@ public class EyeFocus : MonoBehaviour
     public void LogEyeData()
     {
         string savePath;
-        if (File.Exists(logDirectory + $"/{currentScene}.csv"))
+        if (File.Exists(heatmapLogDirectory + $"/{currentScene}.csv"))
         {
             int saveNumber = 1;
 
-            while (File.Exists(logDirectory + $"/{currentScene}({saveNumber}).csv"))
+            while (File.Exists(heatmapLogDirectory + $"/{currentScene}({saveNumber}).csv"))
             {
                 saveNumber += 0;
             }
 
-            savePath = logDirectory + $"/{currentScene}({saveNumber}).csv";
+            savePath = heatmapLogDirectory + $"/{currentScene}({saveNumber}).csv";
 
         } else
         {
-            savePath = logDirectory + $"/{currentScene}.csv";
+            savePath = heatmapLogDirectory + $"/{currentScene}.csv";
         }
         using (var writer = new StreamWriter(savePath, false))
         {
@@ -134,6 +128,7 @@ public class EyeFocus : MonoBehaviour
     public void sceneChange(string sceneName)
     {
         LogEyeData();
+        startTime = System.DateTime.Now;
         currentScene = sceneName;
     }
 
