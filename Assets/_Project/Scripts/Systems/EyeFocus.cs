@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using ViveSR.anipal.Eye;
 using System.IO;
+using System;
 
 public class EyeFocus : MonoBehaviour
 {
@@ -18,11 +19,10 @@ public class EyeFocus : MonoBehaviour
     private Vector3 worldCoord;
 
     private Queue<string> eyeFocusQueue;
-    private System.DateTime startTime;
+    private DateTime startTime;
+    private TimeSpan timeFromStart;
     private string currentScene = "Basic Room";
-    private string heatmapLogDirectory;
-    private int participantNo = 0;
-    
+    private string heatmapLogDirectory;    
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +35,7 @@ public class EyeFocus : MonoBehaviour
         }
 
         eyeFocusQueue = new Queue<string>();
-        startTime = System.DateTime.Now;
+        startTime = DateTime.Now;
 
         ParticipantData pptData = ParticipantData.GetPptData();
 
@@ -88,7 +88,9 @@ public class EyeFocus : MonoBehaviour
 
                 worldCoord = FocusInfo.point;
 
-                eyeFocusQueue.Enqueue($@"{worldCoord.x},{worldCoord.y},{worldCoord.z},{currentFocusItem},{(System.DateTime.Now - startTime):mm:ss}");
+                timeFromStart = DateTime.Now - startTime;
+
+                eyeFocusQueue.Enqueue($@"{worldCoord.x},{worldCoord.y},{worldCoord.z},{currentFocusItem},{timeFromStart:mm\:ss}");
                 break;
             }
         }
@@ -128,7 +130,7 @@ public class EyeFocus : MonoBehaviour
     public void sceneChange(string sceneName)
     {
         LogEyeData();
-        startTime = System.DateTime.Now;
+        startTime = DateTime.Now;
         currentScene = sceneName;
     }
 
