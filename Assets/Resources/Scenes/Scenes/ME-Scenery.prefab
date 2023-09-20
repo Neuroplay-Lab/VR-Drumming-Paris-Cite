@@ -696,6 +696,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: ME Focus
       objectReference: {fileID: 0}
+    - target: {fileID: 2410607888759719720, guid: 6493bdb86c74d8f4eb162b40631775ac,
+        type: 3}
+      propertyPath: itemLabel
+      value: Buildings
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397711477281823931, guid: 6493bdb86c74d8f4eb162b40631775ac,
+        type: 3}
+      propertyPath: itemLabel
+      value: Buildings
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975519592805416778, guid: 6493bdb86c74d8f4eb162b40631775ac,
+        type: 3}
+      propertyPath: itemLabel
+      value: Buildings
+      objectReference: {fileID: 0}
+    - target: {fileID: 6485348776824975656, guid: 6493bdb86c74d8f4eb162b40631775ac,
+        type: 3}
+      propertyPath: itemLabel
+      value: Buildings
+      objectReference: {fileID: 0}
     - target: {fileID: 7733210468929434631, guid: 6493bdb86c74d8f4eb162b40631775ac,
         type: 3}
       propertyPath: m_RootOrder
