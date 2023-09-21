@@ -84,13 +84,14 @@ public class EyeFocus : MonoBehaviour
                 } else
                 {
                     currentFocusItem = null;
+                    return;
                 }
 
                 worldCoord = FocusInfo.point;
 
                 timeFromStart = DateTime.Now - startTime;
 
-                eyeFocusQueue.Enqueue($@"{worldCoord.x},{worldCoord.y},{worldCoord.z},{currentFocusItem},{timeFromStart:mm\:ss}");
+                eyeFocusQueue.Enqueue($@"{worldCoord.x},{worldCoord.y},{worldCoord.z},{currentFocusItem},{timeFromStart:mm\:ss\.fff}");
                 break;
             }
         }
