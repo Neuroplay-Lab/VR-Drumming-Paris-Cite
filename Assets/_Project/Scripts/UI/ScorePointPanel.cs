@@ -6,16 +6,21 @@ using UnityEngine.UI;
 
 namespace _Project.Scripts.UI
 {
+    /// <summary>
+    /// Responsible for displaying synchrony score and error rate in
+    /// researchers view.
+    /// </summary>
     public class ScorePointPanel : MonoBehaviour
     {
         #region Serialized Fields
 
+        // Synchrony GUI elements
         [SerializeField] private TextMeshProUGUI scorePointText;
         [SerializeField] private TextMeshProUGUI synchronousRateText;
         [SerializeField] private Slider synchronousRateSlider;
 
+        // Error GUI elements
         [Space] [SerializeField] private TextMeshProUGUI errorRateText;
-
         [SerializeField] private Slider errorRateSlider;
 
         #endregion
@@ -42,7 +47,7 @@ namespace _Project.Scripts.UI
 
         /// <summary>
         ///  Handles animation of the sliders
-        ///  @note - Could probably add a tweening library to make this more readable, like DOTween
+        ///  <!--Could probably add a tweening library to make this more readable, like DOTween-->
         /// </summary>
         private void Update()
         {

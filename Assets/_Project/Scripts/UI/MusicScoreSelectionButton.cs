@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace _Project.Scripts.UI
 {
+    /// <summary>
+    /// Attached to the music score selection button to invoke a track change
+    /// event when pressed.
+    /// </summary>
     public class MusicScoreSelectionButton : MonoBehaviour
     {
         #region Serialized Fields

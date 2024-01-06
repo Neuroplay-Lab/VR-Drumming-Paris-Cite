@@ -7,7 +7,7 @@ using UnityEngine.XR;
 namespace _Project.Scripts.Systems
 {
     /// <summary>
-    /// A static class that handles all events in the game.
+    ///     A static class that handles all events in the game.
     /// </summary>
     [HelpURL("https://en.wikipedia.org/wiki/Observer_pattern")]
     public static class EventManager

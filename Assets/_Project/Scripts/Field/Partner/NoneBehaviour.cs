@@ -1,8 +1,8 @@
-﻿using DrumRhythmGame.Data;
-using UnityEngine.XR;
-
-namespace DrumRhythmGame.Field
+﻿namespace DrumRhythmGame.Field
 {
+    /// <summary>
+    /// SEEMINGLY REDUNDANT.
+    /// </summary>
     public class NoneBehaviour : IPartnerBehaviour
     {
         public bool Enabled { get; private set; } = false;

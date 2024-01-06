@@ -27,7 +27,7 @@ namespace _Project.Scripts.UI
 		#endregion
 
 		/// <summary>
-		/// Subscribe a passed button to the current tab group list
+		///		Subscribe a passed button to the current tab group list
 		/// </summary>
 		/// <param name="button">TabButton reference that will be added to the list</param>
 		public void Subscribe(TabButton button)
@@ -90,7 +90,7 @@ namespace _Project.Scripts.UI
 			}
 		}
 		/// <summary>
-		/// Default the current tabs to their idle colour
+		///		Default the current tabs to their idle colour
 		/// </summary>
 		private void ResetTabs()
 		{

@@ -2,12 +2,15 @@
 using _Project.Scripts.Data;
 using _Project.Scripts.Systems;
 using DrumRhythmGame.Data;
-using DrumRhythmGame.Systems;
 using UnityEditor;
 using UnityEngine;
 
 namespace _Project.Scripts.Field
 {
+    /// <summary>
+    /// Handles the selection of different drumming partners, and also changing
+    /// the behaviour of the selected partner.
+    /// </summary>
     public class PartnerManager : SingletonMonoBehaviour<PartnerManager>
     {
         private static readonly string Prefix = "[<b>PartnerManager</b>]";

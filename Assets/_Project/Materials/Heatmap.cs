@@ -1,8 +1,11 @@
 ﻿// Alan Zucconi
 // www.alanzucconi.com
 using UnityEngine;
-using System.Collections;
 
+/// <summary>
+/// Used to display heatmaps in the game scene - used here for test purposes
+/// only and is not required in the output of heatmap data
+/// </summary>
 public class Heatmap : MonoBehaviour
 {
     public Vector4[] positions;

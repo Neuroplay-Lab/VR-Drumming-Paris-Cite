@@ -3,14 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using DrumRhythmGame.Systems;
 using UniRx;
 using UnityEngine;
 
 namespace _Project.Scripts.Systems
 {
     /// <summary>
-    /// A class responsible for logging data to a CSV file.
+    ///     A class responsible for logging data to a CSV file.
     /// </summary>
     [HelpURL("https://learn.microsoft.com/en-us/dotnet/api/system.idisposable?view=net-7.0")]
     public class DataLogger : IDisposable
@@ -31,9 +30,11 @@ namespace _Project.Scripts.Systems
                 // Create directory when it doesn't exist
                 Directory.CreateDirectory(baseLogDir);
 
+            // get details of the current participant, based on the previous
             ParticipantData currentPpt = ParticipantData.GetNextParticipantID();
             _logDirectory = baseLogDir + $"/{currentPpt.date}-ppt{currentPpt.pptNumber}/Sync Logs";
-            currentPpt.Save();
+            currentPpt.Save(); // update most recent participant to this one in save data
+
             if (!Directory.Exists(_logDirectory))
             {
                 Directory.CreateDirectory(_logDirectory);
@@ -53,7 +54,6 @@ namespace _Project.Scripts.Systems
         public void StartRecording(string csvLabel = "Label")
         {
             _queue = new Queue<string>();
-            //_screenshots = new Queue<(byte[], float)>();
             _coroutine = Observable.FromCoroutine(() => StartRecordingTransform(csvLabel)).Subscribe();
             _saveData = SaveData.Instance;
         }
@@ -72,21 +72,11 @@ namespace _Project.Scripts.Systems
             _queue?.Enqueue(text);
         }
 
-        /*public void EnqueueScreenshot(byte[] ss, float logTime)
-        {
-            _screenshots?.Enqueue((ss, logTime));
-        }*/
-
         private IEnumerator StartRecordingTransform(string csvLabel)
         {
             // TODO: Could probably use a better file name, and allow the user to specify it
             var filePath = _logDirectory + $@"/{DateTime.Now:yyyy-MM-dd-HHmmss}.csv";
             _isRecording = true;
-
-            /*var screenshotFolderPath = _logDirectory + $@"/{DateTime.Now:yyyy-MM-dd-HHmmss}";
-
-            // Create directory
-            Directory.CreateDirectory(screenshotFolderPath);*/
 
             using (var writer = new StreamWriter(filePath, false, Encoding.UTF8))
             {
@@ -116,10 +106,7 @@ namespace _Project.Scripts.Systems
                 }
             }
 
-            
-
             _queue.Clear();
-            //_screenshots.Clear();
         }
     }
 }

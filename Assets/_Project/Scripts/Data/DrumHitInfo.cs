@@ -1,5 +1,8 @@
 ﻿namespace DrumRhythmGame.Data
 {
+    /// <summary>
+    ///     Contains all relevant info on each drum hit
+    /// </summary>
     public struct DrumHitInfo
     {
         public readonly ActorType actor;

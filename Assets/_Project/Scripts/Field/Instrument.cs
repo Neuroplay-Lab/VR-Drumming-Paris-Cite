@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using _Project.Scripts.Systems;
 using DrumRhythmGame.Data;
-using DrumRhythmGame.Systems;
 using UnityEngine;
 
 namespace DrumRhythmGame.Field
 {
     /// <summary>
-    /// 
+    /// Contains all information for each instrument that can be added; such as
+    /// type, sound, volume, etc,.
     /// </summary>
     [RequireComponent(typeof(Collider))]
     [RequireComponent(typeof(AudioSource))]
@@ -25,7 +25,10 @@ namespace DrumRhythmGame.Field
         private bool _isPlayable = true;
 
         [SerializeField] private InsideCollider wrongSide;
-        
+
+        /// <summary>
+        /// Sets up the instrument.
+        /// </summary>
         private void Awake()
         {
             //　AudioSource setting
@@ -51,6 +54,11 @@ namespace DrumRhythmGame.Field
             rb.useGravity = false;
         }
 
+        /// <summary>
+        /// Called when a collision (drum hit) is registered
+        /// </summary>
+        /// <param name="other">Other object in the collision
+        /// (typically the drum stick)</param>
         private void OnTriggerEnter(Collider other)
         {
             if(wrongSide == null || wrongSide.currentTriggerStatus() == false)

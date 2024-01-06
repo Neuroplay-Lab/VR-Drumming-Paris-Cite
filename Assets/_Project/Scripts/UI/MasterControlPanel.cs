@@ -1,5 +1,4 @@
 ﻿using _Project.Scripts.Systems;
-using DrumRhythmGame.Systems;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -50,7 +49,6 @@ namespace _Project.Scripts.UI
             applicationQuitButton.onClick.RemoveAllListeners();
 
             enableRecordingToggle.onValueChanged.RemoveAllListeners();
-            // recordPerUnitToggle.onValueChanged.RemoveAllListeners();
         }
 
         #endregion
@@ -61,21 +59,8 @@ namespace _Project.Scripts.UI
             resetMusicButton.onClick.AddListener(MusicSequence.Instance.Reset);
             applicationQuitButton.onClick.AddListener(Quit);
 
-            // TODO: Move to a separate panel
-            /*
-            volumeSlider.value = SaveData.Instance.preferenceData.musicVolume;
-
-            volumeSlider.onValueChanged.AddListener(value =>
-            {
-                var newVolume = Mathf.Log10(value) * 20f;
-                _audio.SetFloat("MusicVolume", newVolume);
-                SaveData.Instance.preferenceData.musicVolume = value;
-            });
-            */
-
             enableRecordingToggle.onValueChanged.AddListener(value =>
                 SaveData.Instance.preferenceData.enableRecording = value);
-            // recordPerUnitToggle.onValueChanged.AddListener(value => SaveData.Instance.preferenceData.recordPerUnit = value);
             muteAgentDrumSoundsToggle.onValueChanged.AddListener(value =>
             {
                 SaveData.Instance.preferenceData.muteAgentDrumSounds = value;
@@ -87,7 +72,6 @@ namespace _Project.Scripts.UI
                 EventManager.InvokeCueStateChanged(value);
                 SaveData.Instance.preferenceData.displayVisualCue = value;
             });
-            // promptEntryTime.onValueChanged.AddListener(value => SaveData.Instance.preferenceData.hideCueAfterTime = int.Parse(value));
             enableLoggingToggle.onValueChanged.AddListener(value =>
             {
                 SaveData.Instance.preferenceData.enableLogging = value;

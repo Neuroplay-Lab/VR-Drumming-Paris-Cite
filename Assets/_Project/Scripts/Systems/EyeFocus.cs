@@ -6,6 +6,10 @@ using ViveSR.anipal.Eye;
 using System.IO;
 using System;
 
+/// <summary>
+///     Handles all tasks related to the collecting and storing of eye-tracking
+///     data in the game
+/// </summary>
 public class EyeFocus : MonoBehaviour
 {
 
@@ -15,6 +19,7 @@ public class EyeFocus : MonoBehaviour
     private static EyeData_v2 eyeData = new EyeData_v2();
     private bool eye_callback_registered = false;
 
+    // holds info about the current eye-focus item
     private string currentFocusItem;
     private Vector3 worldCoord;
 
@@ -24,7 +29,6 @@ public class EyeFocus : MonoBehaviour
     private string currentScene = "Basic Room";
     private string heatmapLogDirectory;    
 
-    // Start is called before the first frame update
     void Start()
     {
         // check if eye tracking has been enabled before attempting to track eyes
@@ -34,16 +38,16 @@ public class EyeFocus : MonoBehaviour
             return;
         }
 
+        // create new eye-tracking queue and start time
         eyeFocusQueue = new Queue<string>();
         startTime = DateTime.Now;
 
+        // get current participant info to store eye-tracking heatmap in the correct location
         ParticipantData pptData = ParticipantData.GetPptData();
-
         heatmapLogDirectory = $@"{Application.dataPath}/Log/{pptData.date}-ppt{pptData.pptNumber}/Eye Tracking Data (Heatmaps)";
         Directory.CreateDirectory(heatmapLogDirectory);
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -76,49 +80,64 @@ public class EyeFocus : MonoBehaviour
                 eye_focus = SRanipal_Eye_v2.Focus(index, out GazeRay, out FocusInfo, 0, MaxDistance, (1 << layer_id) | (1 << 0));
             }
 
-            if (eye_focus)
+            if (eye_focus)  // if eye-focus has been correctly recorded
             {   
-                if(FocusInfo.transform.gameObject.layer == 10) // if hitting a relevant focal point
+                if(FocusInfo.transform.gameObject.layer == 10)
                 {
+                    // if hitting a relevant focal point, get the name of the item
                     currentFocusItem = FocusInfo.collider.GetComponent<FocusItem>().GetItemLabel();
-                } else
+                }
+                else // otherwise, no object found
                 {
                     currentFocusItem = null;
                     return;
                 }
 
+                // get location and time data
                 worldCoord = FocusInfo.point;
-
                 timeFromStart = DateTime.Now - startTime;
 
+                // register this eye-track event (row in eye-tracking data)
                 eyeFocusQueue.Enqueue($@"{worldCoord.x},{worldCoord.y},{worldCoord.z},{currentFocusItem},{timeFromStart:mm\:ss\.fff}");
                 break;
             }
         }
     }
 
+    /// <summary>
+    ///     Saves all eye-tracking data to a .csv file
+    /// </summary>
     public void LogEyeData()
     {
         string savePath;
         if (File.Exists(heatmapLogDirectory + $"/{currentScene}.csv"))
         {
+            /* Here when a participant is repeating a scene at a later time
+             * within the same experiment so a number should be added to the
+             * end of the save file to avoid overwriting previous data */
             int saveNumber = 1;
 
             while (File.Exists(heatmapLogDirectory + $"/{currentScene}({saveNumber}).csv"))
             {
-                saveNumber += 0;
+                /* loop until high enough save number is reached as
+                 * to not overwrite previous data */
+                saveNumber += 1;
             }
 
             savePath = heatmapLogDirectory + $"/{currentScene}({saveNumber}).csv";
 
-        } else
+        }
+        else 
         {
+            // no save number needed (first occurance)
             savePath = heatmapLogDirectory + $"/{currentScene}.csv";
         }
         using (var writer = new StreamWriter(savePath, false))
         {
+            // first, add headers to each column
             writer.WriteLine("x,y,z,focusItem,time");
 
+            // loop each row and write to file
             while(eyeFocusQueue.Count > 0)
             {
                 writer.WriteLine(eyeFocusQueue.Dequeue());
@@ -128,11 +147,16 @@ public class EyeFocus : MonoBehaviour
 
     }
 
+    /// <summary>
+    ///     Should be called whenever a scene is changed to make appropriate changes
+    ///     to eye-tracking recording
+    /// </summary>
+    /// <param name="sceneName">The name of the scene changed to</param>
     public void sceneChange(string sceneName)
     {
-        LogEyeData();
-        startTime = DateTime.Now;
-        currentScene = sceneName;
+        LogEyeData(); // save previous eye-tracking data
+        startTime = DateTime.Now; // restart time
+        currentScene = sceneName; // update current scene
     }
 
     private static void EyeCallback(ref EyeData_v2 eye_data)
@@ -140,11 +164,13 @@ public class EyeFocus : MonoBehaviour
         eyeData = eye_data;
     }
 
+    /// <returns>Name of the item currently being looked at (where available)</returns>
     public string GetCurrentFocusItem()
     {
         return this.currentFocusItem;
     }
 
+    /// <returns>World coordinates currently being looked at</returns>
     public Vector3 GetCurrentFocusCoordinates()
     {
         return worldCoord;
@@ -152,6 +178,6 @@ public class EyeFocus : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        LogEyeData();
+        LogEyeData(); // save any recorded data before quitting game
     }
 }

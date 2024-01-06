@@ -4,25 +4,29 @@ using UnityEngine.UI;
 
 namespace _Project.Scripts.UI
 {
+    /// <summary>
+    /// Allows for the repositioning of the prompt panel during run time.
+    /// </summary>
     public class PromptPositionSettingPanel : MonoBehaviour
     {
         #region Serialized Fields
 
+        // position of prompt panel
         [SerializeField] private Transform promptPanelTransform;
 
+        // UI Sliders
         [Space] [SerializeField] private Slider yPositionSlider;
-
         [SerializeField] private TextMeshProUGUI yPositionText;
 
         #endregion
 
-        private bool _isSliderBeingDragged;
         private float _startingYPosition;
 
         #region Event Functions
 
         protected void Awake()
         {
+            // get initial y position of prompt panel
             _startingYPosition = promptPanelTransform.position.y;
         }
 

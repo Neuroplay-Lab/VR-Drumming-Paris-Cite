@@ -2,18 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+///     Used for eye-tracking debugging purposes. Allows a ball to move around a
+///     scene based on where the eye focus is.
+/// </summary>
 public class ballMover : MonoBehaviour
 {
-    // Start is called before the first frame update
 
     [SerializeField] private EyeFocus eyeTracker;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         Vector3 position = eyeTracker.GetCurrentFocusCoordinates();

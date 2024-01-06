@@ -8,7 +8,7 @@ using TMPro;
 namespace _Project.Scripts.UI
 {
     /// <summary>
-    /// A simple console logger that re-directs the latest log message.
+    ///     A simple console logger that re-directs the latest log message.
     /// </summary>
     public class ConsoleLogger : MonoBehaviour
     {
@@ -20,7 +20,7 @@ namespace _Project.Scripts.UI
         private bool isRunning;
 
         /// <summary>
-        /// Checks if console logging is enabled.
+        ///     Checks if console logging is enabled.
         /// </summary>
         private void Awake()
         {
@@ -65,9 +65,9 @@ namespace _Project.Scripts.UI
         }
 
         /// <summary>
-        /// Displays the latest log message on the canvas.
+        ///     Displays the latest log message on the canvas.
         /// </summary>
-        /// <param name="logEntry"> The log entry to display</param>
+        /// <param name="logEntry">The log entry to display</param>
         private void DisplayOnCanvasConsole(LogEntry logEntry)
         {
             if(!logText) return;

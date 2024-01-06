@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace _Project.Scripts.Systems
 {
+    /// <summary>
+    /// Loads a score into the game from its csv representation.
+    /// </summary>
     public class MusicScoreLoader
     {
         public static MusicScore Load(string csvText, int columnCount)
@@ -37,11 +40,6 @@ namespace _Project.Scripts.Systems
             }
 
             return musicScore;
-        }
-
-        void Start()
-        {
-
         }
 
         private void OnDisable()

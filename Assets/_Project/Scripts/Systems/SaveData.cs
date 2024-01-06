@@ -6,7 +6,7 @@ using UnityEngine;
 namespace _Project.Scripts.Systems
 {
     /// <summary>
-    /// Formatting of the save data
+    /// Used for the formatting of the save data
     /// </summary>
     public class SaveData
     {

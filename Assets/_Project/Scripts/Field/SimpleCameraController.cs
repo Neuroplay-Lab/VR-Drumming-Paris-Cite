@@ -2,6 +2,10 @@
 
 namespace UnityTemplateProjects
 {
+    /// <summary>
+    /// REDUNDANT - No longer used in project.
+    /// <para>Used for controlling camera movement</para>
+    /// </summary>
     public class SimpleCameraController : MonoBehaviour
     {
         class CameraState

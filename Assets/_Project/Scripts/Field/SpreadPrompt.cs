@@ -10,7 +10,7 @@ namespace _Project.Scripts.Field
     //[RequireComponent(typeof(MeshRenderer))]
     public class SpreadPrompt : MonoBehaviour
     {
-        private const float KeepAlive = 0.5f;
+        private const float KeepAlive = 0.5f;  // how long to display prompt
 
         private const float PerfectThreshold = 0.1f;
 
@@ -45,16 +45,11 @@ namespace _Project.Scripts.Field
 
         private void Awake()
         {
-            //_renderer = GetComponent<MeshRenderer>();
-
-            // _renderer.material = new Material(_renderer.material.shader);
+  
             textPro = promptRectTransform.GetComponent<TextMeshProUGUI>();
             defaultColor.a = 1;
 
             _offColor = new Color(defaultColor.r, defaultColor.g, defaultColor.b, 0);
-
-            //_color = _renderer.material.GetColor(Color);
-            //_renderer.material.SetFloat(Radius, 0);
 
             EventManager.MusicResetEvent += CancelSpread;
             EventManager.CueStateChanged += HandleCueStateChange;
@@ -65,6 +60,7 @@ namespace _Project.Scripts.Field
             EventManager.MusicResetEvent -= CancelSpread;
             EventManager.CueStateChanged -= HandleCueStateChange;
         }
+
 #if UNITY_EDITOR
         private void OnGUI()
         {
@@ -136,12 +132,8 @@ namespace _Project.Scripts.Field
                 _spreading = currentTime < duration + keepAlive;
             }
 
-            // 半径をゼロに戻す
-            //_renderer.material.SetFloat(Radius, 0);
-            //promptRectTransform.localScale = Vector3.zero;
             textPro.color = _offColor;
 
-            // エフェクトが出てないときは、Hit()が呼ばれてもNoneを返すように
             _hitStatus = HitStatus.None;
 
             OnSpreadEnd(instrumentType);

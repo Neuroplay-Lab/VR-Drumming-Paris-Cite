@@ -1,7 +1,4 @@
-﻿using DrumRhythmGame.Data;
-using UnityEngine.XR;
-
-namespace DrumRhythmGame.Field
+﻿namespace DrumRhythmGame.Field
 {
     public interface IPartnerBehaviour
     {

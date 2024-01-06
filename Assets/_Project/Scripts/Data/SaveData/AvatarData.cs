@@ -2,6 +2,9 @@
 
 namespace DrumRhythmGame.Data
 {
+    /// <summary>
+    ///     Used to save the avatar selection data
+    /// </summary>
     [Serializable]
     public class AvatarData
     {

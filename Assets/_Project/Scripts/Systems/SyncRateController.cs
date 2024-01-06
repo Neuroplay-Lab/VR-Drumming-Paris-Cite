@@ -9,6 +9,9 @@ using UnityEngine.XR;
 
 namespace DrumRhythmGame.Systems
 {
+    /// <summary>
+    ///     Records drum hits and calculates the sync rate value
+    /// </summary>
     public class SyncRateController
     {
         public event Action<float, HitUnit> OnRateChange;
@@ -49,7 +52,7 @@ namespace DrumRhythmGame.Systems
         }
 
         /// <summary>
-        /// Occurs when a drum is hit.
+        ///     Occurs when a drum is hit.
         /// </summary>
         /// <param name="actor">Who struck a drum</param>
         /// <param name="instrumentType">Type of drum struck e.g. Tom or Hi-Hat</param>

@@ -5,6 +5,8 @@ using UnityEngine.XR;
 namespace DrumRhythmGame.Field
 {
     /// <summary>
+    ///     Used to provide haptic feedback to the hand controllers when a drum
+    ///     hit is made
     /// </summary>
     public class DrumStick : MonoBehaviour
     {
@@ -17,6 +19,12 @@ namespace DrumRhythmGame.Field
 
         #region Event Functions
 
+        /// <summary>
+        ///     Handles collisions that should cause haptic feedback for the VR controller.
+        ///     Vibrations will only occur when the object collided with is of type
+        ///     <c>Instrument</c>
+        /// </summary>
+        /// <param name="other">The other object involved in the collision</param>
         private void OnTriggerEnter(Collider other)
         {
             if (other.GetComponent<Instrument>() != null && owner == ActorType.Player) Vibrate();
@@ -24,6 +32,9 @@ namespace DrumRhythmGame.Field
 
         #endregion
 
+        /// <summary>
+        ///     Sends a haptic vibration to the relevant VR controller
+        /// </summary>
         private void Vibrate()
         {
             var device = InputDevices.GetDeviceAtXRNode(node);

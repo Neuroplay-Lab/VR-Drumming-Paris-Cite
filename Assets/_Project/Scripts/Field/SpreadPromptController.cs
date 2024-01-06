@@ -8,6 +8,10 @@ using UnityEngine.XR;
 
 namespace _Project.Scripts.Field
 {
+    /// <summary>
+    ///     Handles displaying the rhythm on the prompt display and also registering
+    ///     note events based on this prompt
+    /// </summary>
     [DefaultExecutionOrder(2)]
     public class SpreadPromptController : MonoBehaviour
     {
@@ -48,6 +52,7 @@ namespace _Project.Scripts.Field
 
         private void OnEnable()
         {
+            // set up events
             EventManager.DrumHitEvent += OnDrumHit;
             EventManager.MusicSettingChangeEvent += UpdateScore;
             EventManager.MusicResetEvent += ResetBeatCounter;
@@ -70,7 +75,6 @@ namespace _Project.Scripts.Field
         {
             Debug.Log("UpdateScore - SpreadPromptController\n");
 
-            // TODO: This doesn't correctly clear the score
             if (_notes != null)
             {
                 foreach (var note in notes)
@@ -91,6 +95,10 @@ namespace _Project.Scripts.Field
             MusicSequence.Instance.SetTrigger(-duration, OnTime);
         }
 
+        /// <summary>
+        ///     Resets the beat counter. Should be called anytime a song goes back to the start
+        ///     or a new song is selected.
+        /// </summary>
         private void ResetBeatCounter()
         {
             _beatCounter = 0;
@@ -140,7 +148,7 @@ namespace _Project.Scripts.Field
                     EventManager.InvokeMusicScoreNoteSetEvent(_instrumentTypes[i], _noteMarginTime);
                 }
 
-            _beatCounter++;
+            _beatCounter++;  // move to next beat
         }
     }
 }

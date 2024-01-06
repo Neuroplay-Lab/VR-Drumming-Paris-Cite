@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace _Project.Scripts.UI
 {
+    /// <summary>
+    /// SEEMINGLY REDUNDANT. Not actually invoked when selecting a new scene,
+    /// could possibly be removed.
+    /// </summary>
     public class SceneSelectionButton : MonoBehaviour
     {
         #region Serialized Fields
@@ -15,7 +19,6 @@ namespace _Project.Scripts.UI
 
         public void SceneSelected()
         {
-            Debug.Log("HERE");
             EventManager.InvokeSceneSelected(sceneSO);
             Debug.Log($"Selected: {title} scene");
         }

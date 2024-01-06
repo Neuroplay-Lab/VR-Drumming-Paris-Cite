@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using _Project.Scripts.Field;
 using _Project.Scripts.Systems;
 using DrumRhythmGame.Data;
-using DrumRhythmGame.Field;
-using DrumRhythmGame.Systems;
 using UnityEngine;
 using UnityEngine.XR;
 
 namespace DrumRhythmGame.Field
 {
+    /// <summary>
+    /// DEPRICATED - No longer used. Used to play an effect when a note is hit.
+    /// </summary>
     [RequireComponent(typeof(MeshRenderer))]
     public class SpreadNoteHitEffect : MonoBehaviour
     {

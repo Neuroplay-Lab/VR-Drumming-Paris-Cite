@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 namespace Assets._Project.Scripts.UI
 {
+    /// <summary>
+    /// Handles the different options available for the drumming partner agent.
+    /// </summary>
     public class PartnerSettingPanel : MonoBehaviour
     {
         [SerializeField] private int partnerIndex;

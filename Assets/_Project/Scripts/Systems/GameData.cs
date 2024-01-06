@@ -6,20 +6,22 @@ using UnityEngine.XR;
 
 namespace _Project.Scripts.Systems
 {
+    /// <summary>
+    ///     Collects relevant scoring and eye-tracking for the game and passes
+    ///     values to the <c>DataLogger</c> to record
+    /// </summary>
     [DefaultExecutionOrder(-1)]
     public class GameData : SingletonMonoBehaviour<GameData>
     {
         // A way of creating headers in a CSV file
-        private const string
-            DataHeader =
-                "Timestamp,WhichInstrumentWasHit,SyncRateBetweenPlayerAndDrummingAgent,RhythmErrorRate,EyeFocusItem, EyeFocusCoord"; // ,CueOnset
+        private const string DataHeader = "Timestamp,WhichInstrumentWasHit,SyncRateBetweenPlayerAndDrummingAgent,RhythmErrorRate,EyeFocusItem, EyeFocusCoord"; // ,CueOnset
 
-        private DataLogger dataLogger;
+        private DataLogger dataLogger; // responsible for saving game data
         private ErrorRateController errorRateController;
         private SyncRateController syncRateController;
 
+        // values related to eye-tracking data
         [SerializeField] private EyeFocus eyeTracker;
-        //[SerializeField] private Camera eyeViewCamera;
         private Vector3 lookCoords;
 
         public int ScorePoint { get; private set; }
@@ -52,44 +54,30 @@ namespace _Project.Scripts.Systems
 
             errorRateController = ErrorRateController.Instance;
 
+            // set up events
             EventManager.MusicStartEvent += ResetScorePoint;
             EventManager.MusicStartEvent += StartRecording;
             EventManager.MusicResetEvent += StopRecording;
-
-            EventManager.DrumHitEvent += CaptureDrumHit;
+            //EventManager.DrumHitEvent += CaptureDrumHit;
         }
-
-        /*private byte[] SaveCameraView()
-        {
-            RenderTexture screenTexture = new RenderTexture(Screen.width, Screen.height, 16);
-            eyeViewCamera.targetTexture = screenTexture;
-            RenderTexture.active = screenTexture;
-            eyeViewCamera.Render();
-            Texture2D renderedTexture = new Texture2D(Screen.width, Screen.height);
-            renderedTexture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
-            RenderTexture.active = null;
-            return renderedTexture.EncodeToPNG();
-        }*/
 
         private void OnDestroy()
         {
             EventManager.MusicStartEvent -= ResetScorePoint;
-
             EventManager.MusicStartEvent -= StartRecording;
             EventManager.MusicResetEvent -= StopRecording;
         }
 
         #endregion
 
-        private static void CaptureDrumHit(ActorType actor, InstrumentType type, XRNode node)
-        {
-            // Redundant function?
-        }
+        //private static void CaptureDrumHit(ActorType actor, InstrumentType type, XRNode node)
+        //{
+        //    //TODO: Redundant function?
+        //}
 
         public void AddScorePoint(int point)
         {
             ScorePoint += point;
-
             EventManager.InvokePlayerScoreUpdateEvent(point);
         }
 
@@ -99,7 +87,6 @@ namespace _Project.Scripts.Systems
             SynchronousRate = 0;
 
             syncRateController.Clear();
-
             EventManager.InvokePlayerScoreUpdateEvent(0);
         }
 
@@ -109,22 +96,16 @@ namespace _Project.Scripts.Systems
 
             if (SaveData.Instance.preferenceData.recordPerUnit)
             {
-                // "UnitCenterTime,Instrument,SyncRate" : "HitTime,HitActor,Instrument"
-                /*var recordPerUnit =
-                    "{(latestUnit.startTime + latestUnit.endTime) / 2f},{latestUnit.instrumentType},{latestUnit.syncRate}";*/
-
                 var lastErrorRate = errorRateController.GetLastErrorRate();
 
                 lookCoords = eyeTracker.GetCurrentFocusCoordinates();
 
                 dataLogger.Enqueue(
                     $"{(latestUnit.startTime + latestUnit.endTime) / 2f},{latestUnit.instrumentType},{latestUnit.syncRate},{lastErrorRate:F7},{eyeTracker.GetCurrentFocusItem()},({lookCoords.x}/{lookCoords.y}/{lookCoords.z})");
-
-                //dataLogger.EnqueueScreenshot(SaveCameraView(), latestUnit.startTime + latestUnit.endTime);
-
             }
             else
             {
+                // not used anymore but will keep incase this is wanted in future
                 dataLogger.Enqueue($"{latestUnit.ownerHitTime},{latestUnit.owner},{latestUnit.instrumentType}");
                 foreach (var guestHitTime in latestUnit.guestHitTimes)
                     dataLogger.Enqueue($"{guestHitTime},{latestUnit.guest},{latestUnit.instrumentType}");
@@ -138,9 +119,9 @@ namespace _Project.Scripts.Systems
         {
             if (SaveData.Instance.preferenceData.enableRecording)
             {
-                var label = SaveData.Instance.preferenceData.recordPerUnit
-                    ? DataHeader
-                    : "HitTime,HitActor,Instrument";
+                var label = SaveData.Instance.preferenceData.recordPerUnit ?
+                    DataHeader                          // do record per unit
+                    : "HitTime,HitActor,Instrument";    // don't record per unit
 
                 dataLogger.StartRecording(label);
             }

@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿// TODO: Potentially now redundant - check and remove
+
+using System.Collections;
 using System.Collections.Generic;
 using _Project.Scripts.Systems;
 using DrumRhythmGame.Data;

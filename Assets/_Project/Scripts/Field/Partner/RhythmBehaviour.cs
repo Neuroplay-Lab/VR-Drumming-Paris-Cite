@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using _Project.Scripts.Systems;
 using DrumRhythmGame.Data;
-using DrumRhythmGame.Systems;
 using RootMotion.FinalIK;
 using UniRx;
 using UnityEngine;

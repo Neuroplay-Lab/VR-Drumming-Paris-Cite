@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace DrumRhythmGame.Field
 {
@@ -19,7 +16,6 @@ namespace DrumRhythmGame.Field
 
         private void Update()
         {
-            // 自身の位置と向きの調整
             var position = (drums[0].position + drums[1].position) / 2;
             transform.position = position;
             transform.LookAt(drums[0]);

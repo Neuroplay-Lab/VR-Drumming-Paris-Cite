@@ -1,8 +1,9 @@
-﻿using System;
+﻿// TODO: Potentially now redundant - check and remove
+
+using System;
 using System.Collections;
 using DrumRhythmGame.Data;
 using UnityEngine;
-using UnityEngine.XR;
 
 namespace DrumRhythmGame.Field
 {
@@ -16,7 +17,8 @@ namespace DrumRhythmGame.Field
         private float _positionToDestroySelf;
         private Action<InstrumentType> _onMoveFinishHandler;
 
-        private bool _isMoving = false;
+        // below temporarily removed as it seems redundant
+        // private bool _isMoving = false;
 
         public void Initialize(float duration, float positionToHit, float positionToDestroySelf)
         {
@@ -29,7 +31,7 @@ namespace DrumRhythmGame.Field
         {
             _onMoveFinishHandler = onMoveFinishHandler;
             _coroutine = StartCoroutine(MoveCoroutine(type));
-            _isMoving = true;
+            //_isMoving = true;
         }
         
         private IEnumerator MoveCoroutine(InstrumentType type)
@@ -49,13 +51,13 @@ namespace DrumRhythmGame.Field
             }
             
             // Destroy self 
-            _isMoving = false;
+            //_isMoving = false;
             _onMoveFinishHandler(type);
         }
 
         private void OnDisable()
         {
-            _isMoving = false;
+            //_isMoving = false;
             if (_coroutine == null) return;
             
             StopCoroutine(_coroutine);

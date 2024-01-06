@@ -11,7 +11,7 @@ namespace _Project.Scripts
 {
     public class AgentModalManager : SingletonMonoBehaviour<AgentModalManager>
     {
-        private static readonly string AgentPath = "Agents/ScriptableObjects";
+        private static readonly string AgentPath = "Agents/ScriptableObjects"; // where all agents are stored
 
         #region Serialized Fields
 
@@ -69,6 +69,10 @@ namespace _Project.Scripts
             SetFirstButtonAsClear();
         }
 
+        /// <summary>
+        ///     Ensures the first button in the Agent selection panel is used for
+        ///     clearing any selected partner
+        /// </summary>
         private void SetFirstButtonAsClear()
         {
             avatarGrid.GetChild(0).GetComponentInChildren<Button>().onClick.AddListener(() =>
@@ -87,6 +91,10 @@ namespace _Project.Scripts
                 agent.index.ToString();
         }
 
+        /// <summary>
+        ///     Called to select an Agent
+        /// </summary>
+        /// <param name="agent">The agent selected to show in the simulation</param>
         private static void SelectAgent(AgentSO agent)
         {
             Debug.Log($"Selected {agent.name} ({agent.index})");

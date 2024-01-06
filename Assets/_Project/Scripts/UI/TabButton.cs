@@ -8,7 +8,7 @@ using UnityEngine.UI;
 namespace _Project.Scripts.UI
 {
 	/// <summary>
-	/// A tab button that can be selected and deselected, only one tab can be open at a time.
+	///		A tab button that can be selected and deselected, only one tab can be open at a time.
 	/// </summary>
 	[RequireComponent(typeof(Image))]
 	public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler
@@ -39,7 +39,7 @@ namespace _Project.Scripts.UI
 		}
 
 		/// <summary>
-		/// Callback for tab button being selected
+		///		Callback for tab button being selected
 		/// </summary>
 		public void Select()
 		{
@@ -47,7 +47,7 @@ namespace _Project.Scripts.UI
 		}
 
 		/// <summary>
-		/// Callback for deselection of a button
+		///		Callback for deselection of a button
 		/// </summary>
 		public void Deselect()
 		{

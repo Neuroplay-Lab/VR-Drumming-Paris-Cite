@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+///     Used to show/hide the gaze ray from the researcher's point of view (never
+///     visible to the participant).
+/// </summary>
 public class ToggleGazeRay : MonoBehaviour
 {
     [SerializeField] private LineRenderer gazeRay;
@@ -18,6 +22,9 @@ public class ToggleGazeRay : MonoBehaviour
         UpdateText();
     }
 
+    /// <summary>
+    ///     Handles UI updates to the menu butttons
+    /// </summary>
     private void UpdateText()
     {
         if (gazeRayShown)
@@ -32,6 +39,9 @@ public class ToggleGazeRay : MonoBehaviour
         }
     }
 
+    /// <summary>
+    ///     Handles the hiding/showing of the gaze ray
+    /// </summary>
     public void ToggleGazeRayVisibility()
     {
         if (gazeRayShown)
@@ -45,6 +55,6 @@ public class ToggleGazeRay : MonoBehaviour
             gazeRayShown = true;
         }
 
-        UpdateText();
+        UpdateText(); // update the UI text to reflect the state of the gaze ray
     }
 }

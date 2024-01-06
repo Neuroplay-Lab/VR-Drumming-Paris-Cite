@@ -13,6 +13,10 @@ using UnityEngine;
 
 namespace _Project.Scripts.Systems
 {
+    /// <summary>
+    ///     Used to automatically detect the BPM of a given track, rather than
+    ///     working this out manually.
+    /// </summary>
     public class UniBpmAnalyzer
     {
         #region CONST
@@ -38,7 +42,7 @@ namespace _Project.Scripts.Systems
         private static readonly BpmMatchData[] BpmMatchDatas = new BpmMatchData[MaxBpm - MinBpm + 1];
 
         /// <summary>
-        /// Analyze BPM from an audio clip
+        /// A   nalyze BPM from an audio clip
         /// </summary>
         /// <param name="clip">target audio clip</param>
         /// <returns>bpm</returns>
@@ -73,13 +77,12 @@ namespace _Project.Scripts.Systems
             {
                 strBuilder.Append("bpm : " + BpmMatchDatas[i].bpm + ", match : " + Mathf.FloorToInt(BpmMatchDatas[i].match * 10000f) + "\n");
             }
-            //Debug.Log(strBuilder.ToString());
 
             return bpm;
         }
 
         /// <summary>
-        /// Create volume array from all sample data
+        ///     Create volume array from all sample data
         /// </summary>
         private static float[] CreateVolumeArray(IReadOnlyList<float> allSamples, int frequency, int channels, int splitFrameSize)
         {
@@ -124,7 +127,7 @@ namespace _Project.Scripts.Systems
         }
 
         /// <summary>
-        /// Search bpm from volume array
+        ///     Search bpm from volume array
         /// </summary>
         private static int SearchBpm(IReadOnlyList<float> volumeArr, int frequency, int splitFrameSize)
         {

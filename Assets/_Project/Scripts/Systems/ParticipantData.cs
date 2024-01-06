@@ -1,9 +1,11 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
+/// <summary>
+/// Used for saving data on the participant, used for appropriately naming
+/// save files with the current date and participant number.
+/// </summary>
 [Serializable] public class ParticipantData
 {
 
@@ -25,6 +27,7 @@ using UnityEngine;
         this.pptNumber = ParticipantNumber;
     }
 
+    /// <returns>Relevant data on the currently saved participant</returns>
     public static ParticipantData GetPptData()
     {
 
@@ -39,6 +42,11 @@ using UnityEngine;
         }
     }
 
+    /// <summary>
+    /// Generates the relevant information for the next participant, either with
+    /// an updated participant number or with a new date and participant number of 0.
+    /// </summary>
+    /// <returns>Data relating to the next participant</returns>
     public static ParticipantData GetNextParticipantID()
     {
         ParticipantData previousPptData = GetPptData();
@@ -60,6 +68,9 @@ using UnityEngine;
         }
     }
 
+    /// <summary>
+    /// Saves participant data for reference in future experiments.
+    /// </summary>
     public void Save()
     {
 

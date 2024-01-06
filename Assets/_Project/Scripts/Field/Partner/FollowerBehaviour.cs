@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using _Project.Scripts.Systems;
 using DrumRhythmGame.Data;
-using DrumRhythmGame.Systems;
 using RootMotion.FinalIK;
 using UniRx;
 using UnityEngine;
@@ -77,7 +76,7 @@ namespace DrumRhythmGame.Field
         
         private void Hit(InstrumentType type, XRNode node)
         {
-            // Effectorを特定する（鏡写しなので左右反転）
+            // Effector
             FullBodyBipedEffector effector;
             switch (node)
             {

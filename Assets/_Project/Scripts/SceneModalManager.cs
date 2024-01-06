@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using _Project.Scripts.Data;
-using _Project.Scripts.Field;
 using _Project.Scripts.Systems;
 using TMPro;
 using UnityEngine;
@@ -9,6 +8,9 @@ using UnityEngine.UI;
 
 namespace _Project.Scripts
 {
+    /// <summary>
+    /// Creates and manages the scene selection buttons in the modal panel.
+    /// </summary>
     public class SceneModalManager : SingletonMonoBehaviour<SceneModalManager>
     {
         private static readonly string ScenePath = "Scenes/ScriptableObjects";

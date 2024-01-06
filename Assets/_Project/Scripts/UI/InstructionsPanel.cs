@@ -1,11 +1,13 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using _Project.Scripts.Systems;
 using TMPro;
 using UnityEngine;
 
 namespace _Project.Scripts.UI
 {
+    /// <summary>
+    /// Used for presenting an instruction panel to the participant.
+    /// </summary>
     public class InstructionsPanel : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI instructionsText;

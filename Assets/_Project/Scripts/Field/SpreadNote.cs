@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace _Project.Scripts.Field
 {
+    /// <summary>
+    /// DEPRICATED
+    /// </summary>
     [RequireComponent(typeof(MeshRenderer))]
     public class SpreadNote : MonoBehaviour
     {
@@ -68,7 +71,7 @@ namespace _Project.Scripts.Field
             {
                 var progress = currentTime / duration;
                 
-                // keepAliveによってradius > 1となる場合は1に丸める
+                // keepAlive
                 var radius = progress >= 1 ? 1 : progress;
                 
                 _renderer.material.SetFloat(Radius, radius);
@@ -83,10 +86,8 @@ namespace _Project.Scripts.Field
                 _spreading = currentTime < duration + keepAlive;
             }
             
-            // 半径をゼロに戻す
             _renderer.material.SetFloat(Radius, 0);
             
-            // エフェクトが出てないときは、Hit()が呼ばれてもNoneを返すように
             _hitStatus = HitStatus.None;
 
             onSpreadEnd(instrumentType);

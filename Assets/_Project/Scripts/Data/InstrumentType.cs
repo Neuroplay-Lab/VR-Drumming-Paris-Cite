@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace DrumRhythmGame.Data
+﻿namespace DrumRhythmGame.Data
 {
+    /// <summary>
+    /// Different drum types available
+    /// </summary>
     public enum InstrumentType
     {
         SnareDrum,

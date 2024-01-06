@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using _Project.Scripts.Data;
-using DrumRhythmGame.Systems;
 using UnityEngine;
 
 namespace _Project.Scripts.Systems
 {
+    /// <summary>
+    /// Handles the selection, playing and prompt display for each track.
+    /// </summary>
     [DefaultExecutionOrder(1)]
     [RequireComponent(typeof(AudioSource))]
     public class MusicSequence : SingletonMonoBehaviour<MusicSequence>
@@ -140,7 +142,6 @@ namespace _Project.Scripts.Systems
         /// <returns></returns>
         private IEnumerator BeatCoroutine(int bpm)
         {
-            // TODO: Initial Delay doesn't seem to get updated across songs
             var startTime = Time.fixedTime + setting.initialDelayTime;
 
             var counters = _triggerEvents.Keys.ToDictionary(delayKey => delayKey, delayKey => 1);

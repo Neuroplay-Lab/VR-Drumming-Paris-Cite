@@ -9,6 +9,9 @@ using UnityEngine.XR;
 
 namespace DrumRhythmGame.Field
 {
+    /// <summary>
+    /// DEPRICATED - now using: <c>SpreadPromptController</c>
+    /// </summary>
     public class SpreadNotesController : MonoBehaviour
     {
         #region Serialized Fields
