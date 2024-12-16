@@ -150,6 +150,14 @@ namespace Valve.VR
             sourceMap[inputSource].onUpdate -= functionToStopCalling;
         }
 
+        /// <summary>
+        /// Removes all listeners, useful for dispose pattern
+        /// </summary>
+        public void RemoveAllListeners(SteamVR_Input_Sources input_Sources)
+        {
+            sourceMap[input_Sources].RemoveAllListeners();
+        }
+
         void ISerializationCallbackReceiver.OnBeforeSerialize() { }
 
         void ISerializationCallbackReceiver.OnAfterDeserialize()
@@ -545,6 +553,71 @@ namespace Valve.VR
                 poseActionData_size = (uint)Marshal.SizeOf(typeof(InputPoseActionData_t));
         }
 
+        /// <summary>
+        /// Removes all listeners, useful for dispose pattern
+        /// </summary>
+        public virtual void RemoveAllListeners()
+        {
+
+            Delegate[] delegates;
+
+            if (onActiveChange != null)
+            {
+                delegates = onActiveChange.GetInvocationList();
+                if (delegates != null)
+                    foreach (Delegate existingDelegate in delegates)
+                        onActiveChange -= (SteamVR_Action_Pose.ActiveChangeHandler)existingDelegate;
+            }
+
+            if (onActiveBindingChange != null)
+            {
+                delegates = onActiveBindingChange.GetInvocationList();
+                if (delegates != null)
+                    foreach (Delegate existingDelegate in delegates)
+                        onActiveBindingChange -= (SteamVR_Action_Pose.ActiveChangeHandler)existingDelegate;
+            }
+
+            if (onChange != null)
+            {
+                delegates = onChange.GetInvocationList();
+                if (delegates != null)
+                    foreach (Delegate existingDelegate in delegates)
+                        onChange -= (SteamVR_Action_Pose.ChangeHandler)existingDelegate;
+            }
+
+            if (onUpdate != null)
+            {
+                delegates = onUpdate.GetInvocationList();
+                if (delegates != null)
+                    foreach (Delegate existingDelegate in delegates)
+                        onUpdate -= (SteamVR_Action_Pose.UpdateHandler)existingDelegate;
+            }
+
+            if (onTrackingChanged != null)
+            {
+                delegates = onTrackingChanged.GetInvocationList();
+                if (delegates != null)
+                    foreach (Delegate existingDelegate in delegates)
+                        onTrackingChanged -= (SteamVR_Action_Pose.TrackingChangeHandler)existingDelegate;
+            }
+
+            if (onValidPoseChanged != null)
+            {
+                delegates = onValidPoseChanged.GetInvocationList();
+                if (delegates != null)
+                    foreach (Delegate existingDelegate in delegates)
+                        onValidPoseChanged -= (SteamVR_Action_Pose.ValidPoseChangeHandler)existingDelegate;
+            }
+
+            if (onDeviceConnectedChanged != null)
+            {
+                delegates = onDeviceConnectedChanged.GetInvocationList();
+                if (delegates != null)
+                    foreach (Delegate existingDelegate in delegates)
+                        onDeviceConnectedChanged -= (SteamVR_Action_Pose.DeviceConnectedChangeHandler)existingDelegate;
+            }
+        }
+
         /// <summary><strong>[Should not be called by user code]</strong>
         /// Updates the data for this action and this input source. Sends related events.
         /// </summary>
@@ -553,7 +626,7 @@ namespace Valve.VR
             UpdateValue(false);
         }
 
-        public static float framesAhead = 2;
+        public static float framesAhead = -1;
 
         /// <summary><strong>[Should not be called by user code]</strong>
         /// Updates the data for this action and this input source. Sends related events.
@@ -569,10 +642,10 @@ namespace Valve.VR
 
             EVRInputError err;
 
-            if (framesAhead == 0)
+            if (framesAhead == -1)
                 err = OpenVR.Input.GetPoseActionDataForNextFrame(handle, universeOrigin, ref poseActionData, poseActionData_size, inputSourceHandle);
             else
-                err = OpenVR.Input.GetPoseActionDataRelativeToNow(handle, universeOrigin, framesAhead * (Time.timeScale / SteamVR.instance.hmd_DisplayFrequency), ref poseActionData, poseActionData_size, inputSourceHandle);
+                err = OpenVR.Input.GetPoseActionDataRelativeToNow(handle, universeOrigin, framesAhead * (1 / SteamVR.instance.hmd_DisplayFrequency), ref poseActionData, poseActionData_size, inputSourceHandle);
 
             if (err != EVRInputError.None)
             {

@@ -8,4 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Drumming_Triangle_Children.unity
     guid: 9254f3845c8d0c54eb9e64233f116541
-  m_configObjects: {}
+  m_configObjects:
+    Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 206f050ff6b7b49b9b7384d12f80286a,
+      type: 2}
