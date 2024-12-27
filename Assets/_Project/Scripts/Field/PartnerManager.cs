@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using _Project.Scripts.Data;
 using _Project.Scripts.Systems;
+using _Project.Scripts;
 using DrumRhythmGame.Data;
 using UnityEditor;
 using UnityEngine;
@@ -27,6 +28,8 @@ namespace _Project.Scripts.Field
 
         public PartnerBehaviourType CurrentBehaviourPartnerOne { get; private set; } = PartnerBehaviourType.None;
 
+        private PartnerHandPreference partnerHandPreference = PartnerHandPreference.Both;
+
         #region Event Functions
 
         private void OnEnable()
@@ -50,8 +53,24 @@ namespace _Project.Scripts.Field
         /// <param name="agent"></param>
         private void InstantiateAvatar(AgentSO agent)
         {
+
+            GameObject agentPrefab;
+
+            switch (partnerHandPreference)
+            {
+                case PartnerHandPreference.Left:
+                    agentPrefab = agent.leftHandedVariant;
+                    break;
+                case PartnerHandPreference.Right:
+                    agentPrefab = agent.rightHandedVariant;
+                    break;
+                default:
+                    agentPrefab = agent.prefab;
+                    break;
+            }
+
             // If we already have a partner, and its the same one, we double clicked the same agent so remove it
-            if (_currentPartnerOne != null && _currentPartnerOne == agent.prefab)
+            if (_currentPartnerOne != null && _currentPartnerOne == agentPrefab)
             {
                 Destroy(_currentPartnerOne);
                 return;
@@ -120,6 +139,14 @@ namespace _Project.Scripts.Field
                 _currentPartnerOne.SetActive(CurrentBehaviourPartnerOne != PartnerBehaviourType.None);
                 _currentPartnerOne.GetComponentInChildren<Partner.Partner>().SwitchType(type);
             }
+        }
+
+        public void SwitchHandPreference(PartnerHandPreference preference)
+        {
+            partnerHandPreference = preference;
+            Debug.Log($"[PartnerManager] Switched hand preference to: {preference}");
+
+            InstantiateAvatar();
         }
     }
 }

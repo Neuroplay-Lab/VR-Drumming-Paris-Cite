@@ -13,5 +13,8 @@ namespace _Project.Scripts.Data
         public new string name;
         public Sprite sprite;  // img to display in the panel
         public GameObject prefab;  // avatar model
+
+        public GameObject leftHandedVariant;
+        public GameObject rightHandedVariant;
     }
 }

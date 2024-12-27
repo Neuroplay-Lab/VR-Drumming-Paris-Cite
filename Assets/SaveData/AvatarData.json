@@ -1,5 +1,6 @@
 {
     "playerAvatarIndex": 0,
-    "partnerOneAvatarIndex": 11,
-    "partnerTwoAvatarIndex": 0
+    "partnerOneAvatarIndex": 0,
+    "partnerTwoAvatarIndex": 0,
+    "partnerHandPreference": "Both"
 }

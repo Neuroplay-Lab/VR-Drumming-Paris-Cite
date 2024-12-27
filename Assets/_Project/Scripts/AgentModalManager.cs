@@ -18,7 +18,9 @@ namespace _Project.Scripts
         [SerializeField] private GameObject avatarPrefab;
         [SerializeField] private List<AgentSO> agents = new List<AgentSO>();
 
-        [Space] [Header("Colors")] [SerializeField]
+        [Space]
+        [Header("Colors")]
+        [SerializeField]
         private Color passiveColor;
 
         [SerializeField] private Color activeColor;
@@ -26,7 +28,7 @@ namespace _Project.Scripts
         #endregion
 
         private readonly List<Button> agentButtons = new List<Button>();
-        
+
         private Transform avatarGrid;
         private AgentStruct selectedAvatar;
 
@@ -123,13 +125,18 @@ namespace _Project.Scripts
         private struct AgentStruct
         {
             public Transform Button { get; }
-            private AgentSO AgentSo { get; }
+            public AgentSO AgentSo { get; }
 
             public AgentStruct(Transform button, AgentSO agentSo)
             {
                 Button = button;
                 AgentSo = agentSo;
             }
+        }
+
+        public AgentSO GetSelectedAgent()
+        {
+            return selectedAvatar.AgentSo;
         }
 
         #endregion

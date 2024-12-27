@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b75f7b95469d24a79b46b04518351c76, type: 3}
+  m_Name: Drum ScriptableObject 1
+  m_EditorClassIdentifier: 
+  index: 1
+  name: Main Drum (Single)
+  sprite: {fileID: 21300000, guid: 5ca5220b11a514668a92a802ebffa4c6, type: 3}
+  prefab: {fileID: 2169446284240730353, guid: 866b77bd89e6240b7b47067eb6bdcfe1, type: 3}
+  drumCount: 1
