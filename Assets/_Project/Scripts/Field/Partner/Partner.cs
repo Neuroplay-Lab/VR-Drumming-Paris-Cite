@@ -17,9 +17,11 @@ namespace _Project.Scripts.Field.Partner
         [SerializeField] private InteractionObject middleTom;
         [SerializeField] private InteractionObject snareDrum;
 
+        [SerializeField] private PartnerHandPreference partnerHandPreference;
+
         private Dictionary<InstrumentType, InteractionObject> _instruments;
         private Dictionary<PartnerBehaviourType, IPartnerBehaviour> _behaviours;
-        
+
         private void Awake()
         {
             var interactionSystem = GetComponent<InteractionSystem>();
@@ -41,15 +43,22 @@ namespace _Project.Scripts.Field.Partner
 
         private void OnEnable()
         {
-            _behaviours[PartnerManager.Instance.CurrentBehaviourPartnerOne].Enable();
-            
+            if (PartnerManager.Instance.CurrentBehaviourPartnerOne == PartnerBehaviourType.Rhythm)
+            {
+                ((RhythmBehaviour)_behaviours[PartnerManager.Instance.CurrentBehaviourPartnerOne]).Enable(partnerHandPreference);
+            }
+            else
+            {
+                _behaviours[PartnerManager.Instance.CurrentBehaviourPartnerOne].Enable();
+            }
+
             Debug.Log($"[Partner: {name}] {PartnerManager.Instance.CurrentBehaviourPartnerOne} enabled.");
         }
 
         private void OnDisable()
         {
             _behaviours[PartnerManager.Instance.CurrentBehaviourPartnerOne].Disable();
-            
+
             Debug.Log($"[Partner: {name}] {PartnerManager.Instance.CurrentBehaviourPartnerOne} disabled.");
         }
 
@@ -59,7 +68,7 @@ namespace _Project.Scripts.Field.Partner
             {
                 behaviour.Disable();
             }
-            
+
             _behaviours[type].Enable();
         }
     }

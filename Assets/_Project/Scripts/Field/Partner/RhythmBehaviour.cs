@@ -17,7 +17,9 @@ namespace DrumRhythmGame.Field
         private readonly Random _random;
         private readonly InteractionSystem _interactionSystem;
         private readonly IReadOnlyDictionary<InstrumentType, InteractionObject> _instruments;
-        private readonly IReadOnlyDictionary<InstrumentType, FullBodyBipedEffector> _instrumentHandMap;
+        private readonly Dictionary<InstrumentType, FullBodyBipedEffector> _instrumentHandMap;
+
+        private PartnerHandPreference _partnerHandPreference = PartnerHandPreference.Both;
         private readonly Dictionary<InstrumentType, float> _animationDurations;
         private readonly IList<InstrumentType> _instrumentTypes;
 
@@ -43,7 +45,7 @@ namespace DrumRhythmGame.Field
                                         .Where(target => target.effectorType == _instrumentHandMap[instrument.Key])
                                         .Select(target => target.interactionSpeedMlp)
                                         .First();
-                
+
                 _animationDurations.Add(instrument.Key, 1 / animationSpeed);
             }
         }
@@ -52,20 +54,20 @@ namespace DrumRhythmGame.Field
         {
             // Do nothing if _enabled == false
             if (!Enabled) return;
-            
+
             // Make latency randomly
             float latency = 0;
             if (SaveData.Instance.partnerErrorData.Current.latencyFrequencyRate > _random.NextDouble())
             {
                 latency = SaveData.Instance.partnerErrorData.Current.maxLatencyTime * (float)_random.NextDouble();
             }
-            
+
             // Make miss hit randomly
             if (SaveData.Instance.partnerErrorData.Current.missHitFrequencyRate > _random.NextDouble())
             {
                 type = _instrumentTypes[_random.Next(_instrumentTypes.Count)];
             }
-            
+
             Observable
                 .Timer(TimeSpan.FromSeconds(latency + reachTime - _animationDurations[type] / 2f))
                 .Subscribe(_ =>
@@ -74,10 +76,41 @@ namespace DrumRhythmGame.Field
 
         public void Enable()
         {
+            Enable(_partnerHandPreference);
+        }
+
+        public void Enable(PartnerHandPreference handPreference)
+        {
             if (Enabled)
             {
                 Debug.Log($"[RhythmBehaviour] Already enabled.");
                 return;
+            }
+
+            _partnerHandPreference = handPreference;
+
+            switch (_partnerHandPreference)
+            {
+                case PartnerHandPreference.Left:
+                    _instrumentHandMap[InstrumentType.CrashCymbal] = FullBodyBipedEffector.LeftHand;
+                    _instrumentHandMap[InstrumentType.LeftHighTom] = FullBodyBipedEffector.LeftHand;
+                    _instrumentHandMap[InstrumentType.RightMiddleTom] = FullBodyBipedEffector.LeftHand;
+                    _instrumentHandMap[InstrumentType.SnareDrum] = FullBodyBipedEffector.LeftHand;
+                    break;
+
+                case PartnerHandPreference.Right:
+                    _instrumentHandMap[InstrumentType.CrashCymbal] = FullBodyBipedEffector.RightHand;
+                    _instrumentHandMap[InstrumentType.LeftHighTom] = FullBodyBipedEffector.RightHand;
+                    _instrumentHandMap[InstrumentType.RightMiddleTom] = FullBodyBipedEffector.RightHand;
+                    _instrumentHandMap[InstrumentType.SnareDrum] = FullBodyBipedEffector.RightHand;
+                    break;
+
+                default:
+                    _instrumentHandMap[InstrumentType.CrashCymbal] = FullBodyBipedEffector.RightHand;
+                    _instrumentHandMap[InstrumentType.LeftHighTom] = FullBodyBipedEffector.RightHand;
+                    _instrumentHandMap[InstrumentType.RightMiddleTom] = FullBodyBipedEffector.LeftHand;
+                    _instrumentHandMap[InstrumentType.SnareDrum] = FullBodyBipedEffector.LeftHand;
+                    break;
             }
 
             EventManager.MusicScoreNoteSetEvent += OnNoteSet;

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using _Project.Scripts.Data;
 using _Project.Scripts.Systems;
-using _Project.Scripts;
 using DrumRhythmGame.Data;
 using UnityEditor;
 using UnityEngine;
@@ -25,6 +24,7 @@ namespace _Project.Scripts.Field
         #endregion
 
         private GameObject _currentPartnerOne;
+        private AgentSO _currentAgent;
 
         public PartnerBehaviourType CurrentBehaviourPartnerOne { get; private set; } = PartnerBehaviourType.None;
 
@@ -55,6 +55,7 @@ namespace _Project.Scripts.Field
         {
 
             GameObject agentPrefab;
+            _currentAgent = agent;
 
             switch (partnerHandPreference)
             {
@@ -73,13 +74,14 @@ namespace _Project.Scripts.Field
             if (_currentPartnerOne != null && _currentPartnerOne == agentPrefab)
             {
                 Destroy(_currentPartnerOne);
+                _currentAgent = null;
                 return;
             }
 
             // If we selected a different agent, destroy the old one and instantiate the new one
             if (_currentPartnerOne != null) Destroy(_currentPartnerOne);
             SaveData.Instance.avatarData.partnerOneAvatarIndex = agent.index;
-            _currentPartnerOne = Instantiate(agent.prefab, instantiationPositionPartnerOne);
+            _currentPartnerOne = Instantiate(agentPrefab, instantiationPositionPartnerOne);
             _currentPartnerOne.SetActive(CurrentBehaviourPartnerOne != PartnerBehaviourType.None);
             Debug.Log($"{Prefix} Instantiated agent <color=green>{agent.index}</color>");
         }
@@ -146,7 +148,10 @@ namespace _Project.Scripts.Field
             partnerHandPreference = preference;
             Debug.Log($"[PartnerManager] Switched hand preference to: {preference}");
 
-            InstantiateAvatar();
+            if (_currentAgent != null)
+            {
+                InstantiateAvatar(_currentAgent);
+            }
         }
     }
 }

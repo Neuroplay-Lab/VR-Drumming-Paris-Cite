@@ -16,3 +16,6 @@ MonoBehaviour:
   name: Female Caucasian Adult
   sprite: {fileID: 21300000, guid: 86cd73c783ffe8e4f860c0015503be23, type: 3}
   prefab: {fileID: 6781690422379299565, guid: b6bb35d8d3f188c419298500558c80cc, type: 3}
+  leftHandedVariant: {fileID: 7309352615239467070, guid: 9cbb44b406c04440bb85eb070e19583e,
+    type: 3}
+  rightHandedVariant: {fileID: 0}

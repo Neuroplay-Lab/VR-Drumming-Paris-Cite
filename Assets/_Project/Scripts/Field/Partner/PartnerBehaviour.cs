@@ -1,4 +1,6 @@
-﻿namespace DrumRhythmGame.Field
+﻿using _Project.Scripts.Field.Partner;
+
+namespace DrumRhythmGame.Field
 {
     public interface IPartnerBehaviour
     {

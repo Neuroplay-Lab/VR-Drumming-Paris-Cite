@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using _Project.Scripts.Field;
+using _Project.Scripts.Field.Partner;
 using DrumRhythmGame.Data;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,13 +36,13 @@ namespace Assets._Project.Scripts.UI
             switch (value)
             {
                 case 0:
-                    Debug.Log("Handedness: Both");
+                    PartnerManager.Instance.SwitchHandPreference(PartnerHandPreference.Both);
                     break;
                 case 1:
-                    Debug.Log("Handedness: Left");
+                    PartnerManager.Instance.SwitchHandPreference(PartnerHandPreference.Left);
                     break;
                 case 2:
-                    Debug.Log("Handedness: Right");
+                    PartnerManager.Instance.SwitchHandPreference(PartnerHandPreference.Right);
                     break;
             }
         }
