@@ -16,3 +16,6 @@ MonoBehaviour:
   name: Cow
   sprite: {fileID: 21300000, guid: 8cb6c75ee22c7484db5201dc9d3ef4c6, type: 3}
   prefab: {fileID: 8518630104664649550, guid: 9df18df4b2d583743a3a14a455253515, type: 3}
+  leftHandedVariant: {fileID: 8451574793976216728, guid: dd42c100b66dd4513bd4be5a3dc62519,
+    type: 3}
+  rightHandedVariant: {fileID: 0}

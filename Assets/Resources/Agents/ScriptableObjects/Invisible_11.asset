@@ -16,3 +16,6 @@ MonoBehaviour:
   name: Invisible Partner
   sprite: {fileID: 21300000, guid: df96a0e6801a9426baeaa3157538a13a, type: 3}
   prefab: {fileID: 8518630104664649550, guid: d054bc6823770449082d9b5389f2e89a, type: 3}
+  leftHandedVariant: {fileID: 3839577617780707232, guid: 2c287afdee7d547ee881904a7d245b48,
+    type: 3}
+  rightHandedVariant: {fileID: 0}

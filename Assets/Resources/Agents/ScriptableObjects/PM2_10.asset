@@ -16,3 +16,6 @@ MonoBehaviour:
   name: Male POC Teen
   sprite: {fileID: 21300000, guid: b519ada79c72b422b92d9bb9f58c30bb, type: 3}
   prefab: {fileID: 1657936082216147713, guid: 7b3621685fee84e9281e683f7ce153ce, type: 3}
+  leftHandedVariant: {fileID: 633880881537164909, guid: 1a10d8f096bbf4305b813e773865b639,
+    type: 3}
+  rightHandedVariant: {fileID: 0}

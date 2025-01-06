@@ -16,3 +16,6 @@ MonoBehaviour:
   name: Robot
   sprite: {fileID: 21300000, guid: f7cf3f091fc7aed4391fcd14b864c366, type: 3}
   prefab: {fileID: 1307159792602542041, guid: 371ae75d34008f14fa311d411cedec9c, type: 3}
+  leftHandedVariant: {fileID: 1574763817877795518, guid: e10720f6a104f4f77bb6ca870a3eb26c,
+    type: 3}
+  rightHandedVariant: {fileID: 0}

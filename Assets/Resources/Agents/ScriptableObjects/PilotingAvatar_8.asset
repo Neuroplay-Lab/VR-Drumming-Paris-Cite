@@ -16,3 +16,6 @@ MonoBehaviour:
   name: Piloting Avatar
   sprite: {fileID: 21300000, guid: 13d99d29e73bb824ca543722a118d24b, type: 3}
   prefab: {fileID: 2053252038876752674, guid: c7be5bb34d08ea741806479cd6f92a61, type: 3}
+  leftHandedVariant: {fileID: 2053252038876752674, guid: c7be5bb34d08ea741806479cd6f92a61,
+    type: 3}
+  rightHandedVariant: {fileID: 0}

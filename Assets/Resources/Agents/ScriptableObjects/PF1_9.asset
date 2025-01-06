@@ -16,3 +16,6 @@ MonoBehaviour:
   name: Female POC Adult
   sprite: {fileID: 21300000, guid: 93464f5631a854894aead344cbdecbc7, type: 3}
   prefab: {fileID: 7060349331308815846, guid: ece5f92c38551484cb19a74a8e742d59, type: 3}
+  leftHandedVariant: {fileID: 6518017118691147380, guid: 2402623c74aeb409d95039bc9493271d,
+    type: 3}
+  rightHandedVariant: {fileID: 0}

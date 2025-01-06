@@ -16,3 +16,6 @@ MonoBehaviour:
   name: Female POC Teen
   sprite: {fileID: 21300000, guid: 02d7b7cae9028954086f3c8faa3a439a, type: 3}
   prefab: {fileID: 1035456125412825719, guid: a365e744e095d134193d2e2e24c48540, type: 3}
+  leftHandedVariant: {fileID: 7045893995746629757, guid: 2ddc2b8428c4d4debb04c4a250b45f5c,
+    type: 3}
+  rightHandedVariant: {fileID: 0}

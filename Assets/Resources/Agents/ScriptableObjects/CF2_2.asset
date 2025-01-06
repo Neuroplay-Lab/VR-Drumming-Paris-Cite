@@ -16,3 +16,6 @@ MonoBehaviour:
   name: Female Caucasian Teen
   sprite: {fileID: 21300000, guid: ae94fa287a4e0664cbb770ea52f30d1a, type: 3}
   prefab: {fileID: 1119344813555615490, guid: f1076c531b29ab44ab6aa6ea5bb352bb, type: 3}
+  leftHandedVariant: {fileID: 7657275226517417180, guid: 220e49647d28e40dfab2fb14b94f47c5,
+    type: 3}
+  rightHandedVariant: {fileID: 0}
