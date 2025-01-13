@@ -18,4 +18,5 @@ MonoBehaviour:
   prefab: {fileID: 7060349331308815846, guid: ece5f92c38551484cb19a74a8e742d59, type: 3}
   leftHandedVariant: {fileID: 6518017118691147380, guid: 2402623c74aeb409d95039bc9493271d,
     type: 3}
-  rightHandedVariant: {fileID: 0}
+  rightHandedVariant: {fileID: 125348429271224448, guid: 9af401cd77c1d4494bcb6562fb32ebfe,
+    type: 3}
