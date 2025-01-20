@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b75f7b95469d24a79b46b04518351c76, type: 3}
-  m_Name: Drum ScriptableObject 1
+  m_Name: MainDrum(Pair)
   m_EditorClassIdentifier: 
-  index: 1
-  name: Main Drum (Single)
-  sprite: {fileID: 21300000, guid: 5ca5220b11a514668a92a802ebffa4c6, type: 3}
-  prefab: {fileID: 2169446284240730353, guid: 866b77bd89e6240b7b47067eb6bdcfe1, type: 3}
-  drumCount: 1
+  index: 0
+  name: Main Drum (Pair)
+  sprite: {fileID: 21300000, guid: 09d8ecf6a34e54027a6eb2e2f7dee077, type: 3}
+  prefab: {fileID: 2588714281786548559, guid: b91354e4536c7496fbf2ffb94fa0fb98, type: 3}
+  drumCount: 2

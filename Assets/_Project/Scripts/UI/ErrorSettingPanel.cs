@@ -11,10 +11,12 @@ namespace _Project.Scripts.UI
     {
         #region Serialized Fields
 
-        [Header("Configuration")] [SerializeField]
+        [Header("Configuration")]
+        [SerializeField]
         private KeyCode sliderSnappingKey = KeyCode.LeftShift;
 
-        [Header("UI Elements")] [SerializeField]
+        [Header("UI Elements")]
+        [SerializeField]
         private Slider missHitFrequencyRateSlider;
 
         [SerializeField] private Slider latencyFrequencyRateSlider;
@@ -91,14 +93,14 @@ namespace _Project.Scripts.UI
                 SaveData.Instance.partnerErrorData.Current.maxLatencyTime = value;
                 maxLatencyTimeText.text = $"{value:F2}";
             });
-            
+
             // Resets all of the sliders to 0
             zeroAllButton.onClick.AddListener(() =>
             {
                 SetErrors(0, 0, 0);
                 // TODO: Convert this to a singleton and use Instance instead
                 GetComponent<PromptPositionSettingPanel>().Reset();
-                GetComponent<AvatarPositionOffset>().Reset();
+                GetComponent<PositionOffset>().Reset();
             });
 
             // Initialize preset dropdown
