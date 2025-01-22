@@ -715,7 +715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectorType: 6
   multipliers: []
-  interactionSpeedMlp: 1.4
+  interactionSpeedMlp: 1.2
   pivot: {fileID: 0}
   twistAxis: {x: 0, y: 1, z: 0}
   twistWeight: 1
@@ -3997,7 +3997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectorType: 5
   multipliers: []
-  interactionSpeedMlp: 1.4
+  interactionSpeedMlp: 1.1
   pivot: {fileID: 0}
   twistAxis: {x: 0, y: 1, z: 0}
   twistWeight: 1
@@ -11512,7 +11512,7 @@ MonoBehaviour:
       pull: 1
       push: 0
       pushParent: 0
-      reach: 0.1
+      reach: 0.4
       reachSmoothing: 1
       pushSmoothing: 1
       nodes:
@@ -11562,7 +11562,7 @@ MonoBehaviour:
       pull: 1
       push: 0
       pushParent: 0
-      reach: 0.1
+      reach: 0.5
       reachSmoothing: 1
       pushSmoothing: 1
       nodes:
@@ -11850,7 +11850,7 @@ MonoBehaviour:
       twistWeight: 1
     boneMappings:
     - bone: {fileID: 3109834164074494924}
-      maintainRotationWeight: 0
+      maintainRotationWeight: 0.7
     limbMappings:
     - parentBone: {fileID: 3109834164423601360}
       bone1: {fileID: 3109834165401445411}
