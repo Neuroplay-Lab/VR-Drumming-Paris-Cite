@@ -42,8 +42,12 @@ namespace _Project.Scripts.UI
         /// </summary>
         public void Reset()
         {
-            leftRightSlider.value = 0;
-            frontBackSlider.value = 0;
+            if (leftRightSlider != null)
+                leftRightSlider.value = 0;
+            if (frontBackSlider != null)
+                frontBackSlider.value = 0;
+            if (upDownSlider != null)
+                upDownSlider.value = 0;
         }
 
         /// <summary>
