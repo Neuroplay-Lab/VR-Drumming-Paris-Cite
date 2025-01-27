@@ -105,7 +105,7 @@ namespace _Project.Scripts.Systems
         {
             promptAnimator.gameObject.SetActive(state);
         }
-        
+
         /// <summary>
         ///  Called to begin playing music
         /// </summary>
@@ -146,19 +146,36 @@ namespace _Project.Scripts.Systems
 
             var counters = _triggerEvents.Keys.ToDictionary(delayKey => delayKey, delayKey => 1);
 
+            var interval = setting.speedMagnification * (setting.beatNumber / 16f) * 60f / bpm;
+
             while (true)
             {
-                var interval = setting.speedMagnification * (setting.beatNumber / 16f) * 60f / bpm;
-
-                CurrentTime = Time.fixedTime - startTime;
                 foreach (var trigger in _triggerEvents)
-                    if ((CurrentTime - trigger.Key) / interval >= counters[trigger.Key])
+                {
+                    CurrentTime = Time.fixedTime - startTime;
+                    float sampleTime = source.timeSamples / (source.clip.frequency * interval);
+                    if (Mathf.FloorToInt(sampleTime) >= Mathf.FloorToInt(source.clip.samples / (source.clip.frequency * interval)))
+                    {
+                        Debug.Log("Reset");
+                        source.timeSamples = 0;
+                    }
+                    float adjustedTime = sampleTime - (setting.initialDelayTime / interval) - (trigger.Key / interval) + 1;
+                    if (adjustedTime < 1 && counters[trigger.Key] > 1)
+                    {
+                        adjustedTime = setting.beatNumber + adjustedTime;
+                    }
+                    if (adjustedTime >= counters[trigger.Key])
                     {
                         trigger.Value.Invoke(trigger.Key);
                         counters[trigger.Key]++;
+                        if (counters[trigger.Key] > setting.beatNumber)
+                        {
+                            counters[trigger.Key] = 1;
+                        }
                     }
+                }
 
-                yield return new WaitForFixedUpdate();
+                yield return null;
             }
         }
 
