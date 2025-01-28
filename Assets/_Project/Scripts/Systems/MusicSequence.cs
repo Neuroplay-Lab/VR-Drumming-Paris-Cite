@@ -156,16 +156,19 @@ namespace _Project.Scripts.Systems
                     float sampleTime = source.timeSamples / (source.clip.frequency * interval);
                     if (Mathf.FloorToInt(sampleTime) >= Mathf.FloorToInt(source.clip.samples / (source.clip.frequency * interval)))
                     {
-                        Debug.Log("Reset");
                         source.timeSamples = 0;
                     }
-                    float adjustedTime = sampleTime - (setting.initialDelayTime / interval) - (trigger.Key / interval) + 1;
+                    int adjustedTime = Mathf.FloorToInt(sampleTime - (setting.initialDelayTime / interval) - (trigger.Key / interval) + 1) % setting.beatNumber;
                     if (adjustedTime < 1 && counters[trigger.Key] > 1)
                     {
                         adjustedTime = setting.beatNumber + adjustedTime;
                     }
+
                     if (adjustedTime >= counters[trigger.Key])
                     {
+                        // source.Pause();
+                        // Debug.Break();
+
                         trigger.Value.Invoke(trigger.Key);
                         counters[trigger.Key]++;
                         if (counters[trigger.Key] > setting.beatNumber)
@@ -174,6 +177,9 @@ namespace _Project.Scripts.Systems
                         }
                     }
                 }
+
+                // if (!source.isPlaying)
+                //     source.Play();
 
                 yield return null;
             }
