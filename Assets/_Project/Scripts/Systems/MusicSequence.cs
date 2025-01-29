@@ -115,9 +115,9 @@ namespace _Project.Scripts.Systems
 
             IsPlaying = true;
 
+            promptAnimator.gameObject.SetActive(true);
             source.Play();
             coroutine = StartCoroutine(BeatCoroutine(bpm));
-            promptAnimator.gameObject.SetActive(true);
             StartCoroutine(PlayPromptLoop());
             EventManager.InvokeMusicStartEvent();
         }
