@@ -8006,7 +8006,7 @@ GameObject:
   - component: {fileID: 1944754485959553194}
   - component: {fileID: 1944754485945458768}
   m_Layer: 0
-  m_Name: HEADsimple
+  m_Name: HEAD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8074,10 +8074,36 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300042, guid: 3f67b3596395d6d4789e43abdd577187, type: 3}
+  m_Mesh: {fileID: 4300038, guid: 3f67b3596395d6d4789e43abdd577187, type: 3}
   m_Bones:
   - {fileID: 1944754485959553338}
-  m_BlendShapeWeights: []
+  m_BlendShapeWeights:
+  - 0
+  - 6.192175e-11
+  - 0
+  - 0
+  - 49.60977
+  - 49.60977
+  - 0
+  - 0
+  - 0
+  - 12.2
+  - 0
+  - 100
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 8.1
+  - 10.7
+  - 0
+  - 0
+  - 7.260817e-10
+  - 0
+  - 7.260817e-10
+  - 0
   m_RootBone: {fileID: 1944754485959553338}
   m_AABB:
     m_Center: {x: -0.095476866, y: 0.01890824, z: -0.00000018626451}
@@ -8096,6 +8122,7 @@ GameObject:
   - component: {fileID: 8062783643684263522}
   - component: {fileID: 1556566605755994881}
   - component: {fileID: 8964259344511740361}
+  - component: {fileID: 7054950198766060777}
   m_Layer: 0
   m_Name: TTBoyD
   m_TagString: Untagged
@@ -8648,6 +8675,23 @@ MonoBehaviour:
     spineStiffness: 0.5
     pullBodyVertical: 0.5
     pullBodyHorizontal: 0
+--- !u!114 &7054950198766060777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944754485959126174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa180a1714cf10f45a2aa4fcf6eb725e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 1944754485945458768}
+  blinkSpeed: 0.3
+  blinkInterval: 5
+  blinkRandomness: 2
+  blinkBlendShapeIndexes: 1600000018000000
 --- !u!1 &1944754485959126176
 GameObject:
   m_ObjectHideFlags: 0
