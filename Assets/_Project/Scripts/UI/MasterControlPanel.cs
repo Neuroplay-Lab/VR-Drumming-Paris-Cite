@@ -64,7 +64,7 @@ namespace _Project.Scripts.UI
             muteAgentDrumSoundsToggle.onValueChanged.AddListener(value =>
             {
                 SaveData.Instance.preferenceData.muteAgentDrumSounds = value;
-                _audio.SetFloat("AgentDrumVolume", value ? -80 : 1);
+                _audio.SetFloat("Partner Drums Volume", value ? -80 : 0);
             });
 
             toggleCue.onValueChanged.AddListener(value =>
