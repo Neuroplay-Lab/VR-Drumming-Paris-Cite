@@ -34,7 +34,7 @@ public class RandomIdleAnimation : StateMachineBehaviour
             ResetIdle();
         }
 
-        animator.SetFloat("Idle Animation", currentAnimationIndex, 0.2f, Time.deltaTime); // smoothly transition to the next animation
+        animator.SetFloat("Idle Animation", currentAnimationIndex, 0.5f, Time.deltaTime); // smoothly transition to the next animation
     }
 
     private void ResetIdle()

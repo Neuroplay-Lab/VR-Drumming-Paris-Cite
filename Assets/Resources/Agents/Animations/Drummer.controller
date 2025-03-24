@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUnitlNextAnimation: 5
-  animationVariants: 0
+  animationVariants: 1
 --- !u!1107 &-1302918019505361418
 AnimatorStateMachine:
   serializedVersion: 6
