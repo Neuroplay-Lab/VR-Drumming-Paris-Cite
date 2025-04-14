@@ -19,6 +19,8 @@ namespace _Project.Scripts.Field.Partner
         [SerializeField] private InteractionObject snareDrum;
 
         private Animator avatarAnimator;
+        private AvatarHandHitStateMachine leftHit;
+        private AvatarHandHitStateMachine rightHit;
 
         [SerializeField] private PartnerHandPreference partnerHandPreference;
 
@@ -41,7 +43,7 @@ namespace _Project.Scripts.Field.Partner
             {
                 { PartnerBehaviourType.None, new NoneBehaviour() },
                 { PartnerBehaviourType.Follow, new FollowerBehaviour(interactionSystem, _instruments) },
-                { PartnerBehaviourType.Rhythm, new RhythmBehaviour(interactionSystem, _instruments) }
+                { PartnerBehaviourType.Rhythm, new RhythmBehaviour(interactionSystem, _instruments, this) }
             };
         }
 
@@ -95,6 +97,18 @@ namespace _Project.Scripts.Field.Partner
         public void StopDrumming()
         {
             avatarAnimator.SetBool("Drumming", false);
+        }
+
+        public void DrumHit(FullBodyBipedEffector hittingHand, InstrumentType instrument)
+        {
+            if (hittingHand == FullBodyBipedEffector.RightHand)
+            {
+                rightHit.TriggerHit();
+            }
+            else
+            {
+                leftHit.TriggerHit();
+            }
         }
     }
 }

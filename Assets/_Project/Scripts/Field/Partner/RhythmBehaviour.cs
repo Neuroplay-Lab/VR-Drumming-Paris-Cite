@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Project.Scripts.Field.Partner;
 using _Project.Scripts.Systems;
 using DrumRhythmGame.Data;
 using RootMotion.FinalIK;
@@ -16,6 +17,7 @@ namespace DrumRhythmGame.Field
 
         private readonly Random _random;
         private readonly InteractionSystem _interactionSystem;
+        private Partner _partner;
         private readonly IReadOnlyDictionary<InstrumentType, InteractionObject> _instruments;
         private readonly Dictionary<InstrumentType, FullBodyBipedEffector> _instrumentHandMap;
 
@@ -23,9 +25,10 @@ namespace DrumRhythmGame.Field
         private readonly Dictionary<InstrumentType, float> _animationDurations;
         private readonly IList<InstrumentType> _instrumentTypes;
 
-        public RhythmBehaviour(InteractionSystem interactionSystem, IReadOnlyDictionary<InstrumentType, InteractionObject> instruments)
+        public RhythmBehaviour(InteractionSystem interactionSystem, IReadOnlyDictionary<InstrumentType, InteractionObject> instruments, Partner partner)
         {
             _interactionSystem = interactionSystem;
+            _partner = partner;
             _instruments = instruments;
             _instrumentTypes = instruments.Keys.ToList();
             _random = new Random();
@@ -71,7 +74,7 @@ namespace DrumRhythmGame.Field
             Observable
                 .Timer(TimeSpan.FromSeconds(latency + reachTime - _animationDurations[type] / 2f))
                 .Subscribe(_ =>
-                    _interactionSystem.StartInteraction(_instrumentHandMap[type], _instruments[type], true));
+                    _partner.DrumHit(_instrumentHandMap[type], type));
         }
 
         public void Enable()
