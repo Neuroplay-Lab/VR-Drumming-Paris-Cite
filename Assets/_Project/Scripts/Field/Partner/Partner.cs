@@ -19,8 +19,8 @@ namespace _Project.Scripts.Field.Partner
         [SerializeField] private InteractionObject snareDrum;
 
         private Animator avatarAnimator;
-        private AvatarHandHitStateMachine leftHit;
-        private AvatarHandHitStateMachine rightHit;
+        [SerializeField] private AvatarHitStateMachine leftHit;
+        [SerializeField] private AvatarHitStateMachine rightHit;
 
         [SerializeField] private PartnerHandPreference partnerHandPreference;
 

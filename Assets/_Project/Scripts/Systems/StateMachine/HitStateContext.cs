@@ -1,14 +1,13 @@
-using UnityEngine;
-using UnityEngine.Animations.Rigging;
+using RootMotion.FinalIK;
 
 public class HitStateContext
 {
-    private TwoBoneIKConstraint _ikConstraint;
+    private IKEffector _handEffector;
 
-    public HitStateContext(TwoBoneIKConstraint ikConstraint)
+    public HitStateContext(IKEffector iKEffector)
     {
-        _ikConstraint = ikConstraint;
+        _handEffector = iKEffector;
     }
 
-    public TwoBoneIKConstraint IKConstraint => _ikConstraint;
+    public IKEffector handEffector => _handEffector;
 }

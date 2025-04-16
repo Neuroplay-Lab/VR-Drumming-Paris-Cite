@@ -4,7 +4,7 @@ public class ResetState : HitState
 {
     private float _elapsedTime = 0f;
     private float _resetTime;
-    public ResetState(float resetDuration, HitStateContext context, AvatarHandHitStateMachine.E_AvatarDrumHitState stateKey)
+    public ResetState(float resetDuration, HitStateContext context, AvatarHitStateMachine.E_AvatarDrumHitState stateKey)
     : base(context, stateKey)
     {
         _resetTime = resetDuration;
@@ -18,14 +18,20 @@ public class ResetState : HitState
     public override void UpdateState()
     {
         _elapsedTime += Time.deltaTime;
-        _context.IKConstraint.weight = Mathf.Lerp(_context.IKConstraint.weight, 0f, _elapsedTime / _resetTime);
+        _context.handEffector.positionWeight = Mathf.Lerp(_context.handEffector.positionWeight, 0f, _elapsedTime / _resetTime);
+        _context.handEffector.rotationWeight = _context.handEffector.positionWeight;
     }
-    public override AvatarHandHitStateMachine.E_AvatarDrumHitState GetNextState()
+    public override AvatarHitStateMachine.E_AvatarDrumHitState GetNextState()
     {
-        if (_context.IKConstraint.weight == 0f)
+        if (_context.handEffector.positionWeight == 0f)
         {
-            return AvatarHandHitStateMachine.E_AvatarDrumHitState.Waiting;
+            return AvatarHitStateMachine.E_AvatarDrumHitState.Waiting;
         }
         return StateKey;
+    }
+
+    public void SetResetDuration(float resetDuration)
+    {
+        _resetTime = resetDuration;
     }
 }

@@ -4,7 +4,7 @@ public class HittingState : HitState
 {
     private float _elapsedTime = 0f;
     private float _hitDuration;
-    public HittingState(float hitDuration, HitStateContext context, AvatarHandHitStateMachine.E_AvatarDrumHitState stateKey)
+    public HittingState(float hitDuration, HitStateContext context, AvatarHitStateMachine.E_AvatarDrumHitState stateKey)
     : base(context, stateKey)
     {
         _hitDuration = hitDuration;
@@ -12,23 +12,33 @@ public class HittingState : HitState
 
     public override void EnterState()
     {
+        Debug.Log("Entering");
         _elapsedTime = 0f;
     }
 
-    public override void ExitState() { }
+    public override void ExitState()
+    {
+        Debug.Log("Exiting");
+    }
 
     public override void UpdateState()
     {
         _elapsedTime += Time.deltaTime;
-        _context.IKConstraint.weight = Mathf.Lerp(_context.IKConstraint.weight, 1f, _elapsedTime / _hitDuration);
+        _context.handEffector.positionWeight = Mathf.Lerp(_context.handEffector.positionWeight, 1f, _elapsedTime / _hitDuration);
+        _context.handEffector.rotationWeight = _context.handEffector.positionWeight;
     }
-    public override AvatarHandHitStateMachine.E_AvatarDrumHitState GetNextState()
+    public override AvatarHitStateMachine.E_AvatarDrumHitState GetNextState()
     {
-        if (_context.IKConstraint.weight == 1f)
+        if (_context.handEffector.positionWeight == 1f)
         {
-            return AvatarHandHitStateMachine.E_AvatarDrumHitState.Reset;
+            return AvatarHitStateMachine.E_AvatarDrumHitState.Reset;
         }
 
         return StateKey;
+    }
+
+    public void SetHitDuration(float hitDuration)
+    {
+        _hitDuration = hitDuration;
     }
 }

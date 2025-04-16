@@ -1,8 +1,9 @@
 using UnityEngine;
-using UnityEngine.Animations.Rigging;
+using RootMotion.FinalIK;
 using UnityEngine.Assertions;
+using UnityEngine.Animations.Rigging;
 
-public class AvatarHandHitStateMachine : StateMachine<AvatarHandHitStateMachine.E_AvatarDrumHitState>
+public class AvatarHitStateMachine : StateMachine<AvatarHitStateMachine.E_AvatarDrumHitState>
 {
     public enum E_AvatarDrumHitState
     {
@@ -11,16 +12,31 @@ public class AvatarHandHitStateMachine : StateMachine<AvatarHandHitStateMachine.
         Reset
     }
 
+    private enum ManagedHand
+    {
+        Right,
+        Left
+    }
+
     private HitStateContext _context;
 
-    [SerializeField] private TwoBoneIKConstraint _ikConstraint;
+    [SerializeField] private FullBodyBipedIK _ikConstraint;
     [SerializeField] private float _hitDuration = 1f;
     [SerializeField] private float _resetDuration = 2f;
+
+    [SerializeField] private ManagedHand managedHand;
 
     void Awake()
     {
         ValidateContraints();
-        _context = new HitStateContext(_ikConstraint);
+        if (managedHand == ManagedHand.Right)
+        {
+            _context = new HitStateContext(_ikConstraint.solver.rightHandEffector);
+        }
+        else
+        {
+            _context = new HitStateContext(_ikConstraint.solver.leftHandEffector);
+        }
         InitialiseStates();
     }
 
@@ -37,7 +53,13 @@ public class AvatarHandHitStateMachine : StateMachine<AvatarHandHitStateMachine.
         CurrentState = States[E_AvatarDrumHitState.Reset];
     }
 
-    public void TriggerHit() {
-        
+    public void TriggerHit()
+    {
+        if (!CurrentState.Equals(E_AvatarDrumHitState.Hitting))
+        {
+            TransitionToState(E_AvatarDrumHitState.Hitting);
+        }
+        ((HittingState)States[E_AvatarDrumHitState.Hitting]).SetHitDuration(_hitDuration);
+        ((ResetState)States[E_AvatarDrumHitState.Reset]).SetResetDuration(_resetDuration);
     }
 }
