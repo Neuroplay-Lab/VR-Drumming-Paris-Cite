@@ -5,6 +5,7 @@ using DrumRhythmGame.Field;
 using RootMotion.FinalIK;
 using UnityEngine;
 using _Project.Scripts.Systems;
+using UnityEngine.Assertions;
 
 namespace _Project.Scripts.Field.Partner
 {
@@ -19,8 +20,11 @@ namespace _Project.Scripts.Field.Partner
         [SerializeField] private InteractionObject snareDrum;
 
         private Animator avatarAnimator;
-        [SerializeField] private AvatarHitStateMachine leftHit;
-        [SerializeField] private AvatarHitStateMachine rightHit;
+        [SerializeField] private FullBodyBipedIK fullBodyBipedIK;
+        [SerializeField] private float hitDuration;
+        [SerializeField] private float resetDuration;
+        private AvatarHitStateMachine leftHitStateMachine;
+        private AvatarHitStateMachine rightHitStateMachine;
 
         [SerializeField] private PartnerHandPreference partnerHandPreference;
 
@@ -31,6 +35,11 @@ namespace _Project.Scripts.Field.Partner
         {
             var interactionSystem = GetComponent<InteractionSystem>();
             avatarAnimator = GetComponent<Animator>();
+            fullBodyBipedIK = GetComponent<FullBodyBipedIK>();
+            Assert.IsNotNull(avatarAnimator);
+            Assert.IsNotNull(fullBodyBipedIK);
+            leftHitStateMachine = new AvatarHitStateMachine(fullBodyBipedIK, AvatarHitStateMachine.ManagedHand.Left, hitDuration, resetDuration);
+            rightHitStateMachine = new AvatarHitStateMachine(fullBodyBipedIK, AvatarHitStateMachine.ManagedHand.Right, hitDuration, resetDuration);
             _instruments = new Dictionary<InstrumentType, InteractionObject>()
             {
                 { InstrumentType.CrashCymbal, crashCymbal },
@@ -103,11 +112,11 @@ namespace _Project.Scripts.Field.Partner
         {
             if (hittingHand == FullBodyBipedEffector.RightHand)
             {
-                rightHit.TriggerHit();
+                rightHitStateMachine.TriggerHit();
             }
             else
             {
-                leftHit.TriggerHit();
+                leftHitStateMachine.TriggerHit();
             }
         }
     }

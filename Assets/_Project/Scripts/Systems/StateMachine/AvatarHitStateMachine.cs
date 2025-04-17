@@ -1,7 +1,4 @@
-using UnityEngine;
 using RootMotion.FinalIK;
-using UnityEngine.Assertions;
-using UnityEngine.Animations.Rigging;
 
 public class AvatarHitStateMachine : StateMachine<AvatarHitStateMachine.E_AvatarDrumHitState>
 {
@@ -12,37 +9,33 @@ public class AvatarHitStateMachine : StateMachine<AvatarHitStateMachine.E_Avatar
         Reset
     }
 
-    private enum ManagedHand
+    public enum ManagedHand
     {
         Right,
         Left
     }
 
     private HitStateContext _context;
+    private float _hitDuration;
+    private float _resetDuration;
 
-    [SerializeField] private FullBodyBipedIK _ikConstraint;
-    [SerializeField] private float _hitDuration = 1f;
-    [SerializeField] private float _resetDuration = 2f;
-
-    [SerializeField] private ManagedHand managedHand;
-
-    void Awake()
+    public AvatarHitStateMachine(FullBodyBipedIK fullBodyBipedIK, ManagedHand managedHand, float hitDuration, float resetDuration)
     {
-        ValidateContraints();
         if (managedHand == ManagedHand.Right)
         {
-            _context = new HitStateContext(_ikConstraint.solver.rightHandEffector);
+            _context = new HitStateContext(fullBodyBipedIK.solver.rightHandEffector);
         }
         else
         {
-            _context = new HitStateContext(_ikConstraint.solver.leftHandEffector);
+            _context = new HitStateContext(fullBodyBipedIK.solver.leftHandEffector);
         }
-        InitialiseStates();
+        _hitDuration = hitDuration;
+        _resetDuration = resetDuration;
     }
 
-    private void ValidateContraints()
+    void Awake()
     {
-        Assert.IsNotNull(_ikConstraint, "IK Contraint is not Assigned");
+        InitialiseStates();
     }
 
     private void InitialiseStates()
@@ -55,11 +48,6 @@ public class AvatarHitStateMachine : StateMachine<AvatarHitStateMachine.E_Avatar
 
     public void TriggerHit()
     {
-        if (!CurrentState.Equals(E_AvatarDrumHitState.Hitting))
-        {
-            TransitionToState(E_AvatarDrumHitState.Hitting);
-        }
-        ((HittingState)States[E_AvatarDrumHitState.Hitting]).SetHitDuration(_hitDuration);
-        ((ResetState)States[E_AvatarDrumHitState.Reset]).SetResetDuration(_resetDuration);
+        TransitionToState(E_AvatarDrumHitState.Hitting);
     }
 }

@@ -12,14 +12,10 @@ public class HittingState : HitState
 
     public override void EnterState()
     {
-        Debug.Log("Entering");
         _elapsedTime = 0f;
     }
 
-    public override void ExitState()
-    {
-        Debug.Log("Exiting");
-    }
+    public override void ExitState() { }
 
     public override void UpdateState()
     {
