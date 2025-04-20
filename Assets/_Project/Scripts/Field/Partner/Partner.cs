@@ -4,6 +4,7 @@ using DrumRhythmGame.Data;
 using DrumRhythmGame.Field;
 using RootMotion.FinalIK;
 using UnityEngine;
+using _Project.Scripts.Systems;
 
 namespace _Project.Scripts.Field.Partner
 {
@@ -17,6 +18,8 @@ namespace _Project.Scripts.Field.Partner
         [SerializeField] private InteractionObject middleTom;
         [SerializeField] private InteractionObject snareDrum;
 
+        private Animator avatarAnimator;
+
         [SerializeField] private PartnerHandPreference partnerHandPreference;
 
         private Dictionary<InstrumentType, InteractionObject> _instruments;
@@ -25,6 +28,7 @@ namespace _Project.Scripts.Field.Partner
         private void Awake()
         {
             var interactionSystem = GetComponent<InteractionSystem>();
+            avatarAnimator = GetComponent<Animator>();
             _instruments = new Dictionary<InstrumentType, InteractionObject>()
             {
                 { InstrumentType.CrashCymbal, crashCymbal },
@@ -53,6 +57,14 @@ namespace _Project.Scripts.Field.Partner
             }
 
             Debug.Log($"[Partner: {name}] {PartnerManager.Instance.CurrentBehaviourPartnerOne} enabled.");
+
+            EventManager.MusicStartEvent += StartDrumming;
+            EventManager.MusicResetEvent += StopDrumming;
+
+            if (MusicSequence.Instance.IsPlaying)
+            {
+                StartDrumming();
+            }
         }
 
         private void OnDisable()
@@ -60,6 +72,9 @@ namespace _Project.Scripts.Field.Partner
             _behaviours[PartnerManager.Instance.CurrentBehaviourPartnerOne].Disable();
 
             Debug.Log($"[Partner: {name}] {PartnerManager.Instance.CurrentBehaviourPartnerOne} disabled.");
+
+            EventManager.MusicStartEvent -= StartDrumming;
+            EventManager.MusicResetEvent -= StopDrumming;
         }
 
         public void SwitchType(PartnerBehaviourType type)
@@ -70,6 +85,16 @@ namespace _Project.Scripts.Field.Partner
             }
 
             _behaviours[type].Enable();
+        }
+
+        public void StartDrumming()
+        {
+            avatarAnimator.SetBool("Drumming", true);
+        }
+
+        public void StopDrumming()
+        {
+            avatarAnimator.SetBool("Drumming", false);
         }
     }
 }
