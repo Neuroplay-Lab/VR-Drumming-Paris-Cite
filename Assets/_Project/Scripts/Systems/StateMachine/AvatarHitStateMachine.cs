@@ -1,4 +1,5 @@
 using RootMotion.FinalIK;
+using UnityEngine;
 
 public class AvatarHitStateMachine : StateMachine<AvatarHitStateMachine.E_AvatarDrumHitState>
 {
@@ -19,21 +20,24 @@ public class AvatarHitStateMachine : StateMachine<AvatarHitStateMachine.E_Avatar
     private float _hitDuration;
     private float _resetDuration;
 
-    public AvatarHitStateMachine(FullBodyBipedIK fullBodyBipedIK, ManagedHand managedHand, float hitDuration, float resetDuration)
+    public static AvatarHitStateMachine Create(GameObject where, FullBodyBipedIK fullBodyBipedIK, ManagedHand managedHand, float hitDuration, float resetDuration)
     {
+        AvatarHitStateMachine createdMachine = where.AddComponent<AvatarHitStateMachine>();
         if (managedHand == ManagedHand.Right)
         {
-            _context = new HitStateContext(fullBodyBipedIK.solver.rightHandEffector);
+            createdMachine.SetContext(new HitStateContext(fullBodyBipedIK.solver.rightHandEffector));
         }
         else
         {
-            _context = new HitStateContext(fullBodyBipedIK.solver.leftHandEffector);
+            createdMachine.SetContext(new HitStateContext(fullBodyBipedIK.solver.leftHandEffector));
         }
-        _hitDuration = hitDuration;
-        _resetDuration = resetDuration;
+        createdMachine.SetHitDuration(hitDuration);
+        createdMachine.SetResetDuration(resetDuration);
+
+        return createdMachine;
     }
 
-    void Awake()
+    void Start()
     {
         InitialiseStates();
     }
@@ -49,5 +53,20 @@ public class AvatarHitStateMachine : StateMachine<AvatarHitStateMachine.E_Avatar
     public void TriggerHit()
     {
         TransitionToState(E_AvatarDrumHitState.Hitting);
+    }
+
+    public void SetContext(HitStateContext context)
+    {
+        _context = context;
+    }
+
+    public void SetHitDuration(float hitDuration)
+    {
+        _hitDuration = hitDuration;
+    }
+
+    public void SetResetDuration(float resetDuration)
+    {
+        _resetDuration = resetDuration;
     }
 }

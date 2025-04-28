@@ -38,8 +38,8 @@ namespace _Project.Scripts.Field.Partner
             fullBodyBipedIK = GetComponent<FullBodyBipedIK>();
             Assert.IsNotNull(avatarAnimator);
             Assert.IsNotNull(fullBodyBipedIK);
-            leftHitStateMachine = new AvatarHitStateMachine(fullBodyBipedIK, AvatarHitStateMachine.ManagedHand.Left, hitDuration, resetDuration);
-            rightHitStateMachine = new AvatarHitStateMachine(fullBodyBipedIK, AvatarHitStateMachine.ManagedHand.Right, hitDuration, resetDuration);
+            leftHitStateMachine = AvatarHitStateMachine.Create(gameObject, fullBodyBipedIK, AvatarHitStateMachine.ManagedHand.Left, hitDuration, resetDuration);
+            rightHitStateMachine = AvatarHitStateMachine.Create(gameObject, fullBodyBipedIK, AvatarHitStateMachine.ManagedHand.Right, hitDuration, resetDuration);
             _instruments = new Dictionary<InstrumentType, InteractionObject>()
             {
                 { InstrumentType.CrashCymbal, crashCymbal },
