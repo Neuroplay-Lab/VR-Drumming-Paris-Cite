@@ -20,6 +20,8 @@ namespace _Project.Scripts.UI
         // [SerializeField] private Toggle recordPerUnitToggle;
         [SerializeField] private Toggle enableLoggingToggle;
         [SerializeField] private Toggle muteAgentDrumSoundsToggle;
+        [SerializeField] private Toggle muteParticipantDrumSoundsToggle;
+        [SerializeField] private Toggle muteMusicToggle;
 
         // [SerializeField] private Slider volumeSlider;
         [SerializeField] private Toggle toggleCue;
@@ -65,6 +67,16 @@ namespace _Project.Scripts.UI
             {
                 SaveData.Instance.preferenceData.muteAgentDrumSounds = value;
                 _audio.SetFloat("Partner Drums Volume", value ? -80 : 0);
+            });
+            muteParticipantDrumSoundsToggle.onValueChanged.AddListener(value =>
+            {
+                SaveData.Instance.preferenceData.muteParticipcantDrumSounds = value;
+                _audio.SetFloat("Player Drums Volume", value ? -80 : 0);
+            });
+            muteMusicToggle.onValueChanged.AddListener(value =>
+            {
+                SaveData.Instance.preferenceData.muteMusicSounds = value;
+                _audio.SetFloat("Music Volume", value ? -80 : 0);
             });
 
             toggleCue.onValueChanged.AddListener(value =>
