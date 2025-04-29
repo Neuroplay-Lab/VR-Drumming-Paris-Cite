@@ -22,7 +22,9 @@ namespace _Project.Scripts.Field.Partner
         private Animator avatarAnimator;
         [SerializeField] private FullBodyBipedIK fullBodyBipedIK;
         [SerializeField] private float hitDuration;
+        [SerializeField] private AnimationCurve hitWeightCurve;
         [SerializeField] private float resetDuration;
+        [SerializeField] private AnimationCurve resetWeightCurve;
         private AvatarHitStateMachine leftHitStateMachine;
         private AvatarHitStateMachine rightHitStateMachine;
 
@@ -38,8 +40,8 @@ namespace _Project.Scripts.Field.Partner
             fullBodyBipedIK = GetComponent<FullBodyBipedIK>();
             Assert.IsNotNull(avatarAnimator);
             Assert.IsNotNull(fullBodyBipedIK);
-            leftHitStateMachine = AvatarHitStateMachine.Create(gameObject, fullBodyBipedIK, AvatarHitStateMachine.ManagedHand.Left, hitDuration, resetDuration);
-            rightHitStateMachine = AvatarHitStateMachine.Create(gameObject, fullBodyBipedIK, AvatarHitStateMachine.ManagedHand.Right, hitDuration, resetDuration);
+            leftHitStateMachine = AvatarHitStateMachine.Create(gameObject, fullBodyBipedIK, AvatarHitStateMachine.ManagedHand.Left, hitDuration, hitWeightCurve, resetDuration, resetWeightCurve);
+            rightHitStateMachine = AvatarHitStateMachine.Create(gameObject, fullBodyBipedIK, AvatarHitStateMachine.ManagedHand.Right, hitDuration, hitWeightCurve, resetDuration, resetWeightCurve);
             _instruments = new Dictionary<InstrumentType, InteractionObject>()
             {
                 { InstrumentType.CrashCymbal, crashCymbal },
