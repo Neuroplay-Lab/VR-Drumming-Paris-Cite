@@ -50,11 +50,11 @@ namespace DrumRhythmGame.Field
         {
             if (hand == Hand.Left)
             {
-                hapticAction.Execute(0, 1, 150, 75, SteamVR_Input_Sources.LeftHand);
+                hapticAction.Execute(0, 0.25f, 150, 75, SteamVR_Input_Sources.LeftHand);
             }
             else
             {
-                hapticAction.Execute(0, 1, 150, 75, SteamVR_Input_Sources.RightHand);
+                hapticAction.Execute(0, 0.25f, 150, 75, SteamVR_Input_Sources.RightHand);
             }
 
             // below uses xr method which may not be working
