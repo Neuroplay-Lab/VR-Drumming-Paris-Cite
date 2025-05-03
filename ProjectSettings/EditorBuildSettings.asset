@@ -9,7 +9,11 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/Drumming_Triangle_Children.unity
     guid: 9254f3845c8d0c54eb9e64233f116541
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d032ef2f59cdb49ad91ff4c36e750dd4,
+      type: 2}
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 206f050ff6b7b49b9b7384d12f80286a,
       type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: b17b739f6c63947e48c6fa732a1d5f29,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 39165ecfe0dc04e28a11247beb3ef764,
       type: 2}
