@@ -70,8 +70,8 @@ namespace _Project.Scripts.Systems
             StopCoroutine(coroutine);
             coroutine = null;
             CurrentTime = -1f;
-
             EventManager.InvokeMusicResetEvent();
+            DrumLogger.Instance.SetCurrentTrail("FreePlay");
         }
 
         private void OnEnable()
@@ -120,6 +120,7 @@ namespace _Project.Scripts.Systems
             coroutine = StartCoroutine(BeatCoroutine(bpm));
             StartCoroutine(PlayPromptLoop());
             EventManager.InvokeMusicStartEvent();
+            DrumLogger.Instance.SetCurrentTrail(setting.name);
         }
 
         /// <summary>

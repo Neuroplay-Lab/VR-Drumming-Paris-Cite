@@ -106,6 +106,7 @@ namespace _Project.Scripts.Field
 
         private void OnDrumHit(ActorType actor, InstrumentType type, XRNode node)
         {
+            DrumLogger.Instance.RegisterHitEvent(actor, type, node);
             if (actor != ActorType.Player) return;
 
             if (_notes.TryGetValue(type, out var note))
@@ -144,7 +145,7 @@ namespace _Project.Scripts.Field
                 if (_musicScore.score[_beatCounter, i])
                 {
                     _notes[_instrumentTypes[i]].StartSpread(duration);
-
+                    DrumLogger.Instance.LogBeatTime();
                     EventManager.InvokeMusicScoreNoteSetEvent(_instrumentTypes[i], _noteMarginTime);
                 }
 

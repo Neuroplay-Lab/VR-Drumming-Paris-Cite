@@ -61,7 +61,7 @@ PrefabInstance:
     - target: {fileID: 6781690422379299565, guid: b6bb35d8d3f188c419298500558c80cc,
         type: 3}
       propertyPath: m_Name
-      value: Female_Caucasian_1_Drumming Variant
+      value: Female_Caucasian_1_Drumming FacelessVariant
       objectReference: {fileID: 0}
     - target: {fileID: 6781690422888870177, guid: b6bb35d8d3f188c419298500558c80cc,
         type: 3}
@@ -80,6 +80,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7527855010926399159, guid: 0fe5fe0ab6a204aa98052b2ca9e44007,
         type: 3}
+    - target: {fileID: 7927440288829422563, guid: b6bb35d8d3f188c419298500558c80cc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

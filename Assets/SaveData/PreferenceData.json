@@ -1,8 +1,8 @@
 {
-    "displayVisualCue": true,
+    "displayVisualCue": false,
     "enableRecording": true,
     "recordPerUnit": true,
-    "muteAgentDrumSounds": true,
+    "muteAgentDrumSounds": false,
     "muteParticipcantDrumSounds": false,
     "muteMusicSounds": false,
     "enableLogging": false,
