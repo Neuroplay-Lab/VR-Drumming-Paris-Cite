@@ -115,6 +115,12 @@ namespace _Project.Scripts.Systems
 
             IsPlaying = true;
 
+            if (setting.name == "SPR")
+            {
+                StartCoroutine(SPRTrial());
+                return;
+            }
+
             promptAnimator.gameObject.SetActive(true);
             source.Play();
             coroutine = StartCoroutine(BeatCoroutine(bpm));
@@ -134,6 +140,15 @@ namespace _Project.Scripts.Systems
                 _triggerEvents[delayKey] += handler;
             else
                 _triggerEvents.Add(delayKey, handler);
+        }
+
+        private IEnumerator SPRTrial()
+        {
+            EventManager.InvokeMusicStartEvent();
+            DrumLogger.Instance.SetCurrentTrail(setting.name);
+            yield return new WaitForSeconds(30);
+            EventManager.InvokeMusicResetEvent();
+            DrumLogger.Instance.SetCurrentTrail("FreePlay");
         }
 
         /// <summary>
