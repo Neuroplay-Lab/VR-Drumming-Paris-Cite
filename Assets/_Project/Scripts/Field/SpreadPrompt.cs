@@ -45,14 +45,18 @@ namespace _Project.Scripts.Field
 
         private void Awake()
         {
-  
+
             textPro = promptRectTransform.GetComponent<TextMeshProUGUI>();
             defaultColor.a = 1;
 
             _offColor = new Color(defaultColor.r, defaultColor.g, defaultColor.b, 0);
+        }
 
+        private void OnEnable()
+        {
             EventManager.MusicResetEvent += CancelSpread;
             EventManager.CueStateChanged += HandleCueStateChange;
+            _isCueHidden = !SaveData.Instance.preferenceData.displayVisualCue;
         }
 
         private void OnDestroy()
@@ -83,9 +87,9 @@ namespace _Project.Scripts.Field
 
         public void StartSpread(float duration)
         {
-            if (_isCueHidden) return;
             if (!promptRectTransform.gameObject.activeInHierarchy)
                 promptRectTransform.gameObject.SetActive(true);
+            if (_isCueHidden) return;
             _coroutine = StartCoroutine(SpreadCoroutine(duration, KeepAlive));
         }
 
