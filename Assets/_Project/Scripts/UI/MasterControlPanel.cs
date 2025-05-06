@@ -15,6 +15,7 @@ namespace _Project.Scripts.UI
         [SerializeField] private Button playMusicButton;
         [SerializeField] private Button resetMusicButton;
 
+        [SerializeField] private Toggle allowParticipantStart;
         [SerializeField] private Toggle enableRecordingToggle;
 
         // [SerializeField] private Toggle recordPerUnitToggle;
@@ -61,6 +62,11 @@ namespace _Project.Scripts.UI
             resetMusicButton.onClick.AddListener(MusicSequence.Instance.Reset);
             applicationQuitButton.onClick.AddListener(Quit);
 
+            allowParticipantStart.onValueChanged.AddListener(value =>
+            {
+                SaveData.Instance.preferenceData.allowParticipantStart = value;
+                MusicSequence.Instance.SetParticipantCanStart(value);
+            });
             enableRecordingToggle.onValueChanged.AddListener(value =>
                 SaveData.Instance.preferenceData.enableRecording = value);
             muteAgentDrumSoundsToggle.onValueChanged.AddListener(value =>
@@ -96,10 +102,13 @@ namespace _Project.Scripts.UI
         /// </summary>
         private void SetupSavedPanelData()
         {
+            allowParticipantStart.isOn = SaveData.Instance.preferenceData.allowParticipantStart;
             enableRecordingToggle.isOn = SaveData.Instance.preferenceData.enableRecording;
             enableLoggingToggle.isOn = SaveData.Instance.preferenceData.enableLogging;
             toggleCue.isOn = SaveData.Instance.preferenceData.displayVisualCue;
             muteAgentDrumSoundsToggle.isOn = SaveData.Instance.preferenceData.muteAgentDrumSounds;
+            muteMusicToggle.isOn = SaveData.Instance.preferenceData.muteMusicSounds;
+            muteParticipantDrumSoundsToggle.isOn = SaveData.Instance.preferenceData.muteParticipcantDrumSounds;
         }
 
         private static void Quit()

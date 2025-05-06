@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using _Project.Scripts.Data;
 using UnityEngine;
+using Valve.VR;
 
 namespace _Project.Scripts.Systems
 {
@@ -29,6 +30,9 @@ namespace _Project.Scripts.Systems
         private Coroutine coroutine;
 
         private AudioSource source;
+
+        private bool _participantCanStart = false;
+        [SerializeField] private SteamVR_Action_Boolean triggerPlay;
 
         public bool IsPlaying { get; private set; }
 
@@ -56,6 +60,20 @@ namespace _Project.Scripts.Systems
             source.playOnAwake = false;
             bpm = setting.customBpm > 0 ? setting.customBpm : UniBpmAnalyzer.AnalyzeBpm(setting.bgm);
             source.clip = setting.bgm;
+            _participantCanStart = SaveData.Instance.preferenceData.allowParticipantStart;
+        }
+
+        public void SetParticipantCanStart(bool participantCanStart)
+        {
+            _participantCanStart = participantCanStart;
+        }
+
+        private void Update()
+        {
+            if (_participantCanStart && triggerPlay.GetStateDown(SteamVR_Input_Sources.Any))
+            {
+                Play();
+            }
         }
 
         public void Reset()

@@ -7,6 +7,7 @@ namespace DrumRhythmGame.Data
     {
         public bool displayVisualCue = true;
         public bool enableRecording = true;
+        public bool allowParticipantStart = false;
         public bool recordPerUnit = true;
         public bool muteAgentDrumSounds = true;
         public bool muteParticipcantDrumSounds = false;
