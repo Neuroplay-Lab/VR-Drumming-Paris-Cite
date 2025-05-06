@@ -61,16 +61,16 @@ public class DrumLogger : MonoBehaviour
 
     public void LogParticipantHit(string drum, string hand)
     {
-        _participantHits.Enqueue($@"{DateTime.Now - _currentFileStartTime:mm\:ss\.fff},{hand},{drum}");
+        _participantHits.Enqueue($"{Math.Round((DateTime.Now - _currentFileStartTime).TotalMilliseconds)},{hand},{drum}");
     }
     public void LogAvatarHit(string drum, string hand)
     {
-        _avatarHits.Enqueue($@"{DateTime.Now - _currentFileStartTime:mm\:ss\.fff},{hand},{drum}");
+        _avatarHits.Enqueue($"{Math.Round((DateTime.Now - _currentFileStartTime).TotalMilliseconds)},{hand},{drum}");
     }
 
     public void LogBeatTime()
     {
-        _beatTimes.Enqueue($@"{DateTime.Now - _currentFileStartTime:mm\:ss\.fff}");
+        _beatTimes.Enqueue($"{Math.Round((DateTime.Now - _currentFileStartTime).TotalMilliseconds)}");
     }
 
     public void ChangedAvatar(string avatar)
