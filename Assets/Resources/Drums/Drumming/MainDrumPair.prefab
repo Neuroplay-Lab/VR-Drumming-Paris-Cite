@@ -6147,7 +6147,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!82 &175309812982014612
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6261,7 +6261,7 @@ MonoBehaviour:
   sound: {fileID: 8300000, guid: 63a710d6387ff10428aa5b7b010b578e, type: 3}
   volume: 1
   timeToPlayStart: 0
-  chatteringInterval: 0.2
+  chatteringInterval: 0.4
   audioSource: {fileID: 0}
   wrongSide: {fileID: 0}
 --- !u!65 &4184320032909379472
@@ -6283,8 +6283,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.29886484, y: 0.01989621, z: 0.30198777}
-  m_Center: {x: 0.0073659923, y: 0.2730539, z: 0.003983593}
+  m_Size: {x: 0.29886484, y: 0.022955328, z: 0.30198777}
+  m_Center: {x: 0.007366065, y: 0.27458367, z: 0.0039835614}
 --- !u!4 &285672426665935751 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4973065694237898, guid: 80ef9f5fa1e74d847928837e7b19678b,
@@ -6441,7 +6441,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &6954238990548899194
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6459,7 +6459,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -6577,7 +6577,7 @@ MonoBehaviour:
   sound: {fileID: 8300000, guid: 63a710d6387ff10428aa5b7b010b578e, type: 3}
   volume: 1
   timeToPlayStart: 0
-  chatteringInterval: 0.2
+  chatteringInterval: 0.4
   audioSource: {fileID: 0}
   wrongSide: {fileID: 0}
 --- !u!65 &918393660048328116
@@ -6599,8 +6599,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.2584362, y: 0.025240958, z: 0.25956273}
-  m_Center: {x: 0.0037817506, y: 0.24307908, z: 0.004119113}
+  m_Size: {x: 0.2584362, y: 0.028844446, z: 0.25956273}
+  m_Center: {x: 0.0037817536, y: 0.24487996, z: 0.0041191424}
 --- !u!1001 &7476592540820994091
 PrefabInstance:
   m_ObjectHideFlags: 0
