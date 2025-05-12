@@ -6159,23 +6159,23 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -8274821455849925365, guid: ec12f7772c03e4c4c9e4c2f1643595ad,
     type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 63a710d6387ff10428aa5b7b010b578e, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -6283,8 +6283,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.29886484, y: 0.022955328, z: 0.30198777}
-  m_Center: {x: 0.007366065, y: 0.27458367, z: 0.0039835614}
+  m_Size: {x: 0.29886484, y: 0.028743893, z: 0.30198777}
+  m_Center: {x: 0.0073667085, y: 0.27747884, z: 0.0039833426}
 --- !u!4 &285672426665935751 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4973065694237898, guid: 80ef9f5fa1e74d847928837e7b19678b,
@@ -6475,7 +6475,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -8274821455849925365, guid: ec12f7772c03e4c4c9e4c2f1643595ad,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 63a710d6387ff10428aa5b7b010b578e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -6483,15 +6483,15 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -6599,8 +6599,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.2584362, y: 0.028844446, z: 0.25956273}
-  m_Center: {x: 0.0037817536, y: 0.24487996, z: 0.0041191424}
+  m_Size: {x: 0.2584362, y: 0.03269437, z: 0.25956273}
+  m_Center: {x: 0.0037817534, y: 0.24680424, z: 0.0041191624}
 --- !u!1001 &7476592540820994091
 PrefabInstance:
   m_ObjectHideFlags: 0
