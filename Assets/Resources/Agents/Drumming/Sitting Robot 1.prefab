@@ -154,6 +154,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 2
   node: 4
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &4972044268780978339
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +279,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 2
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8235972307626157011
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,6 +1259,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8235972307830831615
 GameObject:
   m_ObjectHideFlags: 0
@@ -2846,6 +2858,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8235972308190011115
 GameObject:
   m_ObjectHideFlags: 0
@@ -4446,6 +4462,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8235972308602410681
 GameObject:
   m_ObjectHideFlags: 0
@@ -6534,6 +6554,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8235972309392373817
 GameObject:
   m_ObjectHideFlags: 0
@@ -7955,6 +7979,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8235972309711342271
 GameObject:
   m_ObjectHideFlags: 0
@@ -8108,6 +8136,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8235972309742943895
 GameObject:
   m_ObjectHideFlags: 0
@@ -9869,6 +9901,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717370821310611589, guid: d079cd0e6137a44b58864c3a91ad119a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5717370821310611589, guid: d079cd0e6137a44b58864c3a91ad119a,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5721280813766903168, guid: d079cd0e6137a44b58864c3a91ad119a,
         type: 3}

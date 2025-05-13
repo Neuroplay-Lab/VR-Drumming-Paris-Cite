@@ -89,12 +89,12 @@ namespace _Project.Scripts.Field.Partner
 
         public void StartDrumming()
         {
-            avatarAnimator.SetBool("Drumming", true);
+            avatarAnimator?.SetBool("Drumming", true);
         }
 
         public void StopDrumming()
         {
-            avatarAnimator.SetBool("Drumming", false);
+            avatarAnimator?.SetBool("Drumming", false);
         }
     }
 }

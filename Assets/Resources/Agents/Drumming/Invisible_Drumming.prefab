@@ -377,6 +377,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 2
   node: 4
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &6786756065713006875
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +713,7 @@ GameObject:
   - component: {fileID: 6786756065942203788}
   - component: {fileID: 6786756065942203785}
   - component: {fileID: 3955838974745032492}
+  - component: {fileID: 2360453152205102477}
   m_Layer: 0
   m_Name: TH_Cow_01
   m_TagString: Untagged
@@ -1405,6 +1410,27 @@ MonoBehaviour:
   blinkInterval: 5
   blinkRandomness: 2
   blinkBlendShapeIndexes: 1100000012000000
+--- !u!95 &2360453152205102477
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6786756065942203890}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 0ff640b432466a047aeae06bf2063fcd, type: 3}
+  m_Controller: {fileID: 22100000, guid: ff0e6a7e5a58847fe9bc8ccb1f0c88a7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6786756066026596707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,6 +1712,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 2
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &6786756066231721204
 GameObject:
   m_ObjectHideFlags: 0
@@ -4580,6 +4610,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8518630103920755415
 GameObject:
   m_ObjectHideFlags: 0
@@ -5083,6 +5117,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8518630104090659028
 GameObject:
   m_ObjectHideFlags: 0
@@ -7109,6 +7147,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8518630104497572357
 GameObject:
   m_ObjectHideFlags: 0
@@ -7326,6 +7368,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8518630104550488344
 GameObject:
   m_ObjectHideFlags: 0
@@ -9805,6 +9851,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8518630105127168276
 GameObject:
   m_ObjectHideFlags: 0
@@ -10611,6 +10661,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8518630105375866629
 GameObject:
   m_ObjectHideFlags: 0
