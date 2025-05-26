@@ -61,6 +61,15 @@ namespace _Project.Scripts.Field.Partner
             EventManager.MusicStartEvent += StartDrumming;
             EventManager.MusicResetEvent += StopDrumming;
 
+            if (partnerHandPreference == PartnerHandPreference.Left)
+            {
+                avatarAnimator.SetLayerWeight(avatarAnimator.GetLayerIndex("Left Only"), 1);
+            }
+            else if (partnerHandPreference == PartnerHandPreference.Right)
+            {
+                avatarAnimator.SetLayerWeight(avatarAnimator.GetLayerIndex("Right Only"), 1);
+            }
+
             if (MusicSequence.Instance.IsPlaying)
             {
                 StartDrumming();

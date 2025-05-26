@@ -91,7 +91,7 @@ PrefabInstance:
     - target: {fileID: 6781690422379299565, guid: b6bb35d8d3f188c419298500558c80cc,
         type: 3}
       propertyPath: m_Name
-      value: Female_Caucasian_1_Drumming Variant
+      value: Female_Caucasian_1_Drumming LHVariant
       objectReference: {fileID: 0}
     - target: {fileID: 6781690422549944229, guid: b6bb35d8d3f188c419298500558c80cc,
         type: 3}
@@ -186,7 +186,7 @@ PrefabInstance:
     - target: {fileID: 6781690423198790339, guid: b6bb35d8d3f188c419298500558c80cc,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6781690423200474651, guid: b6bb35d8d3f188c419298500558c80cc,
         type: 3}
