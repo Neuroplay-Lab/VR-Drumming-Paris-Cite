@@ -74,6 +74,15 @@ namespace _Project.Scripts.Field.Partner
             EventManager.MusicStartEvent += StartDrumming;
             EventManager.MusicResetEvent += StopDrumming;
 
+            if (partnerHandPreference == PartnerHandPreference.Left)
+            {
+                avatarAnimator.SetLayerWeight(avatarAnimator.GetLayerIndex("Left Only"), 1);
+            }
+            else if (partnerHandPreference == PartnerHandPreference.Right)
+            {
+                avatarAnimator.SetLayerWeight(avatarAnimator.GetLayerIndex("Right Only"), 1);
+            }
+
             if (MusicSequence.Instance.IsPlaying)
             {
                 StartDrumming();
@@ -102,12 +111,12 @@ namespace _Project.Scripts.Field.Partner
 
         public void StartDrumming()
         {
-            avatarAnimator.SetBool("Drumming", true);
+            avatarAnimator?.SetBool("Drumming", true);
         }
 
         public void StopDrumming()
         {
-            avatarAnimator.SetBool("Drumming", false);
+            avatarAnimator?.SetBool("Drumming", false);
         }
 
         public void DrumHit(FullBodyBipedEffector hittingHand, InstrumentType instrument)

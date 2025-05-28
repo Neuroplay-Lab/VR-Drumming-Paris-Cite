@@ -1,6 +1,7 @@
 ﻿using DrumRhythmGame.Data;
 using UnityEngine;
 using UnityEngine.XR;
+using Valve.VR;
 
 namespace DrumRhythmGame.Field
 {
@@ -10,10 +11,20 @@ namespace DrumRhythmGame.Field
     /// </summary>
     public class DrumStick : MonoBehaviour
     {
+
+        private enum Hand
+        {
+            Left,
+            Right
+        }
         #region Serialized Fields
 
         public ActorType owner;
         public XRNode node;
+
+        [SerializeField] private Hand hand;
+
+        public SteamVR_Action_Vibration hapticAction;
 
         #endregion
 
@@ -37,9 +48,20 @@ namespace DrumRhythmGame.Field
         /// </summary>
         private void Vibrate()
         {
-            var device = InputDevices.GetDeviceAtXRNode(node);
-            if (device.TryGetHapticCapabilities(out var capabilities) && capabilities.supportsImpulse)
-                device.SendHapticImpulse(0, 1f, 0.5f);
+            if (hand == Hand.Left)
+            {
+                hapticAction.Execute(0, 0.25f, 150, 75, SteamVR_Input_Sources.LeftHand);
+            }
+            else
+            {
+                hapticAction.Execute(0, 0.25f, 150, 75, SteamVR_Input_Sources.RightHand);
+            }
+
+            // below uses xr method which may not be working
+
+            // var device = InputDevices.GetDeviceAtXRNode(node);
+            // if (device.TryGetHapticCapabilities(out var capabilities) && capabilities.supportsImpulse)
+            //     device.SendHapticImpulse(0, 1f, 0.5f);
         }
     }
 }

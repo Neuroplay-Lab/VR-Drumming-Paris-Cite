@@ -1415,7 +1415,7 @@ AudioSource:
   m_GameObject: {fileID: 6789256496825164381}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 5865228689328759941, guid: ec12f7772c03e4c4c9e4c2f1643595ad,
+  OutputAudioMixerGroup: {fileID: -8787513427017923616, guid: ec12f7772c03e4c4c9e4c2f1643595ad,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -2794,6 +2794,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &6789256497096522340
 GameObject:
   m_ObjectHideFlags: 0
@@ -3463,6 +3467,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &6789256497203593174
 GameObject:
   m_ObjectHideFlags: 0
@@ -3929,13 +3937,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6789256497308853606}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.6191188, y: 0.049417567, z: -0.21549033, w: -0.75353426}
-  m_LocalPosition: {x: -0.10150015, y: 0.007931639, z: 0.14129528}
+  m_LocalRotation: {x: 0.692948, y: 0.07120014, z: -0.20930539, w: -0.6862543}
+  m_LocalPosition: {x: -0.062, y: 0.032, z: 0.137}
   m_LocalScale: {x: 1.2299755, y: 1.2299751, z: 1.2299751}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6789256497998847055}
-  m_LocalEulerAnglesHint: {x: -99.299995, y: -7.5579834, z: 26.535995}
+  m_LocalEulerAnglesHint: {x: -67.113, y: -85.649, z: 97.085}
 --- !u!33 &6789256497308853611
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4022,6 +4030,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 2
   node: 4
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &6789256497320357212
 GameObject:
   m_ObjectHideFlags: 0
@@ -5825,6 +5837,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &6789256497596686666
 GameObject:
   m_ObjectHideFlags: 0
@@ -6001,7 +6017,7 @@ Transform:
   m_GameObject: {fileID: 6789256497618160463}
   serializedVersion: 2
   m_LocalRotation: {x: -0.11384144, y: -0.04335959, z: 0.8014655, w: 0.58550245}
-  m_LocalPosition: {x: 0.037, y: 0.444, z: -0.343}
+  m_LocalPosition: {x: 0.048, y: 0.371, z: -0.278}
   m_LocalScale: {x: 1, y: 1, z: -1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6943,6 +6959,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &6789256497743993658
 GameObject:
   m_ObjectHideFlags: 0
@@ -7727,7 +7747,7 @@ AudioSource:
   m_GameObject: {fileID: 6789256497825466062}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 5865228689328759941, guid: ec12f7772c03e4c4c9e4c2f1643595ad,
+  OutputAudioMixerGroup: {fileID: -8787513427017923616, guid: ec12f7772c03e4c4c9e4c2f1643595ad,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -9061,9 +9081,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6789256497995271672}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 9e5ed165caa63904386d01e822d592d7, type: 3}
-  m_Controller: {fileID: 9100000, guid: dce8e896578e0b64dbedb6a3f5a3c5d5, type: 2}
+  m_Controller: {fileID: 22100000, guid: 1fdeaf72d31334b4aa3d8d9e74128932, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -10226,6 +10246,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 2
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &6789256498136400492
 GameObject:
   m_ObjectHideFlags: 0
@@ -11656,6 +11680,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &6789256498355219272
 GameObject:
   m_ObjectHideFlags: 0
@@ -12748,6 +12776,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &6789256498468116379
 GameObject:
   m_ObjectHideFlags: 0

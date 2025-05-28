@@ -14,7 +14,7 @@ namespace _Project.Scripts.Systems
     public class GameData : SingletonMonoBehaviour<GameData>
     {
         // A way of creating headers in a CSV file
-        private const string DataHeader = "Timestamp,WhichInstrumentWasHit,SyncRateBetweenPlayerAndDrummingAgent,RhythmErrorRate,EyeFocusItem, EyeFocusCoord"; // ,CueOnset
+        private const string DataHeader = "Timestamp,WhichInstrumentWasHit,SyncRateBetweenPlayerAndDrummingAgent,RhythmErrorRate,EyeFocusItem,EyeFocusCoord"; // ,CueOnset
 
         private DataLogger dataLogger; // responsible for saving game data
         private ErrorRateController errorRateController;

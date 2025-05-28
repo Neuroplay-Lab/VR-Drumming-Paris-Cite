@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using _Project.Scripts.Data;
 using UnityEngine;
+using Valve.VR;
 
 namespace _Project.Scripts.Systems
 {
@@ -29,6 +30,9 @@ namespace _Project.Scripts.Systems
         private Coroutine coroutine;
 
         private AudioSource source;
+
+        private bool _participantCanStart = false;
+        [SerializeField] private SteamVR_Action_Boolean triggerPlay;
 
         public bool IsPlaying { get; private set; }
 
@@ -56,6 +60,20 @@ namespace _Project.Scripts.Systems
             source.playOnAwake = false;
             bpm = setting.customBpm > 0 ? setting.customBpm : UniBpmAnalyzer.AnalyzeBpm(setting.bgm);
             source.clip = setting.bgm;
+            _participantCanStart = SaveData.Instance.preferenceData.allowParticipantStart;
+        }
+
+        public void SetParticipantCanStart(bool participantCanStart)
+        {
+            _participantCanStart = participantCanStart;
+        }
+
+        private void Update()
+        {
+            if (_participantCanStart && triggerPlay.GetStateDown(SteamVR_Input_Sources.Any))
+            {
+                Play();
+            }
         }
 
         public void Reset()
@@ -70,8 +88,8 @@ namespace _Project.Scripts.Systems
             StopCoroutine(coroutine);
             coroutine = null;
             CurrentTime = -1f;
-
             EventManager.InvokeMusicResetEvent();
+            DrumLogger.Instance.SetCurrentTrail("FreePlay");
         }
 
         private void OnEnable()
@@ -115,11 +133,18 @@ namespace _Project.Scripts.Systems
 
             IsPlaying = true;
 
+            if (setting.name == "SPR")
+            {
+                StartCoroutine(SPRTrial());
+                return;
+            }
+
             promptAnimator.gameObject.SetActive(true);
             source.Play();
             coroutine = StartCoroutine(BeatCoroutine(bpm));
             StartCoroutine(PlayPromptLoop());
             EventManager.InvokeMusicStartEvent();
+            DrumLogger.Instance.SetCurrentTrail(setting.name);
         }
 
         /// <summary>
@@ -133,6 +158,15 @@ namespace _Project.Scripts.Systems
                 _triggerEvents[delayKey] += handler;
             else
                 _triggerEvents.Add(delayKey, handler);
+        }
+
+        private IEnumerator SPRTrial()
+        {
+            EventManager.InvokeMusicStartEvent();
+            DrumLogger.Instance.SetCurrentTrail(setting.name);
+            yield return new WaitForSeconds(30);
+            EventManager.InvokeMusicResetEvent();
+            DrumLogger.Instance.SetCurrentTrail("FreePlay");
         }
 
         /// <summary>

@@ -82,6 +82,7 @@ namespace _Project.Scripts
                 ResetButtonAppearance();
                 selectedAvatar = new AgentStruct();
                 PartnerManager.Instance.DestroyPartnerOne();
+                DrumLogger.Instance.ChangedAvatar("No Avatar");
             });
         }
 
@@ -101,6 +102,7 @@ namespace _Project.Scripts
         {
             Debug.Log($"Selected {agent.name} ({agent.index})");
             EventManager.InvokeAgentSelected(agent);
+            DrumLogger.Instance.ChangedAvatar(agent.name);
         }
 
         private void ResetButtonAppearance()
