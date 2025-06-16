@@ -1089,10 +1089,10 @@ MonoBehaviour:
         defaultLocalDirection: {x: 0, y: 0, z: 0}
         defaultChildDirection: {x: 0, y: 0, z: 0}
     - pin: 0
-      pull: 1
+      pull: 0.5
       push: 0
       pushParent: 0
-      reach: 0.25
+      reach: 0.3
       reachSmoothing: 1
       pushSmoothing: 1
       nodes:
@@ -1139,10 +1139,10 @@ MonoBehaviour:
         defaultLocalDirection: {x: 0, y: 0, z: 0}
         defaultChildDirection: {x: 0, y: 0, z: 0}
     - pin: 0
-      pull: 1
+      pull: 0.5
       push: 0
       pushParent: 0
-      reach: 0.25
+      reach: 0.3
       reachSmoothing: 1
       pushSmoothing: 1
       nodes:

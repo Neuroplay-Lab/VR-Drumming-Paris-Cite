@@ -8750,12 +8750,12 @@ PrefabInstance:
     - target: {fileID: 2077030493029218269, guid: d079cd0e6137a44b58864c3a91ad119a,
         type: 3}
       propertyPath: solver.chain.Array.data[1].pull
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2077030493029218269, guid: d079cd0e6137a44b58864c3a91ad119a,
         type: 3}
       propertyPath: solver.chain.Array.data[2].pull
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2077030493029218269, guid: d079cd0e6137a44b58864c3a91ad119a,
         type: 3}
@@ -8780,7 +8780,7 @@ PrefabInstance:
     - target: {fileID: 2077030493029218269, guid: d079cd0e6137a44b58864c3a91ad119a,
         type: 3}
       propertyPath: solver.chain.Array.data[2].reach
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2077030493029218269, guid: d079cd0e6137a44b58864c3a91ad119a,
         type: 3}

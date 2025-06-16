@@ -932,6 +932,75 @@ MonoBehaviour:
   highTom: {fileID: 8518630104684854910}
   middleTom: {fileID: 8518630103650982608}
   snareDrum: {fileID: 8518630104459093522}
+  fullBodyBipedIK: {fileID: 6786756065942203785}
+  hitDuration: 0.38
+  hitWeightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5041291
+      value: 0.5061935
+      inSlope: 3.2068048
+      outSlope: 3.2068048
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.067297585
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  resetDuration: 0.8
+  resetWeightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.17035875
+      value: 0.72307295
+      inSlope: 1.1611997
+      outSlope: 1.1611997
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.11608383
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   partnerHandPreference: 0
 --- !u!114 &6786756065942203785
 MonoBehaviour:
@@ -1020,10 +1089,10 @@ MonoBehaviour:
         defaultLocalDirection: {x: 0, y: 0, z: 0}
         defaultChildDirection: {x: 0, y: 0, z: 0}
     - pin: 0
-      pull: 1
+      pull: 0.5
       push: 0
       pushParent: 0
-      reach: 0.1
+      reach: 0.3
       reachSmoothing: 1
       pushSmoothing: 1
       nodes:
@@ -1070,10 +1139,10 @@ MonoBehaviour:
         defaultLocalDirection: {x: 0, y: 0, z: 0}
         defaultChildDirection: {x: 0, y: 0, z: 0}
     - pin: 0
-      pull: 1
+      pull: 0.5
       push: 0
       pushParent: 0
-      reach: 0.1
+      reach: 0.3
       reachSmoothing: 1
       pushSmoothing: 1
       nodes:

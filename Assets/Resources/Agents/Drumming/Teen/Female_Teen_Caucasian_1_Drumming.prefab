@@ -8476,7 +8476,7 @@ MonoBehaviour:
         defaultLocalDirection: {x: 0, y: 0, z: 0}
         defaultChildDirection: {x: 0, y: 0, z: 0}
     - pin: 0
-      pull: 1
+      pull: 0.5
       push: 0
       pushParent: 0
       reach: 0.3
@@ -8526,7 +8526,7 @@ MonoBehaviour:
         defaultLocalDirection: {x: 0, y: 0, z: 0}
         defaultChildDirection: {x: 0, y: 0, z: 0}
     - pin: 0
-      pull: 1
+      pull: 0.5
       push: 0
       pushParent: 0
       reach: 0.3
@@ -8909,12 +8909,12 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0.5041291
       value: 0.5061935
-      inSlope: 3.2068048
-      outSlope: 3.2068048
+      inSlope: 2.1893718
+      outSlope: 2.1893718
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.067297585
+      outWeight: 0.10090845
     - serializedVersion: 3
       time: 1
       value: 1
