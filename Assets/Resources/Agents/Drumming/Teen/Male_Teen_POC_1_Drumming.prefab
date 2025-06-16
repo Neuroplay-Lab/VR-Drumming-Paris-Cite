@@ -1499,8 +1499,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657936082044819050}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7931436, y: 0.18679269, z: 0.57717246, w: 0.05388748}
-  m_LocalPosition: {x: -0.166, y: 0.265, z: -0.233}
+  m_LocalRotation: {x: -0.8984677, y: -0.18058847, z: 0.2759163, w: 0.2898513}
+  m_LocalPosition: {x: -0.037, y: 0.424, z: -0.253}
   m_LocalScale: {x: 0.98614526, y: 1.0230658, z: -1.0127739}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1511,7 +1511,7 @@ Transform:
   - {fileID: 1657936082014871651}
   - {fileID: 1657936083468541313}
   m_Father: {fileID: 1657936082581306290}
-  m_LocalEulerAnglesHint: {x: 197.524, y: 69.886, z: 14.210999}
+  m_LocalEulerAnglesHint: {x: 204.91, y: 41.459, z: -32.28601}
 --- !u!114 &1657936082044819044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2119,6 +2119,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &1657936082277913421
 GameObject:
   m_ObjectHideFlags: 0
@@ -2628,6 +2632,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &1657936082558722328
 GameObject:
   m_ObjectHideFlags: 0
@@ -4238,6 +4246,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &1657936082701529558
 GameObject:
   m_ObjectHideFlags: 0
@@ -4422,8 +4434,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657936082744839585}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.21628517, y: 0.21016584, z: 0.8063736, w: 0.5087365}
-  m_LocalPosition: {x: 0.007, y: 0.319, z: -0.352}
+  m_LocalRotation: {x: -0.44089314, y: -0.08092614, z: 0.80276555, w: 0.3932322}
+  m_LocalPosition: {x: 0.085, y: 0.378, z: -0.289}
   m_LocalScale: {x: 1, y: 1, z: -1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4433,7 +4445,7 @@ Transform:
   - {fileID: 1657936082566527264}
   - {fileID: 1657936083617015464}
   m_Father: {fileID: 1657936082583270615}
-  m_LocalEulerAnglesHint: {x: -33.987003, y: -9.369, z: 118.37401}
+  m_LocalEulerAnglesHint: {x: -12.522, y: -52.215, z: 133.96}
 --- !u!114 &1657936082744839587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5946,6 +5958,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &1657936083079813087
 GameObject:
   m_ObjectHideFlags: 0
@@ -7205,6 +7221,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &1657936083469566015
 GameObject:
   m_ObjectHideFlags: 0
@@ -7419,6 +7439,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &1657936083494015682
 GameObject:
   m_ObjectHideFlags: 0
@@ -8179,7 +8203,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1944754485959126174}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 537b81dc57e504256a6c74c4bcf6bca9, type: 3}
   m_Name: 
@@ -8216,6 +8240,75 @@ MonoBehaviour:
   highTom: {fileID: 1657936082581306316}
   middleTom: {fileID: 1657936082583270614}
   snareDrum: {fileID: 1657936082932806862}
+  fullBodyBipedIK: {fileID: 8964259344511740361}
+  hitDuration: 0.38
+  hitWeightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5041291
+      value: 0.5061935
+      inSlope: 3.2068048
+      outSlope: 3.2068048
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.067297585
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  resetDuration: 0.8
+  resetWeightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.17035875
+      value: 0.72307295
+      inSlope: 1.1611997
+      outSlope: 1.1611997
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.11608383
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   partnerHandPreference: 0
 --- !u!114 &8964259344511740361
 MonoBehaviour:
@@ -8576,7 +8669,7 @@ MonoBehaviour:
       planeBone3: {fileID: 0}
       planeRotationOffset: {x: 0, y: 0, z: 0, w: 1}
     - bone: {fileID: 1944754485959553282}
-      target: {fileID: 0}
+      target: {fileID: 1657936082744839584}
       positionWeight: 0
       rotationWeight: 0
       position: {x: 0, y: 0, z: 0}
@@ -8590,7 +8683,7 @@ MonoBehaviour:
       planeBone3: {fileID: 1944754485959553368}
       planeRotationOffset: {x: 0, y: 0, z: 0, w: 1}
     - bone: {fileID: 1944754485959553360}
-      target: {fileID: 0}
+      target: {fileID: 1657936082044819045}
       positionWeight: 0
       rotationWeight: 0
       position: {x: 0, y: 0, z: 0}
@@ -10954,6 +11047,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 2
   node: 4
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &6399491495244069396
 GameObject:
   m_ObjectHideFlags: 0
@@ -11075,3 +11172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 2
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0

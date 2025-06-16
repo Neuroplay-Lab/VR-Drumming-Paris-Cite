@@ -532,6 +532,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &1119344811879101570
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,8 +719,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119344811953639842}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.21628517, y: 0.21016584, z: 0.8063736, w: 0.5087365}
-  m_LocalPosition: {x: 0.0112, y: 0.2665, z: -0.2957}
+  m_LocalRotation: {x: -0.4291466, y: -0.22824594, z: 0.792376, w: 0.3686154}
+  m_LocalPosition: {x: 0.111, y: 0.363, z: -0.17}
   m_LocalScale: {x: 1, y: 1, z: -1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -726,7 +730,7 @@ Transform:
   - {fileID: 1119344813876798755}
   - {fileID: 1119344812825787051}
   m_Father: {fileID: 1119344813927229652}
-  m_LocalEulerAnglesHint: {x: -33.987003, y: -9.369, z: 118.37401}
+  m_LocalEulerAnglesHint: {x: 2.598, y: -58.128, z: 128.66}
 --- !u!114 &1119344811953639840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2271,6 +2275,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &1119344812270578796
 GameObject:
   m_ObjectHideFlags: 0
@@ -3527,6 +3535,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &1119344812651900012
 GameObject:
   m_ObjectHideFlags: 0
@@ -3745,6 +3757,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &1119344812691267910
 GameObject:
   m_ObjectHideFlags: 0
@@ -5816,8 +5832,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119344813392972393}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.73437244, y: 0.18078978, z: 0.650309, w: 0.071487136}
-  m_LocalPosition: {x: -0.091, y: 0.254, z: -0.213}
+  m_LocalRotation: {x: -0.85807407, y: -0.0073357313, z: 0.4418914, w: 0.26150927}
+  m_LocalPosition: {x: -0.12, y: 0.367, z: -0.166}
   m_LocalScale: {x: 0.98614526, y: 1.0230658, z: -1.0127739}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5828,7 +5844,7 @@ Transform:
   - {fileID: 1119344813354777696}
   - {fileID: 1119344812639814018}
   m_Father: {fileID: 1119344813929195441}
-  m_LocalEulerAnglesHint: {x: 199.885, y: 81.19299, z: 10.57399}
+  m_LocalEulerAnglesHint: {x: 206.251, y: 58.194, z: -15.766998}
 --- !u!114 &1119344813392972391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6376,6 +6392,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &1119344813594968061
 GameObject:
   m_ObjectHideFlags: 0
@@ -6786,6 +6806,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &1119344813862048145
 GameObject:
   m_ObjectHideFlags: 0
@@ -8725,7 +8749,7 @@ MonoBehaviour:
       planeBone3: {fileID: 0}
       planeRotationOffset: {x: 0, y: 0, z: 0, w: 1}
     - bone: {fileID: 3097986450306939419}
-      target: {fileID: 0}
+      target: {fileID: 1119344811953639843}
       positionWeight: 0
       rotationWeight: 0
       position: {x: 0, y: 0, z: 0}
@@ -8739,7 +8763,7 @@ MonoBehaviour:
       planeBone3: {fileID: 3097986450859429746}
       planeRotationOffset: {x: 0, y: 0, z: 0, w: 1}
     - bone: {fileID: 3097986449404919702}
-      target: {fileID: 0}
+      target: {fileID: 1119344813392972390}
       positionWeight: 0
       rotationWeight: 0
       position: {x: 0, y: 0, z: 0}
@@ -8831,7 +8855,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3097986449368503420}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 537b81dc57e504256a6c74c4bcf6bca9, type: 3}
   m_Name: 
@@ -8868,6 +8892,75 @@ MonoBehaviour:
   highTom: {fileID: 1119344813929195471}
   middleTom: {fileID: 1119344813927229653}
   snareDrum: {fileID: 1119344812099659981}
+  fullBodyBipedIK: {fileID: 3097986449368503416}
+  hitDuration: 0.38
+  hitWeightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5041291
+      value: 0.5061935
+      inSlope: 3.2068048
+      outSlope: 3.2068048
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.067297585
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  resetDuration: 0.8
+  resetWeightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.17035875
+      value: 0.72307295
+      inSlope: 1.1611997
+      outSlope: 1.1611997
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.11608383
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   partnerHandPreference: 0
 --- !u!114 &1951413850630353951
 MonoBehaviour:
@@ -9928,6 +10021,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 2
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &3097986449914809246
 GameObject:
   m_ObjectHideFlags: 0
@@ -12562,6 +12659,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 2
   node: 4
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &3097986450746137136
 GameObject:
   m_ObjectHideFlags: 0

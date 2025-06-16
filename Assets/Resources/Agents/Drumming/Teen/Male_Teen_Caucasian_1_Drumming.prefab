@@ -121,6 +121,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 2
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &5486173287258412907
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +246,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 2
   node: 4
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8946239864788690925
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +411,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8946239864824253523}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 537b81dc57e504256a6c74c4bcf6bca9, type: 3}
   m_Name: 
@@ -440,6 +448,75 @@ MonoBehaviour:
   highTom: {fileID: 8946239865463710883}
   middleTom: {fileID: 8946239865461484473}
   snareDrum: {fileID: 8946239865950546849}
+  fullBodyBipedIK: {fileID: 8946239864824253524}
+  hitDuration: 0.38
+  hitWeightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5041291
+      value: 0.5061935
+      inSlope: 3.2068048
+      outSlope: 3.2068048
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.067297585
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  resetDuration: 0.8
+  resetWeightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.17035875
+      value: 0.72307295
+      inSlope: 1.1611997
+      outSlope: 1.1611997
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.11608383
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   partnerHandPreference: 0
 --- !u!114 &8946239864824253524
 MonoBehaviour:
@@ -800,7 +877,7 @@ MonoBehaviour:
       planeBone3: {fileID: 0}
       planeRotationOffset: {x: 0, y: 0, z: 0, w: 1}
     - bone: {fileID: 8946239865939860984}
-      target: {fileID: 0}
+      target: {fileID: 8946239866373903055}
       positionWeight: 0
       rotationWeight: 0
       position: {x: 0, y: 0, z: 0}
@@ -814,7 +891,7 @@ MonoBehaviour:
       planeBone3: {fileID: 8946239866924626535}
       planeRotationOffset: {x: 0, y: 0, z: 0, w: 1}
     - bone: {fileID: 8946239864917875359}
-      target: {fileID: 0}
+      target: {fileID: 8946239864928274698}
       positionWeight: 0
       rotationWeight: 0
       position: {x: 0, y: 0, z: 0}
@@ -1350,8 +1427,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8946239864928274693}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.73437244, y: 0.18078978, z: 0.650309, w: 0.071487136}
-  m_LocalPosition: {x: -0.0921, y: 0.2784, z: -0.2446}
+  m_LocalRotation: {x: -0.80917794, y: -0.48395687, z: 0.33318165, w: 0.0026213482}
+  m_LocalPosition: {x: -0.051, y: 0.285, z: -0.277}
   m_LocalScale: {x: 0.98614526, y: 1.0230658, z: -1.0127739}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1362,7 +1439,7 @@ Transform:
   - {fileID: 8946239864956010252}
   - {fileID: 8946239866490405614}
   m_Father: {fileID: 8946239865463710941}
-  m_LocalEulerAnglesHint: {x: 199.885, y: 81.19299, z: 10.57399}
+  m_LocalEulerAnglesHint: {x: 161.443, y: 34.852005, z: -55.89499}
 --- !u!114 &8946239864928274699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4846,6 +4923,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8946239865583474336
 GameObject:
   m_ObjectHideFlags: 0
@@ -5581,6 +5662,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8946239865828361326
 GameObject:
   m_ObjectHideFlags: 0
@@ -7571,6 +7656,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8946239866094956152
 GameObject:
   m_ObjectHideFlags: 0
@@ -8039,6 +8128,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8946239866212189324
 GameObject:
   m_ObjectHideFlags: 0
@@ -8788,8 +8881,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8946239866373903054}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.21628517, y: 0.21016584, z: 0.8063736, w: 0.5087365}
-  m_LocalPosition: {x: 0.007, y: 0.319, z: -0.352}
+  m_LocalRotation: {x: -0.3241897, y: 0.048561633, z: 0.74243873, w: 0.58423245}
+  m_LocalPosition: {x: 0.064, y: 0.365, z: -0.298}
   m_LocalScale: {x: 1, y: 1, z: -1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8799,7 +8892,7 @@ Transform:
   - {fileID: 8946239865511913039}
   - {fileID: 8946239866574993863}
   m_Father: {fileID: 8946239865461484472}
-  m_LocalEulerAnglesHint: {x: -33.987003, y: -9.369, z: 118.37401}
+  m_LocalEulerAnglesHint: {x: -26.802, y: -28.408, z: 110.503}
 --- !u!114 &8946239866373903052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9220,6 +9313,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8946239866441065002
 GameObject:
   m_ObjectHideFlags: 0
@@ -9626,6 +9723,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 0
   node: 5
+  hand: 0
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
 --- !u!1 &8946239866498418358
 GameObject:
   m_ObjectHideFlags: 0
