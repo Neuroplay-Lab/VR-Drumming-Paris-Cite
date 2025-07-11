@@ -12,7 +12,7 @@ namespace _Project.Scripts.Data
     /// </summary>
     [Serializable]
     [CreateAssetMenu(fileName = "MusicSettingSample", menuName = "MusicSetting", order = 0)]
-    public class MusicSetting : ScriptableObject
+    public class MusicSetting : ScriptableObject, IPlaylistItem
     {
         #region Serialized Fields
 
@@ -20,7 +20,8 @@ namespace _Project.Scripts.Data
 
         public int beatNumber;
 
-        [Header("Music Score Setting")] [Tooltip("CSV file of a music score.")]
+        [Header("Music Score Setting")]
+        [Tooltip("CSV file of a music score.")]
         public TextAsset scoreAsset;
 
         [Tooltip("Count of instruments.")] public int instrumentCount = 4;

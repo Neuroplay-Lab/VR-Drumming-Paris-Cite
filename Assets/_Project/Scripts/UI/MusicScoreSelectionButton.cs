@@ -14,12 +14,13 @@ namespace _Project.Scripts.UI
 
         [SerializeField] private string title;
         [SerializeField] private string artist;
-        [Space] [SerializeField] private MusicSetting musicSetting;
+        [Space][SerializeField] private MusicSetting musicSetting;
 
         #endregion
 
         public void MusicSequenceSelected()
         {
+            MasterControlPanel.Instance.SetUseMusicTrack(true);
             EventManager.InvokeMusicSettingChangeEvent(musicSetting);
             //MusicSequence.Instance.GetComponent<AudioSource>().clip = musicSetting.bgm;
             Debug.Log($"Selected: {title} by {artist}");

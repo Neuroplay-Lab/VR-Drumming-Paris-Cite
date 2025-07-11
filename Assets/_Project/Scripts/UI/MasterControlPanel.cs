@@ -12,6 +12,8 @@ namespace _Project.Scripts.UI
     {
         #region Serialized Fields
 
+        public static MasterControlPanel Instance { get; private set; }
+
         [SerializeField] private Button playMusicButton;
         [SerializeField] private Button resetMusicButton;
 
@@ -32,6 +34,8 @@ namespace _Project.Scripts.UI
 
         [SerializeField] private AudioMixer _audio;
 
+        private bool _useMusicTrack = true;
+
         #endregion
 
         private bool _isPlaying;
@@ -41,8 +45,16 @@ namespace _Project.Scripts.UI
 
         private void OnEnable()
         {
-            SetupListeners();
-            SetupSavedPanelData();
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this);
+            }
+            else
+            {
+                Instance = this;
+                SetupListeners();
+                SetupSavedPanelData();
+            }
         }
 
         private void OnDisable()
@@ -56,9 +68,26 @@ namespace _Project.Scripts.UI
 
         #endregion
 
+        public void SetUseMusicTrack(bool useMusicTrack)
+        {
+            _useMusicTrack = useMusicTrack;
+        }
+
+        private void onStartClick()
+        {
+            if (_useMusicTrack)
+            {
+                MusicSequence.Instance.Play();
+            }
+            else
+            {
+                // link to playlist 
+            }
+        }
+
         private void SetupListeners()
         {
-            playMusicButton.onClick.AddListener(MusicSequence.Instance.Play);
+            playMusicButton.onClick.AddListener(onStartClick);
             resetMusicButton.onClick.AddListener(MusicSequence.Instance.Reset);
             applicationQuitButton.onClick.AddListener(Quit);
 
