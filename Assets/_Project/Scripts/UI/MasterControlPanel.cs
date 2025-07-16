@@ -34,8 +34,6 @@ namespace _Project.Scripts.UI
 
         [SerializeField] private AudioMixer _audio;
 
-        private bool _useMusicTrack = true;
-
         #endregion
 
         private bool _isPlaying;
@@ -68,27 +66,36 @@ namespace _Project.Scripts.UI
 
         #endregion
 
-        public void SetUseMusicTrack(bool useMusicTrack)
-        {
-            _useMusicTrack = useMusicTrack;
-        }
-
         private void onStartClick()
         {
-            if (_useMusicTrack)
+            if (GameData.Instance.useMusicTrack)
             {
                 MusicSequence.Instance.Play();
             }
             else
             {
-                // link to playlist 
+                // link to playlist
+                PlaylistController.Instance.Play();
+            }
+        }
+
+        private void onResetClick()
+        {
+            if (GameData.Instance.useMusicTrack)
+            {
+                MusicSequence.Instance.Reset();
+            }
+            else
+            {
+                // stop playlist
+                PlaylistController.Instance.Reset();
             }
         }
 
         private void SetupListeners()
         {
             playMusicButton.onClick.AddListener(onStartClick);
-            resetMusicButton.onClick.AddListener(MusicSequence.Instance.Reset);
+            resetMusicButton.onClick.AddListener(onResetClick);
             applicationQuitButton.onClick.AddListener(Quit);
 
             allowParticipantStart.onValueChanged.AddListener(value =>

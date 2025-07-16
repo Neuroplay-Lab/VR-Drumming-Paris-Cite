@@ -27,6 +27,8 @@ namespace _Project.Scripts.Systems
         public int ScorePoint { get; private set; }
         public float SynchronousRate { get; private set; }
 
+        public bool useMusicTrack { get; private set; } = true;
+
         #region Event Functions
 
         protected override void Awake()
@@ -133,6 +135,11 @@ namespace _Project.Scripts.Systems
                 dataLogger.StopRecording();
 
             ErrorRateController.Instance.ClearErrorRates();
+        }
+
+        public void SetUseMusicTrack(bool useMusicTrack)
+        {
+            this.useMusicTrack = useMusicTrack;
         }
     }
 }

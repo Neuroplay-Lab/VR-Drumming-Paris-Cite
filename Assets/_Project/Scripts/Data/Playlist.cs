@@ -14,6 +14,14 @@ namespace _Project.Scripts.Data
     [CreateAssetMenu(fileName = "Playlist", menuName = "Playlist", order = 1)]
     public class Playlist : ScriptableObject
     {
-        public IPlaylistItem[] playlistItems;
+        public PlaylistItem[] playlistItems;
+    }
+
+
+    [Serializable]
+    public struct PlaylistItem
+    {
+        public MusicSetting track;
+        public float duration;
     }
 }

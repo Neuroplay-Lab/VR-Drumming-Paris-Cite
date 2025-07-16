@@ -12,11 +12,12 @@ namespace _Project.Scripts.Data
     /// </summary>
     [Serializable]
     [CreateAssetMenu(fileName = "MusicSettingSample", menuName = "MusicSetting", order = 0)]
-    public class MusicSetting : ScriptableObject, IPlaylistItem
+    public class MusicSetting : ScriptableObject
     {
         #region Serialized Fields
 
-        [Header("BGM Setting")] public AudioClip bgm;
+        [Header("BGM Setting")]
+        public AudioClip bgm;
 
         public int beatNumber;
 
