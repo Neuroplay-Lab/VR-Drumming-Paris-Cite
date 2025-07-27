@@ -37,11 +37,6 @@ public class PlaylistController : MonoBehaviour
     {
         foreach (PlaylistItem item in currentPlaylist.playlistItems)
         {
-            if (item.track.name.Trim().ToLower() == "break")
-            {
-                yield return new WaitForSeconds(item.duration);
-                continue;
-            }
             EventManager.InvokeMusicSettingChangeEvent(item.track);
             MusicSequence.Instance.Play();
             yield return new WaitForSeconds(item.duration);

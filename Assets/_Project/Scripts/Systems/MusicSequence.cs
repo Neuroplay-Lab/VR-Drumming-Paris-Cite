@@ -133,9 +133,20 @@ namespace _Project.Scripts.Systems
 
             IsPlaying = true;
 
-            if (setting.name == "SPR")
+            if (setting.name.Trim().ToUpper() == "SPR")
             {
                 StartCoroutine(SPRTrial());
+                return;
+            }
+            else if (setting.name.Trim().ToUpper() == "BREAK")
+            {
+                // Just set the name for the break and do nothing else
+                DrumLogger.Instance.SetCurrentTrail(setting.name);
+                return;
+            }
+            else if (setting.name.Trim().ToUpper() == "INTERFERENCE")
+            {
+                StartCoroutine(InterferenceTrial());
                 return;
             }
 
@@ -165,6 +176,29 @@ namespace _Project.Scripts.Systems
             EventManager.InvokeMusicStartEvent();
             DrumLogger.Instance.SetCurrentTrail(setting.name);
             yield return new WaitForSeconds(30);
+            EventManager.InvokeMusicResetEvent();
+            DrumLogger.Instance.SetCurrentTrail("FreePlay");
+        }
+
+        private IEnumerator InterferenceTrial()
+        {
+            promptAnimator.gameObject.SetActive(true);
+            source.Play();
+            coroutine = StartCoroutine(BeatCoroutine(bpm));
+            StartCoroutine(PlayPromptLoop());
+            EventManager.InvokeMusicStartEvent();
+            DrumLogger.Instance.SetCurrentTrail(setting.name);
+
+            yield return new WaitForSeconds(30);
+
+            IsPlaying = false;
+
+            promptAnimator.SetBool(Playing, false);
+            promptAnimator.gameObject.SetActive(false);
+            source.Stop();
+            StopCoroutine(coroutine);
+            coroutine = null;
+            CurrentTime = -1f;
             EventManager.InvokeMusicResetEvent();
             DrumLogger.Instance.SetCurrentTrail("FreePlay");
         }

@@ -58,6 +58,8 @@ namespace DrumRhythmGame.Field
             // Do nothing if _enabled == false
             if (!Enabled) return;
 
+            if (MusicSequence.Instance.Setting.name.Trim().ToLower() == "interference") return;
+
             // Make latency randomly
             float latency = 0;
             if (SaveData.Instance.partnerErrorData.Current.latencyFrequencyRate > _random.NextDouble())
