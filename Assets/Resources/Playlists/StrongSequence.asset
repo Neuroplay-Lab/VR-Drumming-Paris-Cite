@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: StrongSequence
   m_EditorClassIdentifier: 
   playlistItems:
-  - track: {fileID: 11400000, guid: 9937a7ad116700c439dc9a0e3bccb6ee, type: 2}
+  - track: {fileID: 11400000, guid: c6860497b88019b4c90770a996dcef76, type: 2}
     duration: 10
-  - track: {fileID: 11400000, guid: 3e5f74f4f280bea4db872b3eaa68f4d1, type: 2}
-    duration: 20
+  - track: {fileID: 11400000, guid: 3cfab132111064d8498c5de7e0f7092a, type: 2}
+    duration: 5
+  - track: {fileID: 11400000, guid: 47ec229fa9388ce429c5bc19fb9aea7e, type: 2}
+    duration: 10
