@@ -39,6 +39,10 @@ public class PlaylistController : MonoBehaviour
         {
             EventManager.InvokeMusicSettingChangeEvent(item.track);
             MusicSequence.Instance.Play();
+            if (item.track.name.Trim().ToLower() == "recall")
+            {
+                break;
+            }
             yield return new WaitForSeconds(item.duration);
             MusicSequence.Instance.Reset();
         }

@@ -78,9 +78,9 @@ namespace _Project.Scripts.Systems
 
         public void Reset()
         {
-            if (setting.name.Trim().ToUpper() == "BREAK")
+            if (setting.name.Trim().ToUpper() == "BREAK" || setting.name.Trim().ToUpper() == "RECALL")
             {
-                EventManager.InvokeBreakStopEvent();
+                EventManager.InvokeTimerStopEvent();
             }
 
             if (!source.isPlaying) return;
@@ -143,11 +143,11 @@ namespace _Project.Scripts.Systems
                 StartCoroutine(SPRTrial());
                 return;
             }
-            else if (setting.name.Trim().ToUpper() == "BREAK")
+            else if (setting.name.Trim().ToUpper() == "BREAK" || setting.name.Trim().ToUpper() == "RECALL")
             {
                 // Just set the name for the break and do nothing else
                 DrumLogger.Instance.SetCurrentTrail(setting.name);
-                EventManager.InvokeBreakStartEvent();
+                EventManager.InvokeTimerStartEvent();
                 return;
             }
             else if (setting.name.Trim().ToUpper() == "INTERFERENCE")

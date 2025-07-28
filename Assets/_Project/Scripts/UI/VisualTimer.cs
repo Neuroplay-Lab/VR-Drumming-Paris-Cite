@@ -30,16 +30,16 @@ namespace _Project.Scripts.UI
         {
             EventManager.MusicStartEvent += StartTimer;
             EventManager.MusicResetEvent += StopTimer;
-            EventManager.BreakStartEvent += StartTimer;
-            EventManager.BreakStopEvent += StopTimer;
+            EventManager.TimerStartEvent += StartTimer;
+            EventManager.TimerStopEvent += StopTimer;
         }
 
         private void OnDisable()
         {
             EventManager.MusicStartEvent -= StartTimer;
             EventManager.MusicResetEvent -= StopTimer;
-            EventManager.BreakStartEvent -= StartTimer;
-            EventManager.BreakStopEvent -= StopTimer;
+            EventManager.TimerStartEvent -= StartTimer;
+            EventManager.TimerStopEvent -= StopTimer;
         }
 
         #endregion
