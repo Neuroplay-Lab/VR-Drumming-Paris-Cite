@@ -30,12 +30,16 @@ namespace _Project.Scripts.UI
         {
             EventManager.MusicStartEvent += StartTimer;
             EventManager.MusicResetEvent += StopTimer;
+            EventManager.BreakStartEvent += StartTimer;
+            EventManager.BreakStopEvent += StopTimer;
         }
 
         private void OnDisable()
         {
             EventManager.MusicStartEvent -= StartTimer;
             EventManager.MusicResetEvent -= StopTimer;
+            EventManager.BreakStartEvent -= StartTimer;
+            EventManager.BreakStopEvent -= StopTimer;
         }
 
         #endregion
@@ -45,6 +49,8 @@ namespace _Project.Scripts.UI
         /// </summary>
         private void StopTimer()
         {
+            if (_timerCoroutine is null) { return; }
+
             StopCoroutine(_timerCoroutine);
 
             _isRunning = false;

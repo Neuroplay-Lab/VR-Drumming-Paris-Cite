@@ -78,6 +78,11 @@ namespace _Project.Scripts.Systems
 
         public void Reset()
         {
+            if (setting.name.Trim().ToUpper() == "BREAK")
+            {
+                EventManager.InvokeBreakStopEvent();
+            }
+
             if (!source.isPlaying) return;
 
             IsPlaying = false;
@@ -142,6 +147,7 @@ namespace _Project.Scripts.Systems
             {
                 // Just set the name for the break and do nothing else
                 DrumLogger.Instance.SetCurrentTrail(setting.name);
+                EventManager.InvokeBreakStartEvent();
                 return;
             }
             else if (setting.name.Trim().ToUpper() == "INTERFERENCE")

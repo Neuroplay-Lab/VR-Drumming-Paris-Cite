@@ -24,6 +24,9 @@ namespace _Project.Scripts.Systems
         public static event Action MusicStartEvent;
         public static event Action MusicResetEvent;
 
+        public static event Action BreakStartEvent;
+        public static event Action BreakStopEvent;
+
         public static event Action<bool> CueStateChanged;
 
         public static event Action<bool> LoggingStateChanged;
@@ -61,6 +64,16 @@ namespace _Project.Scripts.Systems
         public static void InvokeMusicResetEvent()
         {
             MusicResetEvent?.Invoke();
+        }
+
+        public static void InvokeBreakStartEvent()
+        {
+            BreakStartEvent?.Invoke();
+        }
+
+        public static void InvokeBreakStopEvent()
+        {
+            BreakStopEvent?.Invoke();
         }
 
         public static void InvokeLoggingStateChanged(bool obj)
