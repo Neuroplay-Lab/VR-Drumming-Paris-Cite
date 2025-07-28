@@ -30,6 +30,7 @@ public class PlaylistController : MonoBehaviour
             {
                 MusicSequence.Instance.Reset();
             }
+            DrumLogger.Instance.SetCurrentTrail("FreePlay");
         }
     }
 
@@ -46,6 +47,8 @@ public class PlaylistController : MonoBehaviour
             yield return new WaitForSeconds(item.duration);
             MusicSequence.Instance.Reset();
         }
+
+        DrumLogger.Instance.SetCurrentTrail("FreePlay");
     }
 
     public void SetCurrentPlaylist(Playlist playlist)

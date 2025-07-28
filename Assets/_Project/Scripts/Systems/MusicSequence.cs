@@ -94,7 +94,10 @@ namespace _Project.Scripts.Systems
             coroutine = null;
             CurrentTime = -1f;
             EventManager.InvokeMusicResetEvent();
-            DrumLogger.Instance.SetCurrentTrail("FreePlay");
+            if (GameData.Instance.useMusicTrack)
+            {
+                DrumLogger.Instance.SetCurrentTrail("FreePlay");
+            }
         }
 
         private void OnEnable()
