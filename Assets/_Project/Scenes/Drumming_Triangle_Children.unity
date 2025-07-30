@@ -371,7 +371,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -450
+      value: -350
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -396,7 +396,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -433,6 +433,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -21.725504
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6082466}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -463,10 +478,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6082466}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &6082464 stripped
 RectTransform:
@@ -474,6 +494,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 6082463}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6082465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6082463}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6082466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6082465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: MMS2
+  artist: 2
+  playlist: {fileID: 11400000, guid: 077748b8f51a249709e166755d722203, type: 2}
 --- !u!1 &8372174
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,7 +1478,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -650
+      value: -550
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -1462,7 +1503,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -1499,6 +1540,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 75994910}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1529,10 +1585,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 75994910}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &75994908 stripped
 RectTransform:
@@ -1540,6 +1601,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 75994907}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &75994909 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 75994907}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &75994910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75994909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: WMS2
+  artist: 2
+  playlist: {fileID: 11400000, guid: 8c2b32e845fab49919285e513709267a, type: 2}
 --- !u!1 &81515807
 GameObject:
   m_ObjectHideFlags: 0
@@ -2398,7 +2480,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2450
+      value: -2350
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -2423,7 +2505,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -2460,6 +2542,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 143301897}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2490,10 +2587,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 143301897}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &143301895 stripped
 RectTransform:
@@ -2501,6 +2603,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 143301894}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &143301896 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 143301894}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &143301897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143301896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: WM6_25
+  artist: 6
+  playlist: {fileID: 11400000, guid: daeb9ba3f75e740d5be1cd1e2b97fe67, type: 2}
 --- !u!1 &147494755
 GameObject:
   m_ObjectHideFlags: 0
@@ -2821,6 +2944,171 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 671666324}
   m_PrefabAsset: {fileID: 0}
+--- !u!43 &168966731
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 11
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 24
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0, y: 0.01, z: 0}
+      m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 288
+    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0.01, z: 0}
+    m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_MeshUsageFlags: 0
+  m_CookingOptions: 30
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &169020154
 GameObject:
   m_ObjectHideFlags: 0
@@ -3352,171 +3640,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1106452900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &185730573
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 11
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 24
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 8
-    localAABB:
-      m_Center: {x: 0, y: 0.01, z: 0}
-      m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 8
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 28
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 288
-    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0.01, z: 0}
-    m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_MeshUsageFlags: 0
-  m_CookingOptions: 30
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
 --- !u!1 &188292339
 GameObject:
   m_ObjectHideFlags: 0
@@ -4019,7 +4142,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -750
+      value: -650
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -4044,7 +4167,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -4081,6 +4204,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 201608126}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -4111,10 +4249,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 201608126}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &201608124 stripped
 RectTransform:
@@ -4122,6 +4265,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 201608123}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &201608125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 201608123}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &201608126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201608125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: SM1_25
+  artist: 1
+  playlist: {fileID: 11400000, guid: 098e82a3fb72849909fef6a3b1118672, type: 2}
 --- !u!1 &230557098 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 124034, guid: 4d293c8e162f3874b982baadd71153d2,
@@ -4727,7 +4891,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1350
+      value: -1250
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -4752,7 +4916,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -4789,6 +4953,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 269663278}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -4819,10 +4998,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 269663278}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &269663276 stripped
 RectTransform:
@@ -4830,6 +5014,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 269663275}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &269663277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 269663275}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &269663278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269663277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: SM7_25
+  artist: 7
+  playlist: {fileID: 11400000, guid: 413cbbf1ce49341edad692a2ea958411, type: 2}
 --- !u!1 &269708251
 GameObject:
   m_ObjectHideFlags: 0
@@ -6322,7 +6527,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2950
+      value: -2850
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -6347,7 +6552,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -6384,6 +6589,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 361150130}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -6414,10 +6634,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 361150130}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &361150128 stripped
 RectTransform:
@@ -6425,6 +6650,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 361150127}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &361150129 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 361150127}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &361150130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361150129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: WM11_25
+  artist: 11
+  playlist: {fileID: 11400000, guid: 26d20201df61c4e3a9e6a02f63559607, type: 2}
 --- !u!1 &372578175
 GameObject:
   m_ObjectHideFlags: 0
@@ -6807,7 +7053,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -6844,6 +7090,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -21.725504
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 380399664}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -6874,10 +7135,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 380399664}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &380399662 stripped
 RectTransform:
@@ -6885,6 +7151,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 380399661}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &380399663 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 380399661}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &380399664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380399663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: MMS1
+  artist: 1
+  playlist: {fileID: 11400000, guid: 70f8766c641cb497f9e8707f4f8de756, type: 2}
 --- !u!1 &381590897
 GameObject:
   m_ObjectHideFlags: 0
@@ -7196,7 +7483,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2150
+      value: -2050
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -7221,7 +7508,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -7258,6 +7545,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 383917119}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -7288,10 +7590,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 383917119}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &383917117 stripped
 RectTransform:
@@ -7299,6 +7606,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 383917116}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &383917118 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 383917116}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &383917119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383917118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: WM3_25
+  artist: 3
+  playlist: {fileID: 11400000, guid: 21c7fadd3c3c14d04b57155f41ea84fb, type: 2}
 --- !u!1 &388559847
 GameObject:
   m_ObjectHideFlags: 0
@@ -8181,7 +8509,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1250
+      value: -1150
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -8206,7 +8534,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -8243,6 +8571,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 444169804}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -8273,10 +8616,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 444169804}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &444169802 stripped
 RectTransform:
@@ -8284,6 +8632,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 444169801}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &444169803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 444169801}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &444169804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444169803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: SM6_25
+  artist: 6
+  playlist: {fileID: 11400000, guid: f27c1e807b8cb4f07b15d588d8d119ca, type: 2}
 --- !u!1 &449545749
 GameObject:
   m_ObjectHideFlags: 0
@@ -8893,7 +9262,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2550
+      value: -2450
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -8918,7 +9287,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -8955,6 +9324,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 503275987}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -8985,10 +9369,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 503275987}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &503275985 stripped
 RectTransform:
@@ -8996,6 +9385,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 503275984}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &503275986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 503275984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &503275987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503275986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: WM7_25
+  artist: 7
+  playlist: {fileID: 11400000, guid: fd704df1417be4954bed694c350b6d5a, type: 2}
 --- !u!1 &503985454
 GameObject:
   m_ObjectHideFlags: 0
@@ -9264,7 +9674,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3150
+      value: -3050
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -9289,7 +9699,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -9326,6 +9736,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 504672200}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -9356,10 +9781,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 504672200}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &504672198 stripped
 RectTransform:
@@ -9367,6 +9797,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 504672197}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &504672199 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 504672197}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &504672200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504672199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: EX1_25
+  artist: 1
+  playlist: {fileID: 11400000, guid: 866043b95d87249d8a740dde5cba5649, type: 2}
 --- !u!1001 &509477456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9544,7 +9995,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3050
+      value: -2950
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -9569,7 +10020,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -9606,6 +10057,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 509477459}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -9636,10 +10102,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 509477459}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &509477457 stripped
 RectTransform:
@@ -9647,6 +10118,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 509477456}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &509477458 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 509477456}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &509477459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509477458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: WM12_25
+  artist: 12
+  playlist: {fileID: 11400000, guid: 94c04d2e33c34473aa6a4e2726c9eb52, type: 2}
 --- !u!1 &518413001
 GameObject:
   m_ObjectHideFlags: 0
@@ -10015,46 +10507,6 @@ PrefabInstance:
       addedObject: {fileID: 1154915200}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ea2e58f079ec96479039362b7e3abb8, type: 3}
---- !u!21 &562456164
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &565005321
 GameObject:
   m_ObjectHideFlags: 0
@@ -10755,7 +11207,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1950
+      value: -1850
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -10780,7 +11232,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -10817,6 +11269,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 627663402}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -10847,10 +11314,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 627663402}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &627663400 stripped
 RectTransform:
@@ -10858,6 +11330,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 627663399}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &627663401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 627663399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &627663402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627663401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: WM1_25
+  artist: 1
+  playlist: {fileID: 11400000, guid: d0bae2ad90da846dcbc398cf2f6462eb, type: 2}
 --- !u!4 &635770702 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4142395494322528, guid: da4ce42e7c750194185ba148f37cc157,
@@ -12626,7 +13119,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2350
+      value: -2250
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -12651,7 +13144,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -12688,6 +13181,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 697878618}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -12718,10 +13226,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 697878618}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &697878616 stripped
 RectTransform:
@@ -12729,6 +13242,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 697878615}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &697878617 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 697878615}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &697878618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697878617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: WM5_25
+  artist: 5
+  playlist: {fileID: 11400000, guid: 3cc542a5c8ac5480b8dc4c4b1bd70d30, type: 2}
 --- !u!1 &702939964
 GameObject:
   m_ObjectHideFlags: 0
@@ -14118,286 +14652,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769614827}
   m_CullTransparentMesh: 0
---- !u!1001 &774575548
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 799184716}
-    m_Modifications:
-    - target: {fileID: 2172512698787537126, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_text
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512698787537127, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512698787537127, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512698787537127, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 291.21362
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512698787537127, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 31.435658
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512698787537127, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 155.60681
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512698787537127, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -47.15349
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700344547859, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700344547859, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700344547859, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700344547859, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700344547859, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 52
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700344547859, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -52
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: title
-      value: interference_25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: artist
-      value: Test Sequences
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: musicSetting
-      value: 
-      objectReference: {fileID: 11400000, guid: 3e5f74f4f280bea4db872b3eaa68f4d1,
-        type: 2}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 220
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -350
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_Name
-      value: interference_25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_text
-      value: interference_25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700658682683, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700658682683, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700658682683, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 291.21362
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700658682683, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 31.435658
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700658682683, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 155.60681
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700658682683, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -15.717829
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 296
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 232
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -50
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
---- !u!224 &774575549 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
-    type: 3}
-  m_PrefabInstance: {fileID: 774575548}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &775584099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14941,7 +15195,6 @@ RectTransform:
   - {fileID: 1481244964}
   - {fileID: 1040978251}
   - {fileID: 380399662}
-  - {fileID: 774575549}
   - {fileID: 6082464}
   - {fileID: 965878618}
   - {fileID: 75994908}
@@ -14976,7 +15229,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 440, y: 100}
+  m_SizeDelta: {x: 440, y: 3200}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &799184717
 MonoBehaviour:
@@ -15469,11 +15722,11 @@ PrefabInstance:
     - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 562456164}
+      objectReference: {fileID: 1196656281}
     - target: {fileID: 3380982, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 185730573}
+      objectReference: {fileID: 168966731}
     - target: {fileID: 11417168, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: modelOverride
       value: 
@@ -16463,7 +16716,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1759414377}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.81718755}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -16683,7 +16936,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1550
+      value: -1450
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -16708,7 +16961,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -16745,6 +16998,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 960332236}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -16775,10 +17043,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 960332236}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &960332234 stripped
 RectTransform:
@@ -16786,6 +17059,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 960332233}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &960332235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 960332233}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &960332236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960332235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: SM9_25
+  artist: 9
+  playlist: {fileID: 11400000, guid: 3900cc7ff1f0743a9904a6791d420db7, type: 2}
 --- !u!1001 &965878617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16963,7 +17257,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -550
+      value: -450
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -16988,7 +17282,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -17025,6 +17319,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 965878620}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -17055,10 +17364,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 965878620}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &965878618 stripped
 RectTransform:
@@ -17066,6 +17380,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 965878617}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &965878619 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 965878617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &965878620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965878619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: WMS1
+  artist: 1
+  playlist: {fileID: 11400000, guid: a3a27cfae66a441c186a51c3d0cf3e0f, type: 2}
 --- !u!1 &979845715
 GameObject:
   m_ObjectHideFlags: 0
@@ -17936,7 +18271,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2650
+      value: -2550
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -17961,7 +18296,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -17998,6 +18333,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1030527775}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -18028,10 +18378,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1030527775}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &1030527773 stripped
 RectTransform:
@@ -18039,6 +18394,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1030527772}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1030527774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1030527772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1030527775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030527774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: WM8_25
+  artist: 8
+  playlist: {fileID: 11400000, guid: dba774fe295b74f79be527f5cea245be, type: 2}
 --- !u!1 &1035628945
 GameObject:
   m_ObjectHideFlags: 0
@@ -18328,7 +18704,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -18365,6 +18741,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1040978253}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -18395,10 +18786,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1040978253}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &1040978251 stripped
 RectTransform:
@@ -18406,6 +18802,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1040978250}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1040978252 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1040978250}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1040978253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040978252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: SMS2
+  artist: 2
+  playlist: {fileID: 11400000, guid: c79bd9d0b92f64ff1804517c3a653f94, type: 2}
 --- !u!1 &1050427789
 GameObject:
   m_ObjectHideFlags: 0
@@ -18755,7 +19172,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3250
+      value: -3150
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -18780,7 +19197,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -18817,6 +19234,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1058557833}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -18847,10 +19279,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1058557833}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &1058557831 stripped
 RectTransform:
@@ -18858,6 +19295,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1058557830}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1058557832 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1058557830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1058557833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058557832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: EX2_25
+  artist: 2
+  playlist: {fileID: 11400000, guid: 35455afb7111a4de295bab9e5efd5b99, type: 2}
 --- !u!1001 &1066454264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19035,7 +19493,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -850
+      value: -750
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -19060,7 +19518,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -19097,6 +19555,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1066454267}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -19127,10 +19600,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1066454267}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &1066454265 stripped
 RectTransform:
@@ -19138,6 +19616,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1066454264}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1066454266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1066454264}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1066454267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066454266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: SM2_25
+  artist: 2
+  playlist: {fileID: 11400000, guid: 53b560a270aa7439e83e40104ee28401, type: 2}
 --- !u!1 &1070926608
 GameObject:
   m_ObjectHideFlags: 0
@@ -21152,6 +21651,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190563404}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1196656281
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1201623290
 GameObject:
   m_ObjectHideFlags: 0
@@ -22224,7 +22763,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2050
+      value: -1950
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -22249,7 +22788,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -22286,6 +22825,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1247596878}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -22316,10 +22870,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1247596878}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &1247596876 stripped
 RectTransform:
@@ -22327,6 +22886,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1247596875}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1247596877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1247596875}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1247596878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247596877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: WM2_25
+  artist: 2
+  playlist: {fileID: 11400000, guid: 090c3a8487e1f40d48de27b5c155d68f, type: 2}
 --- !u!1 &1250786014
 GameObject:
   m_ObjectHideFlags: 0
@@ -23701,7 +24281,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1150
+      value: -1050
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -23726,7 +24306,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -23763,6 +24343,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1327466249}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -23793,10 +24388,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1327466249}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &1327466247 stripped
 RectTransform:
@@ -23804,6 +24404,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1327466246}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1327466248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1327466246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1327466249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327466248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: SM5_25
+  artist: 5
+  playlist: {fileID: 11400000, guid: eac35d88bd63d4688a230bb7ca38a6d1, type: 2}
 --- !u!1 &1341037103
 GameObject:
   m_ObjectHideFlags: 0
@@ -25125,7 +25746,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2750
+      value: -2650
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -25150,7 +25771,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -25187,6 +25808,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1406029754}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -25217,10 +25853,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1406029754}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &1406029752 stripped
 RectTransform:
@@ -25228,6 +25869,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1406029751}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1406029753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1406029751}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1406029754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406029753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: WM9_25
+  artist: 9
+  playlist: {fileID: 11400000, guid: 1d0dec3bc94e040edaa2af726e85bfaa, type: 2}
 --- !u!1 &1408629197
 GameObject:
   m_ObjectHideFlags: 0
@@ -26227,7 +26889,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1650
+      value: -1550
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -26252,7 +26914,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -26289,6 +26951,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1462483284}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -26319,10 +26996,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1462483284}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &1462483282 stripped
 RectTransform:
@@ -26330,6 +27012,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1462483281}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1462483283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1462483281}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1462483284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462483283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: SM10_25
+  artist: 10
+  playlist: {fileID: 11400000, guid: 45277f5f1adc9459eba7b4b7b967079e, type: 2}
 --- !u!1 &1468557854
 GameObject:
   m_ObjectHideFlags: 0
@@ -27072,9 +27775,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: SMS1_25
-  artist: Nada
-  playlist: {fileID: 11400000, guid: c4b3131b322cc4492a1277f7bb4e7e7d, type: 2}
+  title: SMS1
+  artist: 1
+  playlist: {fileID: 11400000, guid: 16b97a751a96d435aa30c1689a87e6c0, type: 2}
 --- !u!1 &1485803659
 GameObject:
   m_ObjectHideFlags: 0
@@ -28562,7 +29265,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1450
+      value: -1350
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -28587,7 +29290,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -28624,6 +29327,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1685590015}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -28654,10 +29372,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1685590015}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &1685590013 stripped
 RectTransform:
@@ -28665,6 +29388,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1685590012}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1685590014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1685590012}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1685590015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685590014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: SM8_25
+  artist: 8
+  playlist: {fileID: 11400000, guid: 2d340e611458840d2b6e3e0119e9f583, type: 2}
 --- !u!4 &1689203353 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 482514, guid: 4d293c8e162f3874b982baadd71153d2,
@@ -30159,7 +30903,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2850
+      value: -2750
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -30184,7 +30928,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -30221,6 +30965,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1755299817}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -30251,10 +31010,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1755299817}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &1755299815 stripped
 RectTransform:
@@ -30262,6 +31026,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1755299814}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1755299816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1755299814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1755299817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755299816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: WM10_25
+  artist: 10
+  playlist: {fileID: 11400000, guid: 6f2350ab1be834d62ac5cbbff15fc9ad, type: 2}
 --- !u!4 &1757169952 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 497032828745698096, guid: 5ea2e58f079ec96479039362b7e3abb8,
@@ -30754,7 +31539,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1050
+      value: -950
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -30779,7 +31564,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -30816,6 +31601,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1799120633}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -30846,10 +31646,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1799120633}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &1799120631 stripped
 RectTransform:
@@ -30857,6 +31662,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1799120630}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1799120632 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1799120630}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1799120633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799120632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: SM4_25
+  artist: 4
+  playlist: {fileID: 11400000, guid: 6b0a7d598016948068807d5c5c9032b5, type: 2}
 --- !u!1 &1800869919
 GameObject:
   m_ObjectHideFlags: 0
@@ -30939,8 +31765,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 958017418}
   m_HandleRect: {fileID: 958017417}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.18281248
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -31497,7 +32323,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -950
+      value: -850
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -31522,7 +32348,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -31559,6 +32385,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1858763873}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -31589,10 +32430,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1858763873}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &1858763871 stripped
 RectTransform:
@@ -31600,6 +32446,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1858763870}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1858763872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1858763870}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1858763873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858763872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: SM3_25
+  artist: 3
+  playlist: {fileID: 11400000, guid: 3486596aba569440e83e8c9976d79d03, type: 2}
 --- !u!1 &1860976541
 GameObject:
   m_ObjectHideFlags: 0
@@ -31808,7 +32675,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2250
+      value: -2150
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -31833,7 +32700,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -31870,6 +32737,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1886716422}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -31900,10 +32782,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1886716422}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &1886716420 stripped
 RectTransform:
@@ -31911,6 +32798,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1886716419}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1886716421 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1886716419}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1886716422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886716421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: WM4_25
+  artist: 4
+  playlist: {fileID: 11400000, guid: c5884825094e24ecaa07db9cf42faeaa, type: 2}
 --- !u!4 &1896492824 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4282985487896440, guid: da4ce42e7c750194185ba148f37cc157,
@@ -33468,7 +34376,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1750
+      value: -1650
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -33493,7 +34401,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -33530,6 +34438,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2077358572}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -33560,10 +34483,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2077358572}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &2077358570 stripped
 RectTransform:
@@ -33571,6 +34499,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2077358569}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2077358571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2077358569}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2077358572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077358571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: SM11_25
+  artist: 11
+  playlist: {fileID: 11400000, guid: fcdabf442d35848f297265836f611cdf, type: 2}
 --- !u!1 &2082602716
 GameObject:
   m_ObjectHideFlags: 0
@@ -34110,7 +35059,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1850
+      value: -1750
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700424816606, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -34135,7 +35084,7 @@ PrefabInstance:
     - target: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2172512700658682682, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
@@ -34172,6 +35121,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15.717829
       objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2111052182}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaylistSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172512700797791266, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Project.Scripts.UI.PlaylistSelectionButton, DrumRhythmGame.UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2172512700797791267, guid: b451ff99684a3d348b2a37308b513fa8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -34202,10 +35166,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2172512700424816603, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2111052182}
   m_SourcePrefab: {fileID: 100100000, guid: b451ff99684a3d348b2a37308b513fa8, type: 3}
 --- !u!224 &2111052180 stripped
 RectTransform:
@@ -34213,6 +35182,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2111052179}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2111052181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2172512700424816607, guid: b451ff99684a3d348b2a37308b513fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2111052179}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2111052182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111052181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a9e8fd26e4b5d8bd0a7ec854cfd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: SM12_25
+  artist: 12
+  playlist: {fileID: 11400000, guid: 589e8fa25e4dc4d4cb66f95984ca7bf7, type: 2}
 --- !u!1 &2111292079
 GameObject:
   m_ObjectHideFlags: 0

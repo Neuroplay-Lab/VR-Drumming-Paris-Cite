@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using UnityEditorInternal;
 using UnityEngine;
 
 public abstract class StateMachine<EState> : MonoBehaviour where EState : Enum
