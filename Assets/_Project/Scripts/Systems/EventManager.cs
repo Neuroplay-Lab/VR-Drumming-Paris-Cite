@@ -32,6 +32,7 @@ namespace _Project.Scripts.Systems
         public static event Action<bool> LoggingStateChanged;
 
         public static event Action<AgentSO> AgentSelected;
+        public static event Action RemoveAgent;
         public static event Action<DrumSO> DrumSelected;
         public static event Action<SceneSO> SceneSelected;
 
@@ -90,6 +91,11 @@ namespace _Project.Scripts.Systems
         public static void InvokeAgentSelected(AgentSO obj)
         {
             AgentSelected?.Invoke(obj);
+        }
+
+        public static void InvokeRemoveAgent()
+        {
+            RemoveAgent?.Invoke();
         }
 
         public static void InvokeDrumSelected(DrumSO obj)

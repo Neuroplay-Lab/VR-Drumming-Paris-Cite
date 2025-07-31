@@ -23,5 +23,6 @@ namespace _Project.Scripts.Data
     {
         public MusicSetting track;
         public float duration;
+        public bool hidePartner;
     }
 }

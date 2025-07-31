@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using _Project.Scripts.Data;
 using _Project.Scripts.Systems;
@@ -10,10 +11,14 @@ public class PlaylistController : MonoBehaviour
     private Playlist currentPlaylist;
     // Start is called before the first frame update
 
+    private AgentSO _currentPartner = null;
+    public bool PartnerIsActive = false;
+
     private Coroutine coroutine;
     void Start()
     {
         Instance = this;
+        EventManager.AgentSelected += UpdateCurrentPartnerStored;
     }
 
     public void Play()
@@ -39,6 +44,14 @@ public class PlaylistController : MonoBehaviour
         foreach (PlaylistItem item in currentPlaylist.playlistItems)
         {
             EventManager.InvokeMusicSettingChangeEvent(item.track);
+            if (item.hidePartner && PartnerIsActive)
+            {
+                EventManager.InvokeRemoveAgent();
+            }
+            else if (!item.hidePartner && !PartnerIsActive)
+            {
+                EventManager.InvokeAgentSelected(_currentPartner);
+            }
             MusicSequence.Instance.Play();
             if (item.track.name.Trim().ToLower() == "recall")
             {
@@ -54,6 +67,11 @@ public class PlaylistController : MonoBehaviour
     public void SetCurrentPlaylist(Playlist playlist)
     {
         currentPlaylist = playlist;
+    }
+
+    private void UpdateCurrentPartnerStored(AgentSO agent)
+    {
+        _currentPartner = agent;
     }
 
 }

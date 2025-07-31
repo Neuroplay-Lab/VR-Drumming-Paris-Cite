@@ -35,6 +35,13 @@ namespace _Project.Scripts.Field
         private void OnEnable()
         {
             EventManager.AgentSelected += InstantiateAvatar;
+            EventManager.RemoveAgent += DestroyPartnerOne;
+        }
+
+        private void OnDisable()
+        {
+            EventManager.AgentSelected -= InstantiateAvatar;
+            EventManager.RemoveAgent -= DestroyPartnerOne;
         }
 
 #if UNITY_EDITOR
@@ -75,6 +82,7 @@ namespace _Project.Scripts.Field
             {
                 Destroy(_currentPartnerOne);
                 _currentAgent = null;
+                PlaylistController.Instance.PartnerIsActive = false;
                 return;
             }
 
@@ -84,6 +92,7 @@ namespace _Project.Scripts.Field
             _currentPartnerOne = Instantiate(agentPrefab, instantiationPositionPartnerOne);
             _currentPartnerOne.SetActive(CurrentBehaviourPartnerOne != PartnerBehaviourType.None);
             Debug.Log($"{Prefix} Instantiated agent <color=green>{agent.index}</color>");
+            PlaylistController.Instance.PartnerIsActive = true;
         }
 
         private void SelectAvatar(int skinIndex, int partnerIndex)
@@ -109,6 +118,7 @@ namespace _Project.Scripts.Field
             _currentPartnerOne.SetActive(CurrentBehaviourPartnerOne != PartnerBehaviourType.None);
 
             Debug.Log($"{Prefix} Updated the avatar of agent: <color=green>{partnerIndex}</color>");
+            PlaylistController.Instance.PartnerIsActive = true;
         }
 
         public void DestroyPartnerOne()
@@ -116,6 +126,7 @@ namespace _Project.Scripts.Field
             if (_currentPartnerOne == null) return;
             Destroy(_currentPartnerOne);
             _currentPartnerOne = null;
+            PlaylistController.Instance.PartnerIsActive = false;
         }
 
         public void SelectNextAvatar(int partnerIndex)
