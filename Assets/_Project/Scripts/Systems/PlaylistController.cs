@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Linq;
 using _Project.Scripts.Data;
 using _Project.Scripts.Systems;
 using UnityEngine;
@@ -60,8 +61,10 @@ public class PlaylistController : MonoBehaviour
             yield return new WaitForSeconds(item.duration);
             MusicSequence.Instance.Reset();
         }
-
-        DrumLogger.Instance.SetCurrentTrail("FreePlay");
+        if (currentPlaylist.playlistItems[currentPlaylist.playlistItems.Length - 1].track.name.Trim().ToLower() != "recall")
+        {
+            Reset();
+        }
     }
 
     public void SetCurrentPlaylist(Playlist playlist)
