@@ -10,8 +10,7 @@ public class PlaylistController : MonoBehaviour
 
     public static PlaylistController Instance;
     private Playlist currentPlaylist;
-    // Start is called before the first frame update
-
+    private RandomisedTrial currentTrial;
     private AgentSO _currentPartner = null;
     public bool PartnerIsActive = false;
 
@@ -24,7 +23,14 @@ public class PlaylistController : MonoBehaviour
 
     public void Play()
     {
-        coroutine = StartCoroutine(IteratePlaylist());
+        if (GameData.Instance.currentPlayType is PlayType.Playlist)
+        {
+            coroutine = StartCoroutine(IteratePlaylist());
+        }
+        else if (GameData.Instance.currentPlayType is PlayType.RandomisedTrial)
+        {
+            coroutine = StartCoroutine(IterateTrial());
+        }
     }
 
     public void Reset()
@@ -67,9 +73,19 @@ public class PlaylistController : MonoBehaviour
         }
     }
 
+    private string IterateTrial()
+    {
+        throw new NotImplementedException();
+    }
+
     public void SetCurrentPlaylist(Playlist playlist)
     {
         currentPlaylist = playlist;
+    }
+
+    public void SetRandomisedTrial(RandomisedTrial trial)
+    {
+        currentTrial = trial;
     }
 
     private void UpdateCurrentPartnerStored(AgentSO agent)

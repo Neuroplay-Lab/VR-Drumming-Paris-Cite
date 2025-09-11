@@ -68,7 +68,7 @@ namespace _Project.Scripts.UI
 
         private void onStartClick()
         {
-            if (GameData.Instance.useMusicTrack)
+            if (GameData.Instance.currentPlayType == PlayType.SingleTrack)
             {
                 MusicSequence.Instance.Play();
             }
@@ -81,7 +81,7 @@ namespace _Project.Scripts.UI
 
         private void onResetClick()
         {
-            if (GameData.Instance.useMusicTrack)
+            if (GameData.Instance.currentPlayType == PlayType.SingleTrack)
             {
                 MusicSequence.Instance.Reset();
             }

@@ -27,7 +27,7 @@ namespace _Project.Scripts.Systems
         public int ScorePoint { get; private set; }
         public float SynchronousRate { get; private set; }
 
-        public bool useMusicTrack { get; private set; } = true;
+        public PlayType currentPlayType { get; private set; } = PlayType.SingleTrack;
 
         #region Event Functions
 
@@ -137,9 +137,16 @@ namespace _Project.Scripts.Systems
             ErrorRateController.Instance.ClearErrorRates();
         }
 
-        public void SetUseMusicTrack(bool useMusicTrack)
+        public void SetPlayType(PlayType playType)
         {
-            this.useMusicTrack = useMusicTrack;
+            this.currentPlayType = playType;
         }
+    }
+
+    public enum PlayType
+    {
+        SingleTrack,
+        Playlist,
+        RandomisedTrial
     }
 }

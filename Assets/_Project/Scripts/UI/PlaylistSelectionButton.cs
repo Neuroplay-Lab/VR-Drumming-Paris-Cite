@@ -15,13 +15,20 @@ namespace _Project.Scripts.UI
         [SerializeField] private string title;
         [SerializeField] private string artist;
         [Space][SerializeField] private Playlist playlist;
+        [Space][SerializeField] private RandomisedTrial randomisedTrial;
 
         #endregion
 
         public void PlaylistSelected()
         {
-            GameData.Instance.SetUseMusicTrack(false);
+            GameData.Instance.SetPlayType(PlayType.Playlist);
             PlaylistController.Instance.SetCurrentPlaylist(playlist);
+        }
+
+        public void RandomisedTrialSelected()
+        {
+            GameData.Instance.SetPlayType(PlayType.RandomisedTrial);
+            PlaylistController.Instance.SetRandomisedTrial(randomisedTrial);
         }
     }
 }

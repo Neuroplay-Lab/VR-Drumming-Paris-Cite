@@ -20,7 +20,7 @@ namespace _Project.Scripts.UI
 
         public void MusicSequenceSelected()
         {
-            GameData.Instance.SetUseMusicTrack(true);
+            GameData.Instance.SetPlayType(PlayType.SingleTrack);
             EventManager.InvokeMusicSettingChangeEvent(musicSetting);
             //MusicSequence.Instance.GetComponent<AudioSource>().clip = musicSetting.bgm;
             Debug.Log($"Selected: {title} by {artist}");
