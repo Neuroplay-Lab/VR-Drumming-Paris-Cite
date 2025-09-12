@@ -80,6 +80,10 @@ namespace _Project.Scripts.Systems
         {
             if (setting.name.Trim().ToUpper() == "BREAK" || setting.name.Trim().ToUpper() == "RECALL")
             {
+                if (setting.name.Trim().ToUpper() == "BREAK")
+                {
+                    BreakTimer.Instance.Hide();
+                }
                 EventManager.InvokeTimerStopEvent();
             }
 
@@ -148,6 +152,10 @@ namespace _Project.Scripts.Systems
             }
             else if (setting.name.Trim().ToUpper() == "BREAK" || setting.name.Trim().ToUpper() == "RECALL")
             {
+                if (setting.name.Trim().ToUpper() == "BREAK")
+                {
+                    BreakTimer.Instance.Show();
+                }
                 // Just set the name for the break and do nothing else
                 DrumLogger.Instance.SetCurrentTrail(setting.name);
                 EventManager.InvokeTimerStartEvent();
