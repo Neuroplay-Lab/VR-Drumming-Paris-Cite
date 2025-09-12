@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using _Project.Scripts.Data;
 using _Project.Scripts.Systems;
 using UnityEngine;
+using Valve.Newtonsoft.Json;
 
 public class PlaylistController : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class PlaylistController : MonoBehaviour
     public bool PartnerIsActive = false;
 
     private Coroutine coroutine;
+    private Coroutine subCoroutine;
     void Start()
     {
         Instance = this;
@@ -71,11 +74,98 @@ public class PlaylistController : MonoBehaviour
         {
             Reset();
         }
+        else
+        {
+            yield return new WaitForSeconds(3);
+            StopCoroutine(subCoroutine);
+        }
     }
 
-    private string IterateTrial()
+    private IEnumerator IterateTrial()
     {
-        throw new NotImplementedException();
+        TrialPhase[] trailPhases = currentTrial.GetTrailPhases();
+
+        PlaylistItem shownBreakItem = new PlaylistItem(currentTrial.breakObject, currentTrial.breakTimeSecs, false);
+        PlaylistItem hiddenBreakItem = new PlaylistItem(currentTrial.breakObject, currentTrial.breakTimeSecs, true);
+        PlaylistItem inteferenceItem = new PlaylistItem(currentTrial.interferenceObject, currentTrial.interferenceTimeSecs, true);
+        PlaylistItem recallItem = new PlaylistItem(currentTrial.recallObject, 0, true);
+
+        foreach (TrialPhase phase in trailPhases)
+        {
+            Queue<int> agentQueue = RandomisedEvenBinaryQueue(currentTrial.tracksPerBlock);
+            Queue<int> strongTrackQueue = RandomTrackOrder(phase.availableStrongSequences.Length);
+            Queue<int> weakTrackQueue = RandomTrackOrder(phase.availableWeakSequences.Length);
+            Queue<int> strongOrWeakQueue = RandomisedEvenBinaryQueue(currentTrial.tracksPerBlock);
+
+            for (int i = 0; i < currentTrial.tracksPerBlock; i++)
+            {
+                PlaylistItem currentTrack;
+                if (strongOrWeakQueue.Dequeue() == 0)
+                {
+                    currentTrack = new PlaylistItem(
+                        phase.availableStrongSequences[strongTrackQueue.Dequeue()],
+                        currentTrial.trackTimeSecs,
+                        false
+                    );
+                }
+                else
+                {
+                    currentTrack = new PlaylistItem(
+                        phase.availableStrongSequences[weakTrackQueue.Dequeue()],
+                        currentTrial.trackTimeSecs,
+                        false
+                    );
+                }
+
+                UpdateCurrentPartnerStored(phase.availableAgents[agentQueue.Dequeue()]);
+
+                currentPlaylist = Playlist.CreatePlaylist(
+                    new PlaylistItem[] {
+                    shownBreakItem,
+                    currentTrack,
+                    hiddenBreakItem,
+                    inteferenceItem,
+                    hiddenBreakItem,
+                    recallItem
+                    }
+                );
+
+                yield return subCoroutine = StartCoroutine(IteratePlaylist());
+            }
+        }
+    }
+
+    private Queue<int> RandomisedEvenBinaryQueue(int length)
+    {
+        Queue<int> binaryQueue = new Queue<int>(length);
+        int[] binaryDigitUsageCount = new int[2];
+        for (int i = 0; i < length; i++)
+        {
+            int randomBinaryDigit = UnityEngine.Random.Range(0, 1);
+            if (binaryDigitUsageCount[randomBinaryDigit] >= length / 2)
+            {
+                binaryQueue.Enqueue(1 - randomBinaryDigit);
+            }
+            else
+            {
+                binaryQueue.Enqueue(randomBinaryDigit);
+                binaryDigitUsageCount[randomBinaryDigit]++;
+            }
+        }
+        return binaryQueue;
+    }
+
+    private Queue<int> RandomTrackOrder(int availableTrackCount)
+    {
+        Queue<int> trackIndexQueue = new Queue<int>(currentTrial.tracksPerBlock / 2);
+        List<int> availableTracks = new List<int>(availableTrackCount);
+        availableTracks.AddRange(Enumerable.Range(0, availableTrackCount));
+        for (int i = 0; i < currentTrial.tracksPerBlock / 2; i++)
+        {
+            int randomTrackIndex = UnityEngine.Random.Range(0, availableTracks.Count - 1);
+            trackIndexQueue.Enqueue(availableTracks[randomTrackIndex]);
+        }
+        return trackIndexQueue;
     }
 
     public void SetCurrentPlaylist(Playlist playlist)

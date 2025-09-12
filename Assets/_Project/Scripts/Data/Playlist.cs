@@ -14,13 +14,30 @@ namespace _Project.Scripts.Data
     [CreateAssetMenu(fileName = "Playlist", menuName = "Playlist", order = 1)]
     public class Playlist : ScriptableObject
     {
+        public Playlist(PlaylistItem[] playlistItems)
+        {
+            this.playlistItems = playlistItems;
+        }
         public PlaylistItem[] playlistItems;
+
+        public static Playlist CreatePlaylist(PlaylistItem[] playlistItems)
+        {
+            Playlist obj = CreateInstance<Playlist>();
+            obj.playlistItems = playlistItems;
+            return obj;
+        }
     }
 
 
     [Serializable]
     public struct PlaylistItem
     {
+        public PlaylistItem(MusicSetting musicSetting, float duration, bool hidePartner)
+        {
+            track = musicSetting;
+            this.duration = duration;
+            this.hidePartner = hidePartner;
+        }
         public MusicSetting track;
         public float duration;
         public bool hidePartner;

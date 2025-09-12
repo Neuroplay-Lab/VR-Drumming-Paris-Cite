@@ -64,5 +64,15 @@ namespace DrumRhythmGame.Field
             instrument.audioSource.volume = instrument.volume;
             instrument.audioSource.Play();
         }
+
+        public void SetHighTom(Instrument highTom)
+        {
+            this.highTom = highTom;
+        }
+
+        public void SetMidTom(Instrument midTom)
+        {
+            this.middleTom = midTom;
+        }
     }
 }

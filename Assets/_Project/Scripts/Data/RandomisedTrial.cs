@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using UnityEngine;
 
@@ -11,18 +12,26 @@ namespace _Project.Scripts.Data
     public class RandomisedTrial : ScriptableObject
     {
         [SerializeField] private bool RandomiseOrderOfPhases = true;
+        public int tracksPerBlock { get; private set; } = 6;
 
-        [SerializeField] private TrailPhase[] trailPhases;
+        [SerializeField] private TrialPhase[] trailPhases;
 
-        public TrailPhase[] GetTrailPhases()
+        [field: SerializeField] public int trackTimeSecs { get; private set; }
+        [field: Space][field: SerializeField] public MusicSetting breakObject { get; private set; }
+        [field: SerializeField] public int breakTimeSecs { get; private set; }
+        [field: SerializeField] public MusicSetting interferenceObject { get; private set; }
+        [field: SerializeField] public int interferenceTimeSecs { get; private set; }
+        [field: SerializeField] public MusicSetting recallObject { get; private set; }
+
+        public TrialPhase[] GetTrailPhases()
         {
             if (RandomiseOrderOfPhases)
             {
-                TrailPhase[] returnedArray = new TrailPhase[trailPhases.Length];
+                TrialPhase[] returnedArray = new TrialPhase[trailPhases.Length];
                 Array.Copy(trailPhases, returnedArray, trailPhases.Length);
                 for (int i = 0; i < returnedArray.Length; i++)
                 {
-                    TrailPhase tmp = returnedArray[i];
+                    TrialPhase tmp = returnedArray[i];
                     int r = UnityEngine.Random.Range(i, returnedArray.Length);
                     returnedArray[i] = returnedArray[r];
                     returnedArray[r] = tmp;
@@ -37,10 +46,10 @@ namespace _Project.Scripts.Data
     }
 
     [Serializable]
-    public struct TrailPhase
+    public struct TrialPhase
     {
-        [SerializeField] private AgentSO[] availableAgents;
-        [SerializeField] private MusicSetting[] availableStrongSequences;
-        [SerializeField] private MusicSetting[] availableWeakSequences;
+        [field: SerializeField] public AgentSO[] availableAgents { get; private set; }
+        [field: SerializeField] public MusicSetting[] availableStrongSequences { get; private set; }
+        [field: SerializeField] public MusicSetting[] availableWeakSequences { get; private set; }
     }
 }

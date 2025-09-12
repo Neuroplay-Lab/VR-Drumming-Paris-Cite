@@ -2,6 +2,7 @@
 using _Project.Scripts.Data;
 using _Project.Scripts.Systems;
 using DrumRhythmGame.Data;
+using DrumRhythmGame.Field;
 using UnityEditor;
 using UnityEngine;
 
@@ -20,6 +21,8 @@ namespace _Project.Scripts.Field
         [SerializeField] private List<GameObject> drummingKits;
 
         [SerializeField] private Transform instantiationPosition;
+
+        [SerializeField] private DrumHitEmulator emulator;
 
         #endregion
 
@@ -64,6 +67,25 @@ namespace _Project.Scripts.Field
             _currentDrum = Instantiate(drum.prefab, instantiationPosition);
             // _currentDrum.SetActive(CurrentBehaviourPartnerOne != PartnerBehaviourType.None);
             Debug.Log($"{Prefix} Instantiated drum <color=green>{drum.index}</color>");
+            if (drum.drumCount == 1)
+            {
+                emulator.SetHighTom(drum.prefab.GetComponentInChildren<Instrument>());
+                emulator.SetMidTom(drum.prefab.GetComponentInChildren<Instrument>());
+            }
+            else
+            {
+                foreach (Instrument emaulatorReference in drum.prefab.GetComponentsInChildren<Instrument>())
+                {
+                    if (emaulatorReference.GetInstrumentType() == InstrumentType.LeftHighTom)
+                    {
+                        emulator.SetHighTom(emaulatorReference);
+                    }
+                    else
+                    {
+                        emulator.SetMidTom(emaulatorReference);
+                    }
+                }
+            }
         }
 
         private void SelectAvatar(int drumIndex, int altDrumIndex)

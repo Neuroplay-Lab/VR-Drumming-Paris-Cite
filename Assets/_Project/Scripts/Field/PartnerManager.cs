@@ -32,6 +32,12 @@ namespace _Project.Scripts.Field
 
         #region Event Functions
 
+        private void Start()
+        {
+            SwitchBehaviour(PartnerBehaviourType.Rhythm);
+            SwitchHandPreference(PartnerHandPreference.Both);
+        }
+
         private void OnEnable()
         {
             EventManager.AgentSelected += InstantiateAvatar;

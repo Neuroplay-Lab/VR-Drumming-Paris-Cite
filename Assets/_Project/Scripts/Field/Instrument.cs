@@ -20,7 +20,7 @@ namespace DrumRhythmGame.Field
         [SerializeField] public float timeToPlayStart = 0;
         [SerializeField] private float chatteringInterval = 0.1f;
 
-        
+
         [HideInInspector] public AudioSource audioSource;
         private bool _isPlayable = true;
 
@@ -35,7 +35,7 @@ namespace DrumRhythmGame.Field
             audioSource = GetComponent<AudioSource>();
             audioSource.playOnAwake = false;
             audioSource.spatialBlend = 1f;
-            
+
             // Collider setting
             var meshCollider = GetComponent<MeshCollider>();
             if (meshCollider != null)
@@ -48,7 +48,7 @@ namespace DrumRhythmGame.Field
                 var col = GetComponent<Collider>();
                 col.isTrigger = true;
             }
-            
+
             // Rigidbody setting
             var rb = GetComponent<Rigidbody>();
             rb.useGravity = false;
@@ -61,7 +61,7 @@ namespace DrumRhythmGame.Field
         /// (typically the drum stick)</param>
         private void OnTriggerEnter(Collider other)
         {
-            if(wrongSide == null || wrongSide.currentTriggerStatus() == false)
+            if (wrongSide == null || wrongSide.currentTriggerStatus() == false)
             {
                 if (_isPlayable && other.transform.TryGetComponent<DrumStick>(out var stick))
                 {
@@ -76,10 +76,15 @@ namespace DrumRhythmGame.Field
         private IEnumerator PreventChatteringCoroutine(float time)
         {
             _isPlayable = false;
-            
+
             yield return new WaitForSeconds(time);
 
             _isPlayable = true;
+        }
+
+        public InstrumentType GetInstrumentType()
+        {
+            return type;
         }
     }
 }
