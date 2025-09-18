@@ -1,11 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using _Project.Scripts.Data;
 using _Project.Scripts.Systems;
 using UnityEngine;
-using Valve.Newtonsoft.Json;
 
 public class PlaylistController : MonoBehaviour
 {
@@ -15,6 +13,7 @@ public class PlaylistController : MonoBehaviour
     private RandomisedTrial currentTrial;
     private AgentSO _currentPartner = null;
     public bool PartnerIsActive = false;
+    [SerializeField] private RecallManager recallButtons;
 
     private Coroutine coroutine;
     private Coroutine subCoroutine;
@@ -40,6 +39,10 @@ public class PlaylistController : MonoBehaviour
     {
         if (coroutine != null)
         {
+            if (subCoroutine != null)
+            {
+                StopCoroutine(subCoroutine);
+            }
             StopCoroutine(coroutine);
             if (MusicSequence.Instance.IsPlaying)
             {
@@ -65,6 +68,7 @@ public class PlaylistController : MonoBehaviour
             MusicSequence.Instance.Play();
             if (item.track.name.Trim().ToLower() == "recall")
             {
+                recallButtons.gameObject.SetActive(true);
                 break;
             }
             yield return new WaitForSeconds(item.duration);
