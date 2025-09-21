@@ -35,6 +35,7 @@ namespace _Project.Scripts.Systems
         public static event Action RemoveAgent;
         public static event Action<DrumSO> DrumSelected;
         public static event Action<SceneSO> SceneSelected;
+        public static event Action AgentPrepareEvent;
 
 
         public static void InvokeDrumHitEvent(ActorType actor, InstrumentType type, XRNode node)
@@ -116,6 +117,11 @@ namespace _Project.Scripts.Systems
         public static void InvokeErrorRateChanged(float newErrorRate)
         {
             ErrorRateChanged?.Invoke(newErrorRate);
+        }
+
+        public static void InvokeAgentPrepareEvent()
+        {
+            AgentPrepareEvent?.Invoke();
         }
     }
 }

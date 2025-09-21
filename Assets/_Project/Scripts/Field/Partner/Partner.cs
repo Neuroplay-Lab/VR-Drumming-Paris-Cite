@@ -6,6 +6,7 @@ using RootMotion.FinalIK;
 using UnityEngine;
 using _Project.Scripts.Systems;
 using UnityEngine.Assertions;
+using System.Collections;
 
 namespace _Project.Scripts.Field.Partner
 {
@@ -73,6 +74,7 @@ namespace _Project.Scripts.Field.Partner
 
             EventManager.MusicStartEvent += StartDrumming;
             EventManager.MusicResetEvent += StopDrumming;
+            EventManager.AgentPrepareEvent += StartDrumming;
 
             if (partnerHandPreference == PartnerHandPreference.Left)
             {
@@ -97,6 +99,7 @@ namespace _Project.Scripts.Field.Partner
 
             EventManager.MusicStartEvent -= StartDrumming;
             EventManager.MusicResetEvent -= StopDrumming;
+            EventManager.AgentPrepareEvent -= StartDrumming;
         }
 
         public void SwitchType(PartnerBehaviourType type)
@@ -111,12 +114,36 @@ namespace _Project.Scripts.Field.Partner
 
         public void StartDrumming()
         {
+            StartCoroutine(TemporarilyDisableDrumHitbox());
             avatarAnimator?.SetBool("Drumming", true);
         }
 
         public void StopDrumming()
         {
+            StartCoroutine(TemporarilyDisableDrumHitbox());
             avatarAnimator?.SetBool("Drumming", false);
+        }
+
+        private IEnumerator TemporarilyDisableDrumHitbox(float duration = 0.5f)
+        {
+            if (highTom is not null)
+            {
+                highTom.gameObject.GetComponent<MeshCollider>().enabled = false;
+            }
+            if (middleTom is not null)
+            {
+                middleTom.gameObject.GetComponent<Collider>().enabled = false;
+            }
+            yield return new WaitForSeconds(duration);
+            if (highTom is not null)
+            {
+                highTom.gameObject.GetComponent<MeshCollider>().enabled = true;
+            }
+            if (middleTom is not null)
+            {
+                middleTom.gameObject.GetComponent<Collider>().enabled = true;
+            }
+
         }
 
         public void DrumHit(FullBodyBipedEffector hittingHand, InstrumentType instrument)
