@@ -4,6 +4,7 @@ using System.Linq;
 using _Project.Scripts.Data;
 using _Project.Scripts.Systems;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 public class PlaylistController : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlaylistController : MonoBehaviour
 
     private Coroutine coroutine;
     private Coroutine subCoroutine;
+    private bool recalling = false;
     void Start()
     {
         Instance = this;
@@ -68,20 +70,36 @@ public class PlaylistController : MonoBehaviour
             MusicSequence.Instance.Play();
             if (item.track.name.Trim().ToLower() == "recall")
             {
-                recallButtons.gameObject.SetActive(true);
                 break;
             }
-            yield return new WaitForSeconds(item.duration);
+            if (item.track.name.Trim().ToLower() == "break")
+            {
+                yield return new WaitForSeconds(item.duration - 1);
+                EventManager.InvokeAgentPrepareEvent();
+                yield return new WaitForSeconds(1);
+            }
+            else
+            {
+                yield return new WaitForSeconds(item.duration);
+            }
             MusicSequence.Instance.Reset();
         }
-        if (currentPlaylist.playlistItems[currentPlaylist.playlistItems.Length - 1].track.name.Trim().ToLower() != "recall")
+        if (currentPlaylist.playlistItems[^1].track.name.Trim().ToLower() != "recall")
         {
             Reset();
         }
         else
         {
-            yield return new WaitForSeconds(3);
-            StopCoroutine(subCoroutine);
+            recallButtons.gameObject.SetActive(true);
+            recalling = true;
+            while (recalling)
+            {
+                yield return null;
+            }
+            if (subCoroutine is not null)
+            {
+                StopCoroutine(subCoroutine);
+            }
         }
     }
 
@@ -185,6 +203,11 @@ public class PlaylistController : MonoBehaviour
     private void UpdateCurrentPartnerStored(AgentSO agent)
     {
         _currentPartner = agent;
+    }
+
+    public void EndRecall()
+    {
+        recalling = false;
     }
 
 }
