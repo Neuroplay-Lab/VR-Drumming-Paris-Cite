@@ -44,6 +44,7 @@ public class PlaylistController : MonoBehaviour
             if (subCoroutine != null)
             {
                 StopCoroutine(subCoroutine);
+                EventManager.InvokeRemoveAgent();
             }
             StopCoroutine(coroutine);
             if (MusicSequence.Instance.IsPlaying)
@@ -114,9 +115,11 @@ public class PlaylistController : MonoBehaviour
 
         foreach (TrialPhase phase in trailPhases)
         {
+            Debug.Log("Agent queue");
             Queue<int> agentQueue = RandomisedEvenBinaryQueue(currentTrial.tracksPerBlock);
             Queue<int> strongTrackQueue = RandomTrackOrder(phase.availableStrongSequences.Length);
             Queue<int> weakTrackQueue = RandomTrackOrder(phase.availableWeakSequences.Length);
+            Debug.Log("S/W queue");
             Queue<int> strongOrWeakQueue = RandomisedEvenBinaryQueue(currentTrial.tracksPerBlock);
 
             for (int i = 0; i < currentTrial.tracksPerBlock; i++)
@@ -163,15 +166,17 @@ public class PlaylistController : MonoBehaviour
         int[] binaryDigitUsageCount = new int[2];
         for (int i = 0; i < length; i++)
         {
-            int randomBinaryDigit = UnityEngine.Random.Range(0, 1);
+            int randomBinaryDigit = UnityEngine.Random.Range(0, 2);
             if (binaryDigitUsageCount[randomBinaryDigit] >= length / 2)
             {
                 binaryQueue.Enqueue(1 - randomBinaryDigit);
+                Debug.Log(1 - randomBinaryDigit);
             }
             else
             {
                 binaryQueue.Enqueue(randomBinaryDigit);
                 binaryDigitUsageCount[randomBinaryDigit]++;
+                Debug.Log(randomBinaryDigit);
             }
         }
         return binaryQueue;
