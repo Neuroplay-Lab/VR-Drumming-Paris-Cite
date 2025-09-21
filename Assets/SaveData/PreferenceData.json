@@ -5,7 +5,7 @@
     "recordPerUnit": true,
     "muteAgentDrumSounds": false,
     "muteParticipcantDrumSounds": false,
-    "muteMusicSounds": false,
+    "muteMusicSounds": true,
     "enableLogging": false,
     "hideCueAfterTime": 20.0,
     "musicVolume": 1.0
