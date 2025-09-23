@@ -4,7 +4,6 @@ using System.Linq;
 using _Project.Scripts.Data;
 using _Project.Scripts.Systems;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 
 public class PlaylistController : MonoBehaviour
 {
@@ -19,6 +18,7 @@ public class PlaylistController : MonoBehaviour
     private Coroutine coroutine;
     private Coroutine subCoroutine;
     private bool recalling = false;
+    private bool waitingToContinue = false;
     void Start()
     {
         Instance = this;
@@ -91,8 +91,8 @@ public class PlaylistController : MonoBehaviour
         }
         else
         {
-            recallButtons.gameObject.SetActive(true);
             recalling = true;
+            recallButtons.gameObject.SetActive(true);
             while (recalling)
             {
                 yield return null;
@@ -115,11 +115,19 @@ public class PlaylistController : MonoBehaviour
 
         foreach (TrialPhase phase in trailPhases)
         {
-            Debug.Log("Agent queue");
-            Queue<int> agentQueue = RandomisedEvenBinaryQueue(currentTrial.tracksPerBlock);
+            Queue<int> agentQueue;
+            if (phase.availableAgents.Length == 1)
+            {
+                // when there is only 1 agent available
+                agentQueue = new Queue<int>(new int[currentTrial.tracksPerBlock]);
+            }
+            else
+            {
+                // when 2 agents need to be alternated between
+                agentQueue = RandomisedEvenBinaryQueue(currentTrial.tracksPerBlock);
+            }
             Queue<int> strongTrackQueue = RandomTrackOrder(phase.availableStrongSequences.Length);
             Queue<int> weakTrackQueue = RandomTrackOrder(phase.availableWeakSequences.Length);
-            Debug.Log("S/W queue");
             Queue<int> strongOrWeakQueue = RandomisedEvenBinaryQueue(currentTrial.tracksPerBlock);
 
             for (int i = 0; i < currentTrial.tracksPerBlock; i++)
@@ -157,7 +165,14 @@ public class PlaylistController : MonoBehaviour
 
                 yield return subCoroutine = StartCoroutine(IteratePlaylist());
             }
+            waitingToContinue = true;
+            recallButtons.gameObject.SetActive(true);
+            while (waitingToContinue)
+            {
+                yield return null;
+            }
         }
+        Reset();
     }
 
     private Queue<int> RandomisedEvenBinaryQueue(int length)
@@ -210,9 +225,19 @@ public class PlaylistController : MonoBehaviour
         _currentPartner = agent;
     }
 
+    public bool IsRecalling()
+    {
+        return recalling;
+    }
+
     public void EndRecall()
     {
         recalling = false;
+    }
+
+    public void ContinueToNextTrialPhase()
+    {
+        waitingToContinue = false;
     }
 
 }
