@@ -4,7 +4,7 @@ using System.Linq;
 using _Project.Scripts.Data;
 using _Project.Scripts.Systems;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
+using UnityEngine.Animations.Rigging;
 
 public class PlaylistController : MonoBehaviour
 {
@@ -115,11 +115,17 @@ public class PlaylistController : MonoBehaviour
 
         foreach (TrialPhase phase in trailPhases)
         {
-            Debug.Log("Agent queue");
-            Queue<int> agentQueue = RandomisedEvenBinaryQueue(currentTrial.tracksPerBlock);
+            Queue<int> agentQueue;
+            if (phase.availableAgents.Length == 1)
+            {
+                agentQueue = RandomisedEvenBinaryQueue(currentTrial.tracksPerBlock);
+            }
+            else
+            {
+                agentQueue = new Queue<int>(new int[currentTrial.tracksPerBlock]);
+            }
             Queue<int> strongTrackQueue = RandomTrackOrder(phase.availableStrongSequences.Length);
             Queue<int> weakTrackQueue = RandomTrackOrder(phase.availableWeakSequences.Length);
-            Debug.Log("S/W queue");
             Queue<int> strongOrWeakQueue = RandomisedEvenBinaryQueue(currentTrial.tracksPerBlock);
 
             for (int i = 0; i < currentTrial.tracksPerBlock; i++)
