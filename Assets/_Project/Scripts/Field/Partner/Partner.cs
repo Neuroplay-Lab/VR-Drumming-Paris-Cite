@@ -124,7 +124,7 @@ namespace _Project.Scripts.Field.Partner
             avatarAnimator?.SetBool("Drumming", false);
         }
 
-        private IEnumerator TemporarilyDisableDrumHitbox(float duration = 0.5f)
+        private IEnumerator TemporarilyDisableDrumHitbox(float duration = 0.25f)
         {
             if (highTom is not null)
             {
