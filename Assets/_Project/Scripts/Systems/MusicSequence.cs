@@ -74,6 +74,8 @@ namespace _Project.Scripts.Systems
             {
                 Play();
             }
+
+            IsPlaying = source.isPlaying;
         }
 
         public void Reset()
