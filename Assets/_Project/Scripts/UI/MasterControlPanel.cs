@@ -1,4 +1,5 @@
-﻿using _Project.Scripts.Systems;
+﻿using _Project.Scripts.Field;
+using _Project.Scripts.Systems;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -25,6 +26,7 @@ namespace _Project.Scripts.UI
         [SerializeField] private Toggle muteAgentDrumSoundsToggle;
         [SerializeField] private Toggle muteParticipantDrumSoundsToggle;
         [SerializeField] private Toggle muteMusicToggle;
+        [SerializeField] private Toggle hideDrumsToggle;
 
         // [SerializeField] private Slider volumeSlider;
         [SerializeField] private Toggle toggleCue;
@@ -120,6 +122,11 @@ namespace _Project.Scripts.UI
                 SaveData.Instance.preferenceData.muteMusicSounds = value;
                 _audio.SetFloat("Music Volume", value ? -80 : 0);
             });
+            hideDrumsToggle.onValueChanged.AddListener(value =>
+            {
+                SaveData.Instance.preferenceData.hideDrums = value;
+                DrumManager.Instance.HideDrums(value);
+            });
 
             toggleCue.onValueChanged.AddListener(value =>
             {
@@ -144,6 +151,7 @@ namespace _Project.Scripts.UI
             toggleCue.isOn = SaveData.Instance.preferenceData.displayVisualCue;
             muteAgentDrumSoundsToggle.isOn = SaveData.Instance.preferenceData.muteAgentDrumSounds;
             muteMusicToggle.isOn = SaveData.Instance.preferenceData.muteMusicSounds;
+            hideDrumsToggle.isOn = SaveData.Instance.preferenceData.hideDrums;
             muteParticipantDrumSoundsToggle.isOn = SaveData.Instance.preferenceData.muteParticipcantDrumSounds;
         }
 

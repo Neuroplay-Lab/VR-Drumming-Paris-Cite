@@ -6,6 +6,7 @@
     "muteAgentDrumSounds": false,
     "muteParticipcantDrumSounds": false,
     "muteMusicSounds": false,
+    "hideDrums": false,
     "enableLogging": false,
     "hideCueAfterTime": 20.0,
     "musicVolume": 1.0
