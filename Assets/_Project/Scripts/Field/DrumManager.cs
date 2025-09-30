@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using _Project.Scripts.Data;
 using _Project.Scripts.Systems;
 using DrumRhythmGame.Data;
@@ -23,6 +24,8 @@ namespace _Project.Scripts.Field
         [SerializeField] private Transform instantiationPosition;
 
         [SerializeField] private DrumHitEmulator emulator;
+        private bool _drumsAreHidden;
+        [SerializeField] MeshRenderer drumStoolMesh; // access required for hiding
 
         #endregion
 
@@ -36,6 +39,8 @@ namespace _Project.Scripts.Field
         {
             _currentDrum = drummingKits[0];
             EventManager.DrumSelected += InstantiateDrum;
+            _drumsAreHidden = SaveData.Instance.preferenceData.hideDrums;
+            HideDrums(_drumsAreHidden);
         }
 
 #if UNITY_EDITOR
@@ -65,6 +70,7 @@ namespace _Project.Scripts.Field
             if (_currentDrum != null) Destroy(_currentDrum);
             // SaveData.Instance.avatarData.partnerOneAvatarIndex = drum.index;
             _currentDrum = Instantiate(drum.prefab, instantiationPosition);
+            HideDrums(_drumsAreHidden);
             // _currentDrum.SetActive(CurrentBehaviourPartnerOne != PartnerBehaviourType.None);
             Debug.Log($"{Prefix} Instantiated drum <color=green>{drum.index}</color>");
             if (drum.drumCount == 1)
@@ -118,6 +124,27 @@ namespace _Project.Scripts.Field
             if (_currentDrum == null) return;
             Destroy(_currentDrum);
             _currentDrum = null;
+        }
+
+        public void HideDrums(bool hidden)
+        {
+            _drumsAreHidden = hidden;
+            if (_drumsAreHidden)
+            {
+                foreach (MeshRenderer meshRenderer in _currentDrum.gameObject.GetComponentsInChildren<MeshRenderer>())
+                {
+                    meshRenderer.enabled = false;
+                }
+                drumStoolMesh.enabled = false;
+            }
+            else
+            {
+                foreach (MeshRenderer meshRenderer in _currentDrum.gameObject.GetComponentsInChildren<MeshRenderer>())
+                {
+                    meshRenderer.enabled = true;
+                }
+                drumStoolMesh.enabled = true;
+            }
         }
 
         // public void SelectNextDrum(int drumIndex)
