@@ -16,7 +16,8 @@ MonoBehaviour:
   beatNumber: 16
   scoreAsset: {fileID: 4900000, guid: 5151d18453a38b74aa7b98df2197de65, type: 3}
   instrumentCount: 4
-  initialDelayTime: 0
+  initialDelayTime: 4
+  muteDuringDelay: 1
   noteMarginTime: 0.1
   speedMagnification: 1
   loopScore: 1
