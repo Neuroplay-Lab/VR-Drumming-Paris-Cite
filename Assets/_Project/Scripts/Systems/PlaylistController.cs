@@ -45,6 +45,7 @@ public class PlaylistController : MonoBehaviour
             {
                 StopCoroutine(subCoroutine);
                 EventManager.InvokeRemoveAgent();
+                DrumLogger.Instance.ChangedAvatar("No Avatar", shouldLog: false);
             }
             StopCoroutine(coroutine);
             if (MusicSequence.Instance.IsPlaying)
@@ -60,15 +61,17 @@ public class PlaylistController : MonoBehaviour
         foreach (PlaylistItem item in currentPlaylist.playlistItems)
         {
             EventManager.InvokeMusicSettingChangeEvent(item.track);
+            MusicSequence.Instance.Play();
             if (item.hidePartner && PartnerIsActive)
             {
                 EventManager.InvokeRemoveAgent();
+                DrumLogger.Instance.ChangedAvatar("No Avatar", shouldLog: false);
             }
             else if (!item.hidePartner && !PartnerIsActive)
             {
                 EventManager.InvokeAgentSelected(_currentPartner);
+                DrumLogger.Instance.ChangedAvatar(_currentPartner.name, shouldLog: false);
             }
-            MusicSequence.Instance.Play();
             if (item.track.name.Trim().ToLower() == "recall")
             {
                 break;
