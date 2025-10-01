@@ -116,6 +116,9 @@ public class PlaylistController : MonoBehaviour
         PlaylistItem inteferenceItem = new PlaylistItem(currentTrial.interferenceObject, currentTrial.interferenceTimeSecs, true);
         PlaylistItem recallItem = new PlaylistItem(currentTrial.recallObject, 0, true);
 
+        Queue<int> strongTrackQueue = RandomTrackOrder(currentTrial.availableStrongSequences.Length);
+        Queue<int> weakTrackQueue = RandomTrackOrder(currentTrial.availableWeakSequences.Length);
+
         foreach (TrialPhase phase in trailPhases)
         {
             Queue<int> agentQueue;
@@ -129,17 +132,14 @@ public class PlaylistController : MonoBehaviour
                 // when 2 agents need to be alternated between
                 agentQueue = RandomisedEvenBinaryQueue(currentTrial.tracksPerBlock);
             }
-            Queue<int> strongTrackQueue = RandomTrackOrder(phase.availableStrongSequences.Length);
-            Queue<int> weakTrackQueue = RandomTrackOrder(phase.availableWeakSequences.Length);
             Queue<int> strongOrWeakQueue = RandomisedEvenBinaryQueue(currentTrial.tracksPerBlock);
-
             for (int i = 0; i < currentTrial.tracksPerBlock; i++)
             {
                 PlaylistItem currentTrack;
                 if (strongOrWeakQueue.Dequeue() == 0)
                 {
                     currentTrack = new PlaylistItem(
-                        phase.availableStrongSequences[strongTrackQueue.Dequeue()],
+                        currentTrial.availableStrongSequences[strongTrackQueue.Dequeue()],
                         currentTrial.trackTimeSecs,
                         false
                     );
@@ -147,7 +147,7 @@ public class PlaylistController : MonoBehaviour
                 else
                 {
                     currentTrack = new PlaylistItem(
-                        phase.availableStrongSequences[weakTrackQueue.Dequeue()],
+                        currentTrial.availableStrongSequences[weakTrackQueue.Dequeue()],
                         currentTrial.trackTimeSecs,
                         false
                     );
@@ -188,13 +188,11 @@ public class PlaylistController : MonoBehaviour
             if (binaryDigitUsageCount[randomBinaryDigit] >= length / 2)
             {
                 binaryQueue.Enqueue(1 - randomBinaryDigit);
-                Debug.Log(1 - randomBinaryDigit);
             }
             else
             {
                 binaryQueue.Enqueue(randomBinaryDigit);
                 binaryDigitUsageCount[randomBinaryDigit]++;
-                Debug.Log(randomBinaryDigit);
             }
         }
         return binaryQueue;
@@ -202,13 +200,14 @@ public class PlaylistController : MonoBehaviour
 
     private Queue<int> RandomTrackOrder(int availableTrackCount)
     {
-        Queue<int> trackIndexQueue = new Queue<int>(currentTrial.tracksPerBlock / 2);
+        Queue<int> trackIndexQueue = new Queue<int>(availableTrackCount);
         List<int> availableTracks = new List<int>(availableTrackCount);
         availableTracks.AddRange(Enumerable.Range(0, availableTrackCount));
-        for (int i = 0; i < currentTrial.tracksPerBlock / 2; i++)
+        for (int i = 0; i < availableTrackCount; i++)
         {
-            int randomTrackIndex = UnityEngine.Random.Range(0, availableTracks.Count - 1);
+            int randomTrackIndex = Random.Range(0, availableTracks.Count);
             trackIndexQueue.Enqueue(availableTracks[randomTrackIndex]);
+            availableTracks.RemoveAt(randomTrackIndex);
         }
         return trackIndexQueue;
     }
