@@ -298,5 +298,10 @@ namespace _Project.Scripts.Systems
             yield return new WaitForSeconds(setting.initialDelayTime);
             promptAnimator.SetBool(Playing, true);
         }
+
+        public string GetSequenceName()
+        {
+            return setting.name;
+        }
     }
 }

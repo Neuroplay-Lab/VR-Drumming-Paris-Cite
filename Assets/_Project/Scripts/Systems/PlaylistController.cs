@@ -170,6 +170,7 @@ public class PlaylistController : MonoBehaviour
             }
             waitingToContinue = true;
             recallButtons.gameObject.SetActive(true);
+            EventManager.InvokeTimerStopEvent();
             while (waitingToContinue)
             {
                 yield return null;
