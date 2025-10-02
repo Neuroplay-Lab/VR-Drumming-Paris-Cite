@@ -73,9 +73,10 @@ public class DrumLogger : MonoBehaviour
         _beatTimes.Enqueue($"{Math.Round((DateTime.Now - _currentFileStartTime).TotalMilliseconds)}");
     }
 
-    public void ChangedAvatar(string avatar)
+    public void ChangedAvatar(string avatar, bool shouldLog = true)
     {
-        LogCurrentTrial();
+        if (shouldLog)
+            LogCurrentTrial();
         _currentAvatar = avatar;
     }
 

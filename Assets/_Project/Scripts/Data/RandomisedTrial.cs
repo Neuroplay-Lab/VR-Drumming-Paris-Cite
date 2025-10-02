@@ -16,6 +16,10 @@ namespace _Project.Scripts.Data
 
         [SerializeField] private TrialPhase[] trailPhases;
 
+        [field: SerializeField] public MusicSetting[] availableStrongSequences { get; private set; }
+        [field: SerializeField] public MusicSetting[] availableWeakSequences { get; private set; }
+
+        [field: Space]
         [field: SerializeField] public int trackTimeSecs { get; private set; }
         [field: Space][field: SerializeField] public MusicSetting breakObject { get; private set; }
         [field: SerializeField] public int breakTimeSecs { get; private set; }
@@ -49,7 +53,5 @@ namespace _Project.Scripts.Data
     public struct TrialPhase
     {
         [field: SerializeField] public AgentSO[] availableAgents { get; private set; }
-        [field: SerializeField] public MusicSetting[] availableStrongSequences { get; private set; }
-        [field: SerializeField] public MusicSetting[] availableWeakSequences { get; private set; }
     }
 }

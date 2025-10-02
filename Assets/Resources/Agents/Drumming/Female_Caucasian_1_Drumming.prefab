@@ -5173,7 +5173,7 @@ SkinnedMeshRenderer:
   - 0
   - 29.669794
   - 0
-  - 0
+  - 10
   - 0
   - 0
   - -0
@@ -6617,7 +6617,7 @@ Animator:
   m_GameObject: {fileID: 6781690423198790341}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 6e75111724ff4ce42a87a275e22f8d19, type: 3}
-  m_Controller: {fileID: 9100000, guid: 5074ff196103642959a97e4a04674847, type: 2}
+  m_Controller: {fileID: 22100000, guid: 1fdeaf72d31334b4aa3d8d9e74128932, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1

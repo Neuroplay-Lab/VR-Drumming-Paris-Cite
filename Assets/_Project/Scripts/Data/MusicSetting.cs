@@ -29,6 +29,7 @@ namespace _Project.Scripts.Data
 
         [Tooltip("Initial delay time of the music score.")]
         public float initialDelayTime;
+        public bool muteDuringDelay = false;
 
         [Tooltip(
             "How many seconds before the timing of the strike the note appears. If this time is shortened, the notes move faster.")]

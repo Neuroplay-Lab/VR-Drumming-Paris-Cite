@@ -170,11 +170,24 @@ namespace _Project.Scripts.Systems
             }
 
             promptAnimator.gameObject.SetActive(true);
+            if (setting.muteDuringDelay)
+            {
+                StartCoroutine(MuteDuringDelay(setting.initialDelayTime));
+            }
             source.Play();
             coroutine = StartCoroutine(BeatCoroutine(bpm));
             StartCoroutine(PlayPromptLoop());
             EventManager.InvokeMusicStartEvent();
             DrumLogger.Instance.SetCurrentTrail(setting.name);
+        }
+
+        private IEnumerator MuteDuringDelay(float duration)
+        {
+            Debug.Log("Muting");
+            float initialVolume = source.volume;
+            source.volume = 0;
+            yield return new WaitForSeconds(duration);
+            source.volume = initialVolume;
         }
 
         /// <summary>
@@ -284,6 +297,11 @@ namespace _Project.Scripts.Systems
             Debug.Log("Prompt Loop");
             yield return new WaitForSeconds(setting.initialDelayTime);
             promptAnimator.SetBool(Playing, true);
+        }
+
+        public string GetSequenceName()
+        {
+            return setting.name;
         }
     }
 }
