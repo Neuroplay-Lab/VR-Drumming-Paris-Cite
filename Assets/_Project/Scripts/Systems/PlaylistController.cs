@@ -171,6 +171,9 @@ public class PlaylistController : MonoBehaviour
             waitingToContinue = true;
             recallButtons.gameObject.SetActive(true);
             EventManager.InvokeTimerStopEvent();
+            EventManager.InvokeTimerStartEvent();
+            DrumLogger.Instance.SetCurrentTrail("FreePlay");
+
             while (waitingToContinue)
             {
                 yield return null;
