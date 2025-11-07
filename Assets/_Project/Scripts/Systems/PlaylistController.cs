@@ -39,8 +39,10 @@ public class PlaylistController : MonoBehaviour
 
     public void Reset()
     {
+        Debug.Log("Resetting");
         if (coroutine != null)
         {
+            Debug.Log("Coroutine");
             if (subCoroutine != null)
             {
                 StopCoroutine(subCoroutine);
@@ -52,7 +54,17 @@ public class PlaylistController : MonoBehaviour
             {
                 MusicSequence.Instance.Reset();
             }
+            if (recalling)
+            {
+                EndRecall();
+                MusicSequence.Instance.Reset();
+                recallButtons.gameObject.SetActive(false);
+            }
             DrumLogger.Instance.SetCurrentTrail("FreePlay");
+        }
+        else
+        {
+            Debug.Log("No coroutine");
         }
     }
 
@@ -147,11 +159,13 @@ public class PlaylistController : MonoBehaviour
                 else
                 {
                     currentTrack = new PlaylistItem(
-                        currentTrial.availableStrongSequences[weakTrackQueue.Dequeue()],
+                        currentTrial.availableWeakSequences[weakTrackQueue.Dequeue()],
                         currentTrial.trackTimeSecs,
                         false
                     );
                 }
+
+                Debug.Log(currentTrack.track.name);
 
                 UpdateCurrentPartnerStored(phase.availableAgents[agentQueue.Dequeue()]);
 
