@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
+using DrumRhythmGame.Data;
 using UnityEngine;
 
 
@@ -13,6 +14,8 @@ namespace _Project.Scripts.Data
     {
         [SerializeField] private bool RandomiseOrderOfPhases = true;
         public int tracksPerBlock { get; private set; } = 6;
+
+        [field: SerializeField] public PartnerHandPreference handPreference = PartnerHandPreference.Both;
 
         [SerializeField] private TrialPhase[] trailPhases;
 

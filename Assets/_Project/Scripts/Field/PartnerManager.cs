@@ -42,12 +42,14 @@ namespace _Project.Scripts.Field
         {
             EventManager.AgentSelected += InstantiateAvatar;
             EventManager.RemoveAgent += DestroyPartnerOne;
+            EventManager.HandPreferenceChanged += SwitchHandPreference;
         }
 
         private void OnDisable()
         {
             EventManager.AgentSelected -= InstantiateAvatar;
             EventManager.RemoveAgent -= DestroyPartnerOne;
+            EventManager.HandPreferenceChanged -= SwitchHandPreference;
         }
 
 #if UNITY_EDITOR
