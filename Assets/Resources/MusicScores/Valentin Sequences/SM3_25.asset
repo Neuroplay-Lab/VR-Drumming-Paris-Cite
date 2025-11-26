@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8975100c68e436aadf3ae40a93e8285, type: 3}
   m_Name: SM3_25
   m_EditorClassIdentifier: 
-  bgm: {fileID: 8300000, guid: 30a8cd8536d964fa083352a5cea4113c, type: 3}
+  bgm: {fileID: 8300000, guid: 7890c38dd0a5849649663eae537326a8, type: 3}
   beatNumber: 16
   scoreAsset: {fileID: 4900000, guid: 0e4ccd5a356ecff4aa6ae7ac5b49ce6a, type: 3}
   instrumentCount: 4
