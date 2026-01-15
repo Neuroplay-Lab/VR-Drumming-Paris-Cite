@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8975100c68e436aadf3ae40a93e8285, type: 3}
   m_Name: SM10_25
   m_EditorClassIdentifier: 
-  bgm: {fileID: 8300000, guid: 93fc01d3baabe6949ad21edb8dbfa226, type: 3}
+  bgm: {fileID: 8300000, guid: e2c2f6eb5c73449448f65d70f24b4b7b, type: 3}
   beatNumber: 16
   scoreAsset: {fileID: 4900000, guid: 5151d18453a38b74aa7b98df2197de65, type: 3}
   instrumentCount: 4
-  initialDelayTime: 4
+  initialDelayTime: 0.5
   muteDuringDelay: 1
   noteMarginTime: 0.1
   speedMagnification: 1

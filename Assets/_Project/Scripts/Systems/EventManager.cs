@@ -33,6 +33,7 @@ namespace _Project.Scripts.Systems
 
         public static event Action<AgentSO> AgentSelected;
         public static event Action RemoveAgent;
+        public static event Action<PartnerHandPreference> HandPreferenceChanged;
         public static event Action<DrumSO> DrumSelected;
         public static event Action<SceneSO> SceneSelected;
         public static event Action AgentPrepareEvent;
@@ -97,6 +98,11 @@ namespace _Project.Scripts.Systems
         public static void InvokeRemoveAgent()
         {
             RemoveAgent?.Invoke();
+        }
+
+        public static void InvokeHandPreferenceChanged(PartnerHandPreference preference)
+        {
+            HandPreferenceChanged?.Invoke(preference);
         }
 
         public static void InvokeDrumSelected(DrumSO obj)

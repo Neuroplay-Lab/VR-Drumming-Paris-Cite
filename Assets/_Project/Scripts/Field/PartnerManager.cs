@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using _Project.Scripts.Data;
 using _Project.Scripts.Systems;
 using DrumRhythmGame.Data;
@@ -26,6 +27,8 @@ namespace _Project.Scripts.Field
         private GameObject _currentPartnerOne;
         private AgentSO _currentAgent;
 
+        private Dictionary<AgentSO, GameObject> agentObjectInstantiated;
+
         public PartnerBehaviourType CurrentBehaviourPartnerOne { get; private set; } = PartnerBehaviourType.None;
 
         private PartnerHandPreference partnerHandPreference = PartnerHandPreference.Both;
@@ -42,12 +45,14 @@ namespace _Project.Scripts.Field
         {
             EventManager.AgentSelected += InstantiateAvatar;
             EventManager.RemoveAgent += DestroyPartnerOne;
+            EventManager.HandPreferenceChanged += SwitchHandPreference;
         }
 
         private void OnDisable()
         {
             EventManager.AgentSelected -= InstantiateAvatar;
             EventManager.RemoveAgent -= DestroyPartnerOne;
+            EventManager.HandPreferenceChanged -= SwitchHandPreference;
         }
 
 #if UNITY_EDITOR
@@ -93,9 +98,20 @@ namespace _Project.Scripts.Field
             }
 
             // If we selected a different agent, destroy the old one and instantiate the new one
-            if (_currentPartnerOne != null) Destroy(_currentPartnerOne);
+            if (_currentPartnerOne != null)
+            {
+                Destroy(_currentPartnerOne);
+            }
             SaveData.Instance.avatarData.partnerOneAvatarIndex = agent.index;
-            _currentPartnerOne = Instantiate(agentPrefab, instantiationPositionPartnerOne);
+            if (agentObjectInstantiated[agent] is null)
+            {
+                _currentPartnerOne = Instantiate(agentPrefab, instantiationPositionPartnerOne);
+                agentObjectInstantiated[agent] = _currentPartnerOne;
+            }
+            else
+            {
+                
+            }
             _currentPartnerOne.SetActive(CurrentBehaviourPartnerOne != PartnerBehaviourType.None);
             Debug.Log($"{Prefix} Instantiated agent <color=green>{agent.index}</color>");
             PlaylistController.Instance.PartnerIsActive = true;

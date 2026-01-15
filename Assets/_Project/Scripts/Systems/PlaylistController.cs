@@ -131,6 +131,8 @@ public class PlaylistController : MonoBehaviour
         Queue<int> strongTrackQueue = RandomTrackOrder(currentTrial.availableStrongSequences.Length);
         Queue<int> weakTrackQueue = RandomTrackOrder(currentTrial.availableWeakSequences.Length);
 
+        EventManager.InvokeHandPreferenceChanged(currentTrial.handPreference);
+
         foreach (TrialPhase phase in trailPhases)
         {
             Queue<int> agentQueue;
