@@ -74,8 +74,10 @@ namespace _Project.Scripts.Systems
             {
                 Play();
             }
-
-            IsPlaying = source.isPlaying;
+            if (setting.name.Trim().ToUpper() != "BREAK")
+            {
+                IsPlaying = source.isPlaying;
+            }
         }
 
         public void Reset()
