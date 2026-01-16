@@ -27,7 +27,7 @@ namespace _Project.Scripts.Field
         private GameObject _currentPartnerOne;
         private AgentSO _currentAgent;
 
-        private Dictionary<AgentSO, GameObject> agentObjectInstantiated;
+        public Dictionary<(AgentSO, PartnerHandPreference), GameObject> agentObjectInstantiated;
 
         public PartnerBehaviourType CurrentBehaviourPartnerOne { get; private set; } = PartnerBehaviourType.None;
 
@@ -39,6 +39,19 @@ namespace _Project.Scripts.Field
         {
             SwitchBehaviour(PartnerBehaviourType.Rhythm);
             SwitchHandPreference(PartnerHandPreference.Both);
+            agentObjectInstantiated = new Dictionary<(AgentSO, PartnerHandPreference), GameObject>();
+            PartnerHandPreference[] handPreferences = { PartnerHandPreference.Left, PartnerHandPreference.Right, PartnerHandPreference.Both };
+            foreach (AgentSO agent in Resources.LoadAll<AgentSO>("Agents/ScriptableObjects").ToList())
+            {
+                foreach (var pref in handPreferences)
+                {
+                    partnerHandPreference = pref;
+                    InstantiateAvatar(agent);
+                }
+            }
+            _currentPartnerOne.SetActive(false);
+            _currentAgent = null;
+            partnerHandPreference = PartnerHandPreference.Both;
         }
 
         private void OnEnable()
@@ -91,7 +104,8 @@ namespace _Project.Scripts.Field
             // If we already have a partner, and its the same one, we double clicked the same agent so remove it
             if (_currentPartnerOne != null && _currentPartnerOne == agentPrefab)
             {
-                Destroy(_currentPartnerOne);
+                _currentPartnerOne.SetActive(false);
+                // Destroy(_currentPartnerOne);
                 _currentAgent = null;
                 PlaylistController.Instance.PartnerIsActive = false;
                 return;
@@ -100,17 +114,18 @@ namespace _Project.Scripts.Field
             // If we selected a different agent, destroy the old one and instantiate the new one
             if (_currentPartnerOne != null)
             {
-                Destroy(_currentPartnerOne);
+                _currentPartnerOne.SetActive(false);
+                // Destroy(_currentPartnerOne);
             }
             SaveData.Instance.avatarData.partnerOneAvatarIndex = agent.index;
-            if (agentObjectInstantiated[agent] is null)
+            if (agentObjectInstantiated.ContainsKey((agent, partnerHandPreference)))
             {
-                _currentPartnerOne = Instantiate(agentPrefab, instantiationPositionPartnerOne);
-                agentObjectInstantiated[agent] = _currentPartnerOne;
+                _currentPartnerOne = agentObjectInstantiated[(agent, partnerHandPreference)];
             }
             else
             {
-                
+                _currentPartnerOne = Instantiate(agentPrefab, instantiationPositionPartnerOne);
+                agentObjectInstantiated[(agent, partnerHandPreference)] = _currentPartnerOne;
             }
             _currentPartnerOne.SetActive(CurrentBehaviourPartnerOne != PartnerBehaviourType.None);
             Debug.Log($"{Prefix} Instantiated agent <color=green>{agent.index}</color>");
@@ -126,6 +141,7 @@ namespace _Project.Scripts.Field
 
             // If we already have a partner
             if (_currentPartnerOne != null)
+                // _currentPartnerOne.SetActive(false);
                 Destroy(_currentPartnerOne);
 
             // SET SKIN INDEX
@@ -146,7 +162,8 @@ namespace _Project.Scripts.Field
         public void DestroyPartnerOne()
         {
             if (_currentPartnerOne == null) return;
-            Destroy(_currentPartnerOne);
+            _currentPartnerOne.SetActive(false);
+            // Destroy(_currentPartnerOne);
             _currentPartnerOne = null;
             PlaylistController.Instance.PartnerIsActive = false;
         }
