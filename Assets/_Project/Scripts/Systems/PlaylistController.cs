@@ -12,7 +12,7 @@ public class PlaylistController : MonoBehaviour
     private Playlist currentPlaylist;
     private RandomisedTrial currentTrial;
     private AgentSO _currentPartner = null;
-    public bool PartnerIsActive = false;
+    public AgentSO ShownPartner = null;
     [SerializeField] private RecallManager recallButtons;
 
     private Coroutine coroutine;
@@ -39,8 +39,10 @@ public class PlaylistController : MonoBehaviour
 
     public void Reset()
     {
+        Debug.Log("Resetting");
         if (coroutine != null)
         {
+            Debug.Log("Coroutine");
             if (subCoroutine != null)
             {
                 StopCoroutine(subCoroutine);
@@ -52,7 +54,17 @@ public class PlaylistController : MonoBehaviour
             {
                 MusicSequence.Instance.Reset();
             }
+            if (recalling)
+            {
+                EndRecall();
+                MusicSequence.Instance.Reset();
+                recallButtons.gameObject.SetActive(false);
+            }
             DrumLogger.Instance.SetCurrentTrail("FreePlay");
+        }
+        else
+        {
+            Debug.Log("No coroutine");
         }
     }
 
@@ -62,12 +74,12 @@ public class PlaylistController : MonoBehaviour
         {
             EventManager.InvokeMusicSettingChangeEvent(item.track);
             MusicSequence.Instance.Play();
-            if (item.hidePartner && PartnerIsActive)
+            if (item.hidePartner && ShownPartner is not null)
             {
                 EventManager.InvokeRemoveAgent();
                 DrumLogger.Instance.ChangedAvatar("No Avatar", shouldLog: false);
             }
-            else if (!item.hidePartner && !PartnerIsActive)
+            else if (!item.hidePartner && ShownPartner != _currentPartner)
             {
                 EventManager.InvokeAgentSelected(_currentPartner);
                 DrumLogger.Instance.ChangedAvatar(_currentPartner.name, shouldLog: false);
@@ -119,6 +131,8 @@ public class PlaylistController : MonoBehaviour
         Queue<int> strongTrackQueue = RandomTrackOrder(currentTrial.availableStrongSequences.Length);
         Queue<int> weakTrackQueue = RandomTrackOrder(currentTrial.availableWeakSequences.Length);
 
+        EventManager.InvokeHandPreferenceChanged(currentTrial.handPreference);
+
         foreach (TrialPhase phase in trailPhases)
         {
             Queue<int> agentQueue;
@@ -147,11 +161,13 @@ public class PlaylistController : MonoBehaviour
                 else
                 {
                     currentTrack = new PlaylistItem(
-                        currentTrial.availableStrongSequences[weakTrackQueue.Dequeue()],
+                        currentTrial.availableWeakSequences[weakTrackQueue.Dequeue()],
                         currentTrial.trackTimeSecs,
                         false
                     );
                 }
+
+                Debug.Log(currentTrack.track.name);
 
                 UpdateCurrentPartnerStored(phase.availableAgents[agentQueue.Dequeue()]);
 
@@ -171,6 +187,9 @@ public class PlaylistController : MonoBehaviour
             waitingToContinue = true;
             recallButtons.gameObject.SetActive(true);
             EventManager.InvokeTimerStopEvent();
+            EventManager.InvokeTimerStartEvent();
+            DrumLogger.Instance.SetCurrentTrail("FreePlay");
+
             while (waitingToContinue)
             {
                 yield return null;

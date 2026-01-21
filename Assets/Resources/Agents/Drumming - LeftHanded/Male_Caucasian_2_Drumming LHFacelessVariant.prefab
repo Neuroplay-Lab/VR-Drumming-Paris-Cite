@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1247662981779133548, guid: 38a7679c5570041da90606b55278d616,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3832020196217271356, guid: 38a7679c5570041da90606b55278d616,
         type: 3}
       propertyPath: m_Mesh
@@ -28,7 +33,7 @@ PrefabInstance:
     - target: {fileID: 3832020197054917240, guid: 38a7679c5570041da90606b55278d616,
         type: 3}
       propertyPath: m_Name
-      value: Male_Caucasian_2_Drumming LHVariant Variant
+      value: Male_Caucasian_2_Drumming LHFacelessVariant
       objectReference: {fileID: 0}
     - target: {fileID: 3832020197054917511, guid: 38a7679c5570041da90606b55278d616,
         type: 3}

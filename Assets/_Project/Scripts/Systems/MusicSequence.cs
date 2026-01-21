@@ -74,8 +74,10 @@ namespace _Project.Scripts.Systems
             {
                 Play();
             }
-
-            IsPlaying = source.isPlaying;
+            if (setting.name.Trim().ToUpper() != "BREAK")
+            {
+                IsPlaying = source.isPlaying;
+            }
         }
 
         public void Reset()
@@ -228,7 +230,10 @@ namespace _Project.Scripts.Systems
             promptAnimator.SetBool(Playing, false);
             promptAnimator.gameObject.SetActive(false);
             source.Stop();
-            StopCoroutine(coroutine);
+            if (coroutine is not null)
+            {
+                StopCoroutine(coroutine);
+            }
             coroutine = null;
             CurrentTime = -1f;
             EventManager.InvokeMusicResetEvent();

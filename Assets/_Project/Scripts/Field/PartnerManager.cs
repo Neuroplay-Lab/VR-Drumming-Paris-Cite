@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using _Project.Scripts.Data;
 using _Project.Scripts.Systems;
 using DrumRhythmGame.Data;
@@ -26,6 +27,8 @@ namespace _Project.Scripts.Field
         private GameObject _currentPartnerOne;
         private AgentSO _currentAgent;
 
+        public Dictionary<(AgentSO, PartnerHandPreference), GameObject> agentObjectInstantiated;
+
         public PartnerBehaviourType CurrentBehaviourPartnerOne { get; private set; } = PartnerBehaviourType.None;
 
         private PartnerHandPreference partnerHandPreference = PartnerHandPreference.Both;
@@ -36,18 +39,34 @@ namespace _Project.Scripts.Field
         {
             SwitchBehaviour(PartnerBehaviourType.Rhythm);
             SwitchHandPreference(PartnerHandPreference.Both);
+            agentObjectInstantiated = new Dictionary<(AgentSO, PartnerHandPreference), GameObject>();
+            PartnerHandPreference[] handPreferences = { PartnerHandPreference.Left, PartnerHandPreference.Right, PartnerHandPreference.Both };
+            foreach (AgentSO agent in Resources.LoadAll<AgentSO>("Agents/ScriptableObjects").ToList())
+            {
+                foreach (var pref in handPreferences)
+                {
+                    partnerHandPreference = pref;
+                    InstantiateAvatar(agent);
+                }
+            }
+            _currentPartnerOne.SetActive(false);
+            _currentPartnerOne = null;
+            _currentAgent = null;
+            partnerHandPreference = PartnerHandPreference.Both;
         }
 
         private void OnEnable()
         {
             EventManager.AgentSelected += InstantiateAvatar;
             EventManager.RemoveAgent += DestroyPartnerOne;
+            EventManager.HandPreferenceChanged += SwitchHandPreference;
         }
 
         private void OnDisable()
         {
             EventManager.AgentSelected -= InstantiateAvatar;
             EventManager.RemoveAgent -= DestroyPartnerOne;
+            EventManager.HandPreferenceChanged -= SwitchHandPreference;
         }
 
 #if UNITY_EDITOR
@@ -86,19 +105,32 @@ namespace _Project.Scripts.Field
             // If we already have a partner, and its the same one, we double clicked the same agent so remove it
             if (_currentPartnerOne != null && _currentPartnerOne == agentPrefab)
             {
-                Destroy(_currentPartnerOne);
+                _currentPartnerOne.SetActive(false);
+                // Destroy(_currentPartnerOne);
                 _currentAgent = null;
-                PlaylistController.Instance.PartnerIsActive = false;
+                PlaylistController.Instance.ShownPartner = null;
                 return;
             }
 
             // If we selected a different agent, destroy the old one and instantiate the new one
-            if (_currentPartnerOne != null) Destroy(_currentPartnerOne);
+            if (_currentPartnerOne != null)
+            {
+                _currentPartnerOne.SetActive(false);
+                // Destroy(_currentPartnerOne);
+            }
             SaveData.Instance.avatarData.partnerOneAvatarIndex = agent.index;
-            _currentPartnerOne = Instantiate(agentPrefab, instantiationPositionPartnerOne);
+            if (agentObjectInstantiated.ContainsKey((agent, partnerHandPreference)))
+            {
+                _currentPartnerOne = agentObjectInstantiated[(agent, partnerHandPreference)];
+            }
+            else
+            {
+                _currentPartnerOne = Instantiate(agentPrefab, instantiationPositionPartnerOne);
+                agentObjectInstantiated[(agent, partnerHandPreference)] = _currentPartnerOne;
+            }
             _currentPartnerOne.SetActive(CurrentBehaviourPartnerOne != PartnerBehaviourType.None);
             Debug.Log($"{Prefix} Instantiated agent <color=green>{agent.index}</color>");
-            PlaylistController.Instance.PartnerIsActive = true;
+            PlaylistController.Instance.ShownPartner = agent;
         }
 
         private void SelectAvatar(int skinIndex, int partnerIndex)
@@ -110,6 +142,7 @@ namespace _Project.Scripts.Field
 
             // If we already have a partner
             if (_currentPartnerOne != null)
+                // _currentPartnerOne.SetActive(false);
                 Destroy(_currentPartnerOne);
 
             // SET SKIN INDEX
@@ -124,15 +157,16 @@ namespace _Project.Scripts.Field
             _currentPartnerOne.SetActive(CurrentBehaviourPartnerOne != PartnerBehaviourType.None);
 
             Debug.Log($"{Prefix} Updated the avatar of agent: <color=green>{partnerIndex}</color>");
-            PlaylistController.Instance.PartnerIsActive = true;
+            PlaylistController.Instance.ShownPartner = _currentAgent;
         }
 
         public void DestroyPartnerOne()
         {
             if (_currentPartnerOne == null) return;
-            Destroy(_currentPartnerOne);
+            _currentPartnerOne.SetActive(false);
+            // Destroy(_currentPartnerOne);
             _currentPartnerOne = null;
-            PlaylistController.Instance.PartnerIsActive = false;
+            PlaylistController.Instance.ShownPartner = null;
         }
 
         public void SelectNextAvatar(int partnerIndex)
