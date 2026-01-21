@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4955856133710098831, guid: 3c7166050e6264af2afddbfa172e3b0a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6969382178852834916, guid: 3c7166050e6264af2afddbfa172e3b0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -61,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 6969382178852835227, guid: 3c7166050e6264af2afddbfa172e3b0a,
         type: 3}
       propertyPath: m_Name
-      value: Male_Caucasian_2_Drumming RHVariant Variant
+      value: Male_Caucasian_2_Drumming RHFacelessVariant
       objectReference: {fileID: 0}
     - target: {fileID: 6969382179285864927, guid: 3c7166050e6264af2afddbfa172e3b0a,
         type: 3}
