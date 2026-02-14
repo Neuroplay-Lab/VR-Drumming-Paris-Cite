@@ -82,7 +82,7 @@ public class PlaylistController : MonoBehaviour
             else if (!item.hidePartner && ShownPartner != _currentPartner)
             {
                 EventManager.InvokeAgentSelected(_currentPartner);
-                DrumLogger.Instance.ChangedAvatar(_currentPartner.name, shouldLog: false);
+                DrumLogger.Instance.ChangedAvatar(_currentPartner.name, currentTrial.handPreference, shouldLog: false);
             }
             if (item.track.name.Trim().ToLower() == "recall")
             {
