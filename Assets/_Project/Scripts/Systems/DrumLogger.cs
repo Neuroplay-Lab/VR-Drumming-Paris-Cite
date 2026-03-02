@@ -97,7 +97,7 @@ public class DrumLogger : MonoBehaviour
     private void LogCurrentTrial()
     {
         string trailInfo = $@"{_currentTrail} with {_currentAvatar} ({_handPreference} handed variant) started at {DateTime.Now:HH\:mm\:ss} ({_currentFileStartTime - _ogStartTime:mm\:ss} from start)";
-        if (_currentTrail != "FreePlay" && _currentTrail != "SPR" && _currentTrail != "Break" && _currentTrail != "Interference" && _currentTrail != "Recall")
+        if (_currentTrail != "FreePlay" && _currentTrail != "SPR" && _currentTrail != "Break")
         {
             LogDataToFile(_participantHits, _drumHitHeaders, _hitLogDirectory, "Sequence Log", trailInfo);
         }
