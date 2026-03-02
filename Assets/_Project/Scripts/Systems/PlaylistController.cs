@@ -86,7 +86,13 @@ public class PlaylistController : MonoBehaviour
             }
             if (item.track.name.Trim().ToLower() == "recall")
             {
-                break;
+                recalling = true;
+                recallButtons.gameObject.SetActive(true);
+                while (recalling)
+                {
+                    yield return null;
+                }
+                EventManager.InvokeTimerStopEvent();
             }
             if (item.track.name.Trim().ToLower() == "break")
             {
@@ -106,12 +112,6 @@ public class PlaylistController : MonoBehaviour
         }
         else
         {
-            recalling = true;
-            recallButtons.gameObject.SetActive(true);
-            while (recalling)
-            {
-                yield return null;
-            }
             if (subCoroutine is not null)
             {
                 StopCoroutine(subCoroutine);
