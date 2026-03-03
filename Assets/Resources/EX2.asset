@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: EX2
   m_EditorClassIdentifier: 
   playlistItems:
+  - track: {fileID: 11400000, guid: 3cfab132111064d8498c5de7e0f7092a, type: 2}
+    duration: 5
+    hidePartner: 1
   - track: {fileID: 11400000, guid: 1495a2f69423c4f4cb09b3701b084124, type: 2}
     duration: 32
     hidePartner: 0
