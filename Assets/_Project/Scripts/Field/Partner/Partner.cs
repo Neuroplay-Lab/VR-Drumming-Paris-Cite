@@ -120,7 +120,14 @@ namespace _Project.Scripts.Field.Partner
 
         public void StopDrumming()
         {
-            StartCoroutine(TemporarilyDisableDrumHitbox());
+            if (highTom is not null)
+            {
+                highTom.gameObject.GetComponent<MeshCollider>().enabled = false;
+            }
+            if (middleTom is not null)
+            {
+                middleTom.gameObject.GetComponent<Collider>().enabled = false;
+            }
             avatarAnimator?.SetBool("Drumming", false);
         }
 
@@ -144,6 +151,12 @@ namespace _Project.Scripts.Field.Partner
                 middleTom.gameObject.GetComponent<Collider>().enabled = true;
             }
 
+        }
+
+        public void RevertToWaitState()
+        {
+            leftHitStateMachine.TransitionToState(AvatarHitStateMachine.E_AvatarDrumHitState.Waiting);
+            rightHitStateMachine.TransitionToState(AvatarHitStateMachine.E_AvatarDrumHitState.Waiting);
         }
 
         public void DrumHit(FullBodyBipedEffector hittingHand, InstrumentType instrument)

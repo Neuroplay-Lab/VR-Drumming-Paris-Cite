@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8975100c68e436aadf3ae40a93e8285, type: 3}
   m_Name: WM7_25
   m_EditorClassIdentifier: 
-  bgm: {fileID: 8300000, guid: 2e9ae2aa1483d0846bf2cd3e56fbe19c, type: 3}
+  bgm: {fileID: 8300000, guid: 93f03df8dd96e437fba8a2374e9824b7, type: 3}
   beatNumber: 32
   scoreAsset: {fileID: 4900000, guid: c0570e463e7b3624fb669a6076e80369, type: 3}
   instrumentCount: 4
-  initialDelayTime: 0
+  initialDelayTime: 0.4
+  muteDuringDelay: 1
   noteMarginTime: 0.1
   speedMagnification: 1
   loopScore: 1
