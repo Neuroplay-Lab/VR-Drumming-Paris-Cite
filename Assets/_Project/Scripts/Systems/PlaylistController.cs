@@ -12,7 +12,7 @@ public class PlaylistController : MonoBehaviour
     private Playlist currentPlaylist;
     private RandomisedTrial currentTrial;
     private AgentSO _currentPartner = null;
-    public bool PartnerIsActive = false;
+    public AgentSO ShownPartner = null;
     [SerializeField] private RecallManager recallButtons;
 
     private Coroutine coroutine;
@@ -74,12 +74,12 @@ public class PlaylistController : MonoBehaviour
         {
             EventManager.InvokeMusicSettingChangeEvent(item.track);
             MusicSequence.Instance.Play();
-            if (item.hidePartner && PartnerIsActive)
+            if (item.hidePartner && ShownPartner is not null)
             {
                 EventManager.InvokeRemoveAgent();
                 DrumLogger.Instance.ChangedAvatar("No Avatar", shouldLog: false);
             }
-            else if (!item.hidePartner && !PartnerIsActive)
+            else if (!item.hidePartner && ShownPartner != _currentPartner)
             {
                 EventManager.InvokeAgentSelected(_currentPartner);
                 DrumLogger.Instance.ChangedAvatar(_currentPartner.name, shouldLog: false);

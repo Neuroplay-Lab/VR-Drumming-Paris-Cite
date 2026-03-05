@@ -50,6 +50,7 @@ namespace _Project.Scripts.Field
                 }
             }
             _currentPartnerOne.SetActive(false);
+            _currentPartnerOne = null;
             _currentAgent = null;
             partnerHandPreference = PartnerHandPreference.Both;
         }
@@ -107,7 +108,7 @@ namespace _Project.Scripts.Field
                 _currentPartnerOne.SetActive(false);
                 // Destroy(_currentPartnerOne);
                 _currentAgent = null;
-                PlaylistController.Instance.PartnerIsActive = false;
+                PlaylistController.Instance.ShownPartner = null;
                 return;
             }
 
@@ -129,7 +130,7 @@ namespace _Project.Scripts.Field
             }
             _currentPartnerOne.SetActive(CurrentBehaviourPartnerOne != PartnerBehaviourType.None);
             Debug.Log($"{Prefix} Instantiated agent <color=green>{agent.index}</color>");
-            PlaylistController.Instance.PartnerIsActive = true;
+            PlaylistController.Instance.ShownPartner = agent;
         }
 
         private void SelectAvatar(int skinIndex, int partnerIndex)
@@ -156,7 +157,7 @@ namespace _Project.Scripts.Field
             _currentPartnerOne.SetActive(CurrentBehaviourPartnerOne != PartnerBehaviourType.None);
 
             Debug.Log($"{Prefix} Updated the avatar of agent: <color=green>{partnerIndex}</color>");
-            PlaylistController.Instance.PartnerIsActive = true;
+            PlaylistController.Instance.ShownPartner = _currentAgent;
         }
 
         public void DestroyPartnerOne()
@@ -165,7 +166,7 @@ namespace _Project.Scripts.Field
             _currentPartnerOne.SetActive(false);
             // Destroy(_currentPartnerOne);
             _currentPartnerOne = null;
-            PlaylistController.Instance.PartnerIsActive = false;
+            PlaylistController.Instance.ShownPartner = null;
         }
 
         public void SelectNextAvatar(int partnerIndex)
